@@ -13,6 +13,6 @@
 - The goal of this exercise is to implement your own search from scratch (without using Ruby's #index method!)
 
 - The approach you will implement is called linear search. A linear search takes a sorted array and an item to find in the array, then checks each item in the sorted array one at a time from the beginning until you find the desired item. You can see a visual example below (here we're searching the array [10, 14, 19, 26, 27, 31, 33, 35, 42, 44] for the value of 33):
-
+<p align="center">
 <img src="misc/linear_search.gif" height="140px" align="center"/>
-
+</p>

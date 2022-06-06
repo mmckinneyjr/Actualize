@@ -67,7 +67,7 @@
 - Try using classes to structure your code. 
 
 
-![#bd9d00] 5.18 - Bonus Algorithm Challenge: Linear and Binary Search '#bd9d00'
+<span style="color: green">5.18 - Bonus Algorithm Challenge: Linear and Binary Search</span>
 
 Part 1
 

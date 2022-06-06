@@ -64,7 +64,7 @@
 
 - The approach you will implement is called "<i>linear search</i>". A linear search takes a sorted array and an item to find in the array, then checks each item in the sorted array one at a time from the beginning until you find the desired item. You can see a visual example below (here we're searching the array [10, 14, 19, 26, 27, 31, 33, 35, 42, 44] for the value of 33):
 <p align="center">
-<img src="misc/linear_search.gif" height"100px">
+<img src="misc/linear_search.gif" height="100px">
 </p>
 
 ### Part 2
@@ -73,7 +73,7 @@
 
 - Write a method called "<i>binary_search</i>" that takes a sorted array and a value to find in the array, and returns the index in the array where the value was found. If the value is not found into the array, it should return nil instead. To be clear, you're not allowed to use the built in #index method - instead you'll write code to go through the items in the array to accomplish the same thing
 <p align="center">
-  <img src="misc/binary_search.gif" height"100px">
+  <img src="misc/binary_search.gif" height="100px">
 <p>
 
 

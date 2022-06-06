@@ -34,10 +34,10 @@
 <br>
 
 ### 5.14 - Bonus Exercise: Connect Four
-</div>
 
 - You will be creating a program that is similar to Connect 4.
 - Start by creating a board. The board should consist of an array of arrays (a.k.a. 2 dimensional array).
+<br>
 
 ### 5.15 - Bonus Exercise: Card Game
 
@@ -67,7 +67,7 @@
 <img src="misc/linear_search.gif" style="height: 70px;"/>
 </p>
 
-Part 2
+### Part 2
 
 - A linear search works well, but it's not the fastest way to find an item in a sorted array. A faster approach is called a binary search. In a binary search, you start your search in the exact middle of the sorted array instead of the first item. If the middle item is smaller than the desired item, then you know the desired item will be in the last half of the array. So the next item to check is the exact middle of the the last half of the array. Then you keep repeating the process. 
 

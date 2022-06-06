@@ -1,5 +1,3 @@
-#Ruby: 
-
 class Player
     attr_accessor :name, :turn
 
@@ -189,8 +187,3 @@ while game_board.winner_status == false
     end
  
 end
-
-
-
-
-

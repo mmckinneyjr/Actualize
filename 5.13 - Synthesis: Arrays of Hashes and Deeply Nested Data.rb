@@ -1,5 +1,3 @@
-#Ruby
-
 simplified_movies = []
 i = 0
 

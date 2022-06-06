@@ -67,9 +67,7 @@
 - Try using classes to structure your code. 
 
 
-<div style="color:#bd9d00;font-weight:700;font-size:22px">
-5.18 - Bonus Algorithm Challenge: Linear and Binary Search
-</div>
+![#bd9d00] 5.18 - Bonus Algorithm Challenge: Linear and Binary Search '#bd9d00'
 
 Part 1
 

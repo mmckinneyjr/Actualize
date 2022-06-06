@@ -1,5 +1,3 @@
-#Ruby:
-
 ###### Exercise 1 #####
 
 def linear_search(sorted_array, desired_item)    

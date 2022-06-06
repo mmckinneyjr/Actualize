@@ -1,5 +1,5 @@
 <p align="center">
-<img src="misc/actualize.png" height="200px">
+<img src="misc/actualize.png" height="150px">
 </p>
 
 ### 5.12 - Synthesis: Arrays of Hashes

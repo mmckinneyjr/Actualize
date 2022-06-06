@@ -1,3 +1,7 @@
+<p align="center">
+<img src="misc/actualize.png" height="200px">
+</p>
+
 ### 5.12 - Synthesis: Arrays of Hashes
 
 - 1. Start with the array of hashes:

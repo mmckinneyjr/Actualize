@@ -1,0 +1,998 @@
+  [1m[35m (233.0ms)[0m  [1m[35mCREATE DATABASE "sample_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (54.2ms)[0m  [1m[35mCREATE DATABASE "sample_app_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2022-06-27 11:35:32 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | Allocations: 645)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4885)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-27 11:35:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-06-27 11:35:55 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.6ms | Allocations: 319)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1003)
+
+
+Started GET "/" for ::1 at 2022-06-27 11:51:59 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 536)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3538)
+
+
+Started GET "/hello_path" for ::1 at 2022-06-27 11:52:05 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path.json" for ::1 at 2022-06-27 11:52:57 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path.json" for ::1 at 2022-06-27 12:00:16 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path.json" for ::1 at 2022-06-27 12:00:21 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:00:22 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:01:33 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:02:16 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+    render json: (message: "hello")
+                  ^~~~~~~~
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+Started GET "/hello_path" for ::1 at 2022-06-27 12:02:18 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+    render json: (message: "hello")
+                  ^~~~~~~~
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+Started GET "/hello_path" for ::1 at 2022-06-27 12:03:18 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+    render json: (message: "hello")
+                  ^~~~~~~~
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+Started GET "/hello_path" for ::1 at 2022-06-27 12:03:28 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:03:47 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+    render json: (message: "hello")
+                  ^~~~~~~~
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+Started GET "/hello_path" for ::1 at 2022-06-27 12:03:59 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+     json: (message: "hello")
+         ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:04:37 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected '(', expecting `end'
+    render :json (message: "hello")
+                 ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+...render :json (message: "hello")
+...                              ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected '(', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected '(', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:04:45 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    :render :json (message: "hello")
+            ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+...render :json (message: "hello")
+...                              ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:04:56 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: :json (message: "hello")
+          ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+...ender: :json (message: "hello")
+...                              ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:05:03 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json (message: "hello")
+          ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+...render: json (message: "hello")
+...                              ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ')', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:05:09 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:05:53 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:9: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:9: syntax error, unexpected `end', expecting end-of-input
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:9: syntax error, unexpected `end', expecting end-of-input
+Started GET "/hello_path" for ::1 at 2022-06-27 12:06:04 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:06:05 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:06:13 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: (message: "hello")
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:06:48 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    render: json: {message: "hello"}
+          ^
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:06:55 -0500
+Processing by ExamplePagesController#hello_method as HTML
+Completed 200 OK in 0ms (Views: 0.3ms | Allocations: 276)
+
+
+Started GET "/hello_path" for ::1 at 2022-06-27 12:07:06 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected label, expecting `end'
+    render json:  message: "hello" 
+                  ^~~~~~~~
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label, expecting `end'
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label, expecting `end'
+Started GET "/hello_path" for ::1 at 2022-06-27 12:07:13 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+    render json:  (message: "hello" )
+                   ^~~~~~~~
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+Started GET "/hello_path" for ::1 at 2022-06-27 12:07:23 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+    render json:  (message: "hello" )
+                   ^~~~~~~~
+):
+  
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+app/controllers/example_pages_controller.rb:3: syntax error, unexpected label
+Started GET "/hello_path" for ::1 at 2022-06-27 12:07:28 -0500
+Processing by ExamplePagesController#hello_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 221)
+
+
+Started GET "/hello_path" for ::1 at 2022-06-27 12:15:47 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+    render html: {img src="https://anyonecanlearntocod...
+                      ^~~
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting `end'
+...05fe1d582c9eb9a2888d7dc18.png"}
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting `end'
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting `end'
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for ::1 at 2022-06-27 12:15:48 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | Allocations: 318)
+Completed 200 OK in 6ms (Views: 4.5ms | Allocations: 914)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-27 12:15:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/image_method" for ::1 at 2022-06-27 12:15:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/image_method"):
+  
+Started GET "/image_path" for ::1 at 2022-06-27 12:16:20 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+    render html: {img src="https://anyonecanlearntocod...
+                      ^~~
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting `end'
+...05fe1d582c9eb9a2888d7dc18.png"}
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting `end'
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting `end'
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/image_path" for ::1 at 2022-06-27 12:17:31 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+    render html: img src="https://anyonecanlearntocod...
+                     ^~~
+):
+  
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+Started GET "/image_path" for ::1 at 2022-06-27 12:17:48 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 185)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:17:58 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 177)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:18:29 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 176)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:18:41 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting =>
+...05fe1d582c9eb9a2888d7dc18.png"} #.html_safe
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting =>
+app/controllers/example_pages_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/example_pages_controller.rb:7: syntax error, unexpected '}', expecting =>
+app/controllers/example_pages_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/image_path" for ::1 at 2022-06-27 12:18:56 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 174)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:19:39 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 174)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:20:12 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 175)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:21:33 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 174)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:21:55 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 174)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:22:33 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 174)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:22:57 -0500
+Processing by ExamplePagesController#image_method as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 174)
+
+
+Started GET "/image_path" for ::1 at 2022-06-27 12:23:25 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:11: syntax error, unexpected '}', expecting =>
+    render text: {"ssdfsdfs"}
+                            ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/example_pages_controller.rb:11: syntax error, unexpected '}', expecting =>
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/example_pages_controller.rb:11: syntax error, unexpected '}', expecting =>
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/array_path" for ::1 at 2022-06-27 12:23:35 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:11: syntax error, unexpected '}', expecting =>
+    render text: {"ssdfsdfs"}
+                            ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/example_pages_controller.rb:11: syntax error, unexpected '}', expecting =>
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/example_pages_controller.rb:11: syntax error, unexpected '}', expecting =>
+app/controllers/example_pages_controller.rb:17: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/array_path" for ::1 at 2022-06-27 12:24:30 -0500
+Processing by ExamplePagesController#array_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 173)
+
+
+Started GET "/array_path" for ::1 at 2022-06-27 12:24:41 -0500
+Processing by ExamplePagesController#array_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 173)
+
+
+Started GET "/array_path" for ::1 at 2022-06-27 12:25:52 -0500
+Processing by ExamplePagesController#array_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 178)
+
+
+Started GET "/array_path" for ::1 at 2022-06-27 12:26:05 -0500
+Processing by ExamplePagesController#array_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 177)
+
+
+Started GET "/array_path" for ::1 at 2022-06-27 12:27:00 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:13: syntax error, unexpected '|', expecting ')'
+    my_array.map(|n| "Num: #{n}")
+                 ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...  my_array.map(|n| "Num: #{n}")
+...                              ^
+):
+  
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected '|', expecting ')'
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected '|', expecting ')'
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/array_path" for ::1 at 2022-06-27 12:27:11 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:13: syntax error, unexpected '|', expecting ')'
+    my_array.map(|n| "Num: " + n)
+                 ^
+/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...  my_array.map(|n| "Num: " + n)
+...                              ^
+):
+  
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected '|', expecting ')'
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected '|', expecting ')'
+app/controllers/example_pages_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/array_path" for ::1 at 2022-06-27 12:29:35 -0500
+Processing by ExamplePagesController#array_method as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | Allocations: 184)
+
+
+Started GET "/array_path" for ::1 at 2022-06-27 12:29:45 -0500
+Processing by ExamplePagesController#array_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 185)
+
+
+Started GET "/array_path" for ::1 at 2022-06-27 12:29:53 -0500
+Processing by ExamplePagesController#array_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 184)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:31:09 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 180)
+
+
+  
+NoMethodError (undefined method `empty?' for 1:Integer
+
+          (digest ||= Digest::SHA256.new) << part unless part.empty?
+                                                             ^^^^^^^):
+  
+rack (2.2.3.1) lib/rack/etag.rb:69:in `block in digest_body'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each_chunk'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:128:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:76:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:481:in `each'
+rack (2.2.3.1) lib/rack/etag.rb:67:in `digest_body'
+rack (2.2.3.1) lib/rack/etag.rb:31:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/my_path" for ::1 at 2022-06-27 12:31:59 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 204 No Content in 0ms (Allocations: 109)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:32:00 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 204 No Content in 0ms (Allocations: 27)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:32:18 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 204 No Content in 0ms (Allocations: 27)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:32:19 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 204 No Content in 0ms (Allocations: 27)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:32:21 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 204 No Content in 0ms (Allocations: 27)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:32:33 -0500
+  
+AbstractController::ActionNotFound (The action 'my_method' could not be found for ExamplePagesController
+Did you mean?  array_method):
+  
+actionpack (7.0.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/my_path" for ::1 at 2022-06-27 12:32:52 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 174)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:32:59 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 181)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:33:01 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 66)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:33:12 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 180)
+
+
+  
+NoMethodError (undefined method `empty?' for 1:Integer
+
+          (digest ||= Digest::SHA256.new) << part unless part.empty?
+                                                             ^^^^^^^):
+  
+rack (2.2.3.1) lib/rack/etag.rb:69:in `block in digest_body'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each_chunk'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:128:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:76:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:481:in `each'
+rack (2.2.3.1) lib/rack/etag.rb:67:in `digest_body'
+rack (2.2.3.1) lib/rack/etag.rb:31:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/my_path" for ::1 at 2022-06-27 12:33:32 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 180)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:33:42 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/app/controllers/example_pages_controller.rb:24: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+    render text: p items.map { |i| i[:id] }
+                   ^~~~~
+):
+  
+app/controllers/example_pages_controller.rb:24: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/example_pages_controller.rb:24: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+Started GET "/my_path" for ::1 at 2022-06-27 12:33:54 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 180)
+
+
+  
+NoMethodError (undefined method `empty?' for 1:Integer
+
+          (digest ||= Digest::SHA256.new) << part unless part.empty?
+                                                             ^^^^^^^):
+  
+rack (2.2.3.1) lib/rack/etag.rb:69:in `block in digest_body'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each_chunk'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:128:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:76:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:481:in `each'
+rack (2.2.3.1) lib/rack/etag.rb:67:in `digest_body'
+rack (2.2.3.1) lib/rack/etag.rb:31:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/my_path" for ::1 at 2022-06-27 12:34:16 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 221)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:34:54 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 500 Internal Server Error in 0ms (Allocations: 195)
+
+
+  
+TypeError (String can't be coerced into Integer):
+  
+app/controllers/example_pages_controller.rb:24:in `+'
+app/controllers/example_pages_controller.rb:24:in `block in my_method'
+app/controllers/example_pages_controller.rb:24:in `map'
+app/controllers/example_pages_controller.rb:24:in `my_method'
+Started GET "/my_path" for ::1 at 2022-06-27 12:35:13 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 233)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:35:23 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 179)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:35:52 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 183)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:36:04 -0500
+Processing by ExamplePagesController#my_method as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 182)
+
+
+Started GET "/my_path" for ::1 at 2022-06-27 12:36:41 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/sample-app/config/routes.rb:5: syntax error, unexpected '\n', expecting =>
+...on: "my_method", "array_method"
+...                               ^
+):
+  
+config/routes.rb:5: syntax error, unexpected '\n', expecting =>
+config/routes.rb:5: syntax error, unexpected '\n', expecting =>
+Started GET "/my_path2" for ::1 at 2022-06-27 12:37:20 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 187)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+rack (2.2.3.1) lib/rack/etag.rb:69:in `<<'
+rack (2.2.3.1) lib/rack/etag.rb:69:in `block in digest_body'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each_chunk'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:128:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:76:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:481:in `each'
+rack (2.2.3.1) lib/rack/etag.rb:67:in `digest_body'
+rack (2.2.3.1) lib/rack/etag.rb:31:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/my_path2" for ::1 at 2022-06-27 12:38:10 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 252)
+
+
+Started GET "/my_path2" for ::1 at 2022-06-27 12:38:33 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 186)
+
+
+Started GET "/my_path2" for ::1 at 2022-06-27 12:38:39 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 187)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+rack (2.2.3.1) lib/rack/etag.rb:69:in `<<'
+rack (2.2.3.1) lib/rack/etag.rb:69:in `block in digest_body'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each_chunk'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:128:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:76:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:481:in `each'
+rack (2.2.3.1) lib/rack/etag.rb:67:in `digest_body'
+rack (2.2.3.1) lib/rack/etag.rb:31:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/my_path2" for ::1 at 2022-06-27 12:38:56 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 187)
+
+
+Started GET "/my_path2" for ::1 at 2022-06-27 12:39:03 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 186)
+
+
+Started GET "/my_path2" for ::1 at 2022-06-27 12:39:04 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 72)
+
+
+Started GET "/my_path2" for ::1 at 2022-06-27 12:39:13 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 182)
+
+
+Started GET "/my_path2" for ::1 at 2022-06-27 12:39:20 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 181)
+
+
+Started GET "/my_path2" for ::1 at 2022-06-27 12:39:26 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 182)
+
+
+  
+TypeError (no implicit conversion of Hash into String):
+  
+rack (2.2.3.1) lib/rack/etag.rb:69:in `<<'
+rack (2.2.3.1) lib/rack/etag.rb:69:in `block in digest_body'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:146:in `each_chunk'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:128:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:76:in `each'
+actionpack (7.0.3) lib/action_dispatch/http/response.rb:481:in `each'
+rack (2.2.3.1) lib/rack/etag.rb:67:in `digest_body'
+rack (2.2.3.1) lib/rack/etag.rb:31:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/my_path2" for ::1 at 2022-06-27 12:39:55 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 500 Internal Server Error in 0ms (Allocations: 193)
+
+
+  
+TypeError (wrong element type String at 0 (expected array)):
+  
+app/controllers/example_pages_controller.rb:34:in `to_h'
+app/controllers/example_pages_controller.rb:34:in `my_method2'
+Started GET "/my_path2" for ::1 at 2022-06-27 12:40:16 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 500 Internal Server Error in 0ms (Allocations: 193)
+
+
+  
+TypeError (wrong element type String at 0 (expected array)):
+  
+app/controllers/example_pages_controller.rb:34:in `to_h'
+app/controllers/example_pages_controller.rb:34:in `my_method2'
+Started GET "/my_path2" for ::1 at 2022-06-27 12:40:26 -0500
+Processing by ExamplePagesController#my_method2 as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 198)
+
+
+Started GET "/hello_path" for ::1 at 2022-06-27 12:41:21 -0500
+Processing by ExamplePagesController#hello_method as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 110)
+
+

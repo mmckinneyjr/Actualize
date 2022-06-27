@@ -1,0 +1,650 @@
+  [1m[35m (155.4ms)[0m  [1m[35mCREATE DATABASE "fortune_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (50.1ms)[0m  [1m[35mCREATE DATABASE "fortune_app_test" ENCODING = 'unicode'[0m
+Started GET "/hello_path" for ::1 at 2022-06-27 13:07:19 -0500
+Started GET "/" for ::1 at 2022-06-27 13:07:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/hello_path"):
+  
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 905)
+Completed 200 OK in 20ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 15793)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-27 13:07:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-06-27 13:07:20 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.0ms | Allocations: 319)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 1005)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:07:23 -0500
+  
+LoadError (cannot load such file -- http):
+  
+app/controllers/fortune_pages_controller.rb:1:in `<main>'
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:02 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 257)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:05 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:06 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 79)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:07 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:08 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 75)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:10 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:10 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:12 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:11:13 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:13:30 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 500 Internal Server Error in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 309)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/fortune_pages_controller.rb:21:in `fortune_teller'
+Started GET "/fortune" for ::1 at 2022-06-27 13:13:44 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:13:46 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 74)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:13:56 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 201)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:13:57 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 75)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:13:58 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 75)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:14:16 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 196)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:14:43 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+...ml: fortune <br> Lucky numbers:  
+...                       ^~~~~~~~
+):
+  
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+Started GET "/fortune" for ::1 at 2022-06-27 13:14:51 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: unterminated string meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:23: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:23: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:14:52 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: unterminated string meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:23: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:23: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:15:07 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<', expecting `end'
+    render html: <div>fortune <br> "Lucky numbe...
+                 ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<', expecting `end'
+app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<', expecting `end'
+app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:15:17 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 190)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:15:25 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+...html: "<div>fortune <br> "Lucky numbers:"  </div>"
+...                          ^~~~~
+):
+  
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:15:32 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 190)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:16:00 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<'
+    render html: fortune <br> <div>Lucky numbers:</div>
+                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+...ortune <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:20:21 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<'
+    render html: fortune <br> <div>Lucky numbers:</div>
+                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+...ortune <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:23: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:23:57 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'
+# end
+     ^
+):
+  
+app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:24:10 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 171)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:24:23 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 171)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:24:50 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 171)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:25:00 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 57)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:25:40 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 176)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:26:32 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 176)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:27:00 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 172)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:27:22 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<'
+    render html: fortune <br> <div>Lucky numbers:</div>
+                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+...ortune <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+...er inline: File.read("app/views/test.html")
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+    #render inline: File.read("app/i
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+...File.read("app/views/test.html")
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Courage is not simply one of the vir...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+...ortune = "Courage is not simply one of the virtues, but the ...
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...ply one of the virtues, but the form of every virtue at the ...
+...                            ^~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+...y virtue at the testing point."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Don’t worry about money. The best ...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+...about money. The best things in life are free."
+...                             ^~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+... best things in life are free."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Courage is not the absence of fear; ...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+...  fortune = "Courage is not the absence of fear; it is the c...
+...                            ^~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+...ear; it is the conquest of it."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Sorry you have no fortune"
+                     ^~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:27:32 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<', expecting `end'
+    render html: <br> <div>Lucky numbers:</div>
+                 ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+... html: <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+...er inline: File.read("app/views/test.html")
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+    #render inline: File.read("app/i
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+...File.read("app/views/test.html")
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Courage is not simply one of the vir...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+...ortune = "Courage is not simply one of the virtues, but the ...
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...ply one of the virtues, but the form of every virtue at the ...
+...                            ^~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+...y virtue at the testing point."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Don’t worry about money. The best ...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+...about money. The best things in life are free."
+...                             ^~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+... best things in life are free."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Courage is not the absence of fear; ...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+...  fortune = "Courage is not the absence of fear; it is the c...
+...                            ^~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+...ear; it is the conquest of it."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Sorry you have no fortune"
+                     ^~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<', expecting `end'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<', expecting `end'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:27:33 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<', expecting `end'
+    render html: <br> <div>Lucky numbers:</div>
+                 ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+... html: <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+...er inline: File.read("app/views/test.html")
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+    #render inline: File.read("app/i
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+...File.read("app/views/test.html")
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Courage is not simply one of the vir...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+...ortune = "Courage is not simply one of the virtues, but the ...
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...ply one of the virtues, but the form of every virtue at the ...
+...                            ^~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+...y virtue at the testing point."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Don’t worry about money. The best ...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+...about money. The best things in life are free."
+...                             ^~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+... best things in life are free."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Courage is not the absence of fear; ...
+                     ^~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+...  fortune = "Courage is not the absence of fear; it is the c...
+...                            ^~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+...ear; it is the conquest of it."
+...                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+  #       fortune = "Sorry you have no fortune"
+                     ^~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<', expecting `end'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected '<', expecting `end'
+app/controllers/fortune_pages_controller.rb:3: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:4: unknown regexp options - vw
+app/controllers/fortune_pages_controller.rb:4: end pattern with unmatched parenthesis: /div>
+app/controllers/fortune_pages_controller.rb:4: syntax error, unexpected string literal, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:14: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected `in', expecting `end'
+app/controllers/fortune_pages_controller.rb:16: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected local variable or method, expecting '('
+app/controllers/fortune_pages_controller.rb:18: syntax error, unexpected string literal
+app/controllers/fortune_pages_controller.rb:20: syntax error, unexpected constant, expecting `end'
+app/controllers/fortune_pages_controller.rb:26: unterminated string meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:27:46 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected '<'
+    render html: fortune <br> <div>Lucky numbers:</div>
+                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected label, expecting `do' or '{' or '('
+...ortune <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:28: unterminated regexp meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:28: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:28: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:27:47 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected '<'
+    render html: fortune <br> <div>Lucky numbers:</div>
+                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected label, expecting `do' or '{' or '('
+...ortune <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:28: unterminated regexp meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:28: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:25: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:28: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:28: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:28:01 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected '<'
+    render html: fortune <br> <div>Lucky numbers:</div>
+                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected label, expecting `do' or '{' or '('
+...ortune <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: unterminated regexp meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:26: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:26: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:28:03 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected '<'
+    render html: fortune <br> <div>Lucky numbers:</div>
+                              ^
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected label, expecting `do' or '{' or '('
+...ortune <br> <div>Lucky numbers:</div>
+...                       ^~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: unterminated regexp meets end of file
+/Users/codingbootcamp/Documents/Actualize/fortune-app/app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:26: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected '<'
+app/controllers/fortune_pages_controller.rb:23: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/fortune_pages_controller.rb:26: unterminated regexp meets end of file
+app/controllers/fortune_pages_controller.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/fortune" for ::1 at 2022-06-27 13:28:18 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | Allocations: 179)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:28:33 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 175)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:28:35 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 60)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:28:48 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 179)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:29:26 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 184)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:38:24 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 177)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:38:44 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 176)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:40:04 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 182)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:40:20 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 183)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:43:30 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 2ms (Views: 0.5ms | Allocations: 67)
+
+
+Started GET "/fortune" for ::1 at 2022-06-27 13:43:31 -0500
+Processing by FortunePagesController#fortune_teller as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 68)
+
+

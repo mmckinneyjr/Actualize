@@ -53,6 +53,17 @@ git pull origin main --no-edit
 ```
 
 
+### Week 2
+
+|       | Deliberate Practice (mandatory)            | Deep Dives (optional, see [readme](DEEPDIVES_README.md)) |
+| ----- | ------------------------------------------ | -------------------------------------------------------- |
+| Day 1 | [Intro to APIs](w02/intro_to_apis)         | [Budget](w02/05_budget)                                  |
+| Day 2 | [Babys First Rails](w02/babys_first_rails) | [Book Report](w02/06_book_report)                        |
+| Day 3 | No homework :)                             |                                                          |
+| Day 4 | [Be CRUDdy](w02/be_cruddy)                 | [ETL](w02/07_etl)                                        |
+| Day 5 | [More CRUD](w02/more_crud)                 | [Anagrams](w02/08_anagrams)                              |
+
+
 ### Week 1
 
 |       | Deliberate Practice (mandatory)      | Deep Dives (optional, see [readme](DEEPDIVES_README.md)) |

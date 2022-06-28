@@ -1,3 +1,4 @@
+
 class FortunePagesController < ApplicationController
   def fortune_teller
     random = rand(1..3)
@@ -18,8 +19,15 @@ class FortunePagesController < ApplicationController
     rand_nums = "#{rand(1..60)}, #{rand(1..60)}, #{rand(1..60)}, #{rand(1..60)}, #{rand(1..60)}, #{rand(1..60)}"
 
 
-
     render plain: "#{fortune} \nLucky Numbers: #{rand_nums}"
     
+  end
+
+
+
+  def page_counts
+    count = 0
+    count += 1 
+    render json: {count: count}
   end
 end

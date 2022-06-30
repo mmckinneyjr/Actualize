@@ -1,0 +1,542 @@
+  [1m[35m (152.3ms)[0m  [1m[35mCREATE DATABASE "contacts_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (58.8ms)[0m  [1m[35mCREATE DATABASE "contacts_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (32.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5968045350150673755)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20220628173522)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "phone_number" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220628173522"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (6.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-06-28 17:35:28.383214"], ["updated_at", "2022-06-28 17:35:28.383214"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5968045350150673755)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "555-555-2222"], ["LIMIT", 1]]
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (5.7ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "steve"], ["last_name", "rogers"], ["email", "steverogers@gmail.com"], ["phone_number", "555-555-1111"], ["created_at", "2022-06-28 17:45:01.719280"], ["updated_at", "2022-06-28 17:45:01.719280"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "bruce"], ["last_name", "wayne"], ["email", "brucewayne@gmail.com"], ["phone_number", "555-555-5553"], ["created_at", "2022-06-28 17:45:27.072974"], ["updated_at", "2022-06-28 17:45:27.072974"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.7ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "steve"], ["last_name", "rogers"], ["email", "clarkkent@gmail.com"], ["phone_number", "555-555-2222"], ["created_at", "2022-06-28 17:46:07.812993"], ["updated_at", "2022-06-28 17:46:07.812993"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Update (1.9ms)[0m  [1m[33mUPDATE "contacts" SET "first_name" = $1, "updated_at" = $2 WHERE "contacts"."id" = $3[0m  [["first_name", "clark"], ["updated_at", "2022-06-28 17:47:33.715298"], ["id", 3]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Update (0.6ms)[0m  [1m[33mUPDATE "contacts" SET "last_name" = $1, "updated_at" = $2 WHERE "contacts"."id" = $3[0m  [["last_name", "kent"], ["updated_at", "2022-06-28 17:47:52.874918"], ["id", 3]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+Started GET "/" for ::1 at 2022-06-28 13:10:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 645)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4879)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-28 13:10:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-06-28 13:10:26 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 319)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1003)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:10:31 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (4.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 13.2ms | Allocations: 6705)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:12:05 -0500
+Processing by ContactsController#contact_one as HTML
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 5.1ms | Allocations: 2741)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:12:14 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 6723)
+
+
+  [1m[36mCACHE Contact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `id' for #<ActiveRecord::Relation [#<Contact id: 1, first_name: "steve", last_name: "rogers", email: "steverogers@gmail.com", phone_number: "555-555-1111", created_at: "2022-06-28 17:45:01.719280000 +0000", updated_at: "2022-06-28 17:45:01.719280000 +0000">, #<Contact id: 2, first_name: "bruce", last_name: "wayne", email: "brucewayne@gmail.com", phone_number: "555-555-5553", created_at: "2022-06-28 17:45:27.072974000 +0000", updated_at: "2022-06-28 17:45:27.072974000 +0000">, #<Contact id: 3, first_name: "clark", last_name: "kent", email: "clarkkent@gmail.com", phone_number: "555-555-2222", created_at: "2022-06-28 17:46:07.812993000 +0000", updated_at: "2022-06-28 17:47:52.874918000 +0000">]>
+Did you mean?  ids):
+  
+app/controllers/contacts_controller.rb:4:in `contact_one'
+Started GET "/contact_one" for ::1 at 2022-06-28 13:12:48 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/contacts-api/app/controllers/contacts_controller.rb:7: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/contacts_controller.rb:7: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/contacts_controller.rb:7: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/contact_one" for ::1 at 2022-06-28 13:13:23 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 8.9ms | Allocations: 3668)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:14:33 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 749)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-28 13:14:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/contact_all" for ::1 at 2022-06-28 13:16:25 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4171)
+
+
+  
+NoMethodError (undefined method `each' for Contact:Class):
+  
+app/controllers/contacts_controller.rb:9:in `contact_all'
+Started GET "/contact_one" for ::1 at 2022-06-28 13:17:41 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 5.0ms | Allocations: 3652)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:17:42 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 755)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:17:46 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 741)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:17:47 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 733)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:17:49 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3872)
+
+
+  [1m[36mCACHE Contact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `id' for #<ActiveRecord::Relation [#<Contact id: 1, first_name: "steve", last_name: "rogers", email: "steverogers@gmail.com", phone_number: "555-555-1111", created_at: "2022-06-28 17:45:01.719280000 +0000", updated_at: "2022-06-28 17:45:01.719280000 +0000">, #<Contact id: 2, first_name: "bruce", last_name: "wayne", email: "brucewayne@gmail.com", phone_number: "555-555-5553", created_at: "2022-06-28 17:45:27.072974000 +0000", updated_at: "2022-06-28 17:45:27.072974000 +0000">, #<Contact id: 3, first_name: "clark", last_name: "kent", email: "clarkkent@gmail.com", phone_number: "555-555-2222", created_at: "2022-06-28 17:46:07.812993000 +0000", updated_at: "2022-06-28 17:47:52.874918000 +0000">]>
+Did you mean?  ids):
+  
+app/controllers/contacts_controller.rb:10:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:18:05 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3787)
+
+
+  [1m[36mCACHE Contact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `id' for #<ActiveRecord::Relation [#<Contact id: 1, first_name: "steve", last_name: "rogers", email: "steverogers@gmail.com", phone_number: "555-555-1111", created_at: "2022-06-28 17:45:01.719280000 +0000", updated_at: "2022-06-28 17:45:01.719280000 +0000">, #<Contact id: 2, first_name: "bruce", last_name: "wayne", email: "brucewayne@gmail.com", phone_number: "555-555-5553", created_at: "2022-06-28 17:45:27.072974000 +0000", updated_at: "2022-06-28 17:45:27.072974000 +0000">, #<Contact id: 3, first_name: "clark", last_name: "kent", email: "clarkkent@gmail.com", phone_number: "555-555-2222", created_at: "2022-06-28 17:46:07.812993000 +0000", updated_at: "2022-06-28 17:47:52.874918000 +0000">]>
+Did you mean?  ids):
+  
+app/controllers/contacts_controller.rb:10:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:18:36 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/contacts-api/app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+    render json: {contact.id}
+                            ^
+):
+  
+app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+Started GET "/contact_all" for ::1 at 2022-06-28 13:19:20 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/contacts-api/app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+    render json: {Contact.all}
+                             ^
+):
+  
+app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+Started GET "/contact_all" for ::1 at 2022-06-28 13:19:21 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/contacts-api/app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+    render json: {Contact.all}
+                             ^
+):
+  
+app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+app/controllers/contacts_controller.rb:10: syntax error, unexpected '}', expecting =>
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:24 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 784)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:25 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 54)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:25 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 38)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:30 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 775)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:31 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 54)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:33 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 38)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 13:22:42 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 25ms (Views: 0.9ms | ActiveRecord: 8.8ms | Allocations: 2893)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:46 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 38)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:50 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 38)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:22:59 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 38)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:25:04 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `contact_all'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 5.6ms | Allocations: 5043)
+
+
+  
+NoMethodError (undefined method `id' for [#<Contact id: 1, first_name: "steve", last_name: "rogers", email: "steverogers@gmail.com", phone_number: "555-555-1111", created_at: "2022-06-28 17:45:01.719280000 +0000", updated_at: "2022-06-28 17:45:01.719280000 +0000">, #<Contact id: 2, first_name: "bruce", last_name: "wayne", email: "brucewayne@gmail.com", phone_number: "555-555-5553", created_at: "2022-06-28 17:45:27.072974000 +0000", updated_at: "2022-06-28 17:45:27.072974000 +0000">, #<Contact id: 3, first_name: "clark", last_name: "kent", email: "clarkkent@gmail.com", phone_number: "555-555-2222", created_at: "2022-06-28 17:46:07.812993000 +0000", updated_at: "2022-06-28 17:47:52.874918000 +0000">]:Array
+
+    render json: { id: contact.id, first_name: contact.first_name, last_name: contact.last_name, email: contact.email, phone_number: contact.phone_number }
+                              ^^^):
+  
+app/controllers/contacts_controller.rb:10:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:27:35 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 6548)
+
+
+  [1m[36mCACHE Contact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `id' for #<ActiveRecord::Relation [#<Contact id: 1, first_name: "steve", last_name: "rogers", email: "steverogers@gmail.com", phone_number: "555-555-1111", created_at: "2022-06-28 17:45:01.719280000 +0000", updated_at: "2022-06-28 17:45:01.719280000 +0000">, #<Contact id: 2, first_name: "bruce", last_name: "wayne", email: "brucewayne@gmail.com", phone_number: "555-555-5553", created_at: "2022-06-28 17:45:27.072974000 +0000", updated_at: "2022-06-28 17:45:27.072974000 +0000">, #<Contact id: 3, first_name: "clark", last_name: "kent", email: "clarkkent@gmail.com", phone_number: "555-555-2222", created_at: "2022-06-28 17:46:07.812993000 +0000", updated_at: "2022-06-28 17:47:52.874918000 +0000">]>
+Did you mean?  ids):
+  
+app/controllers/contacts_controller.rb:11:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:27:56 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2993)
+
+
+  
+NameError (undefined local variable or method `id' for #<ContactsController:0x00000000032cf8>
+
+    render json: { id: id, first_name: contact.first_name, last_name: contact.last_name, email: contact.email, phone_number: contact.phone_number }
+                       ^^):
+  
+app/controllers/contacts_controller.rb:11:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:28:19 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4287)
+
+
+  
+NoMethodError (undefined method `id' for Contact:Class
+Did you mean?  ids):
+  
+app/controllers/contacts_controller.rb:11:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:28:27 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 4286)
+
+
+  
+NoMethodError (undefined method `id' for Contact:Class
+Did you mean?  ids):
+  
+app/controllers/contacts_controller.rb:11:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:28:35 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:9:in `contact_all'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 6.9ms | Allocations: 3654)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:29:18 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4229)
+
+
+  
+NoMethodError (undefined method `parse' for Contact:Class):
+  
+app/controllers/contacts_controller.rb:9:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:34:07 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4166)
+
+
+  
+NoMethodError (undefined method `each' for Contact:Class):
+  
+app/controllers/contacts_controller.rb:9:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:34:08 -0500
+Processing by ContactsController#contact_all as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3590)
+
+
+  
+NoMethodError (undefined method `each' for Contact:Class):
+  
+app/controllers/contacts_controller.rb:9:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:36:39 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (1.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 6604)
+
+
+  [1m[36mCACHE Contact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `id' for #<ActiveRecord::Relation [#<Contact id: 1, first_name: "steve", last_name: "rogers", email: "steverogers@gmail.com", phone_number: "555-555-1111", created_at: "2022-06-28 17:45:01.719280000 +0000", updated_at: "2022-06-28 17:45:01.719280000 +0000">, #<Contact id: 2, first_name: "bruce", last_name: "wayne", email: "brucewayne@gmail.com", phone_number: "555-555-5553", created_at: "2022-06-28 17:45:27.072974000 +0000", updated_at: "2022-06-28 17:45:27.072974000 +0000">, #<Contact id: 3, first_name: "clark", last_name: "kent", email: "clarkkent@gmail.com", phone_number: "555-555-2222", created_at: "2022-06-28 17:46:07.812993000 +0000", updated_at: "2022-06-28 17:47:52.874918000 +0000">]>
+Did you mean?  ids):
+  
+app/controllers/contacts_controller.rb:11:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:37:08 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 6611)
+
+
+  [1m[36mCACHE Contact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `first_name' for #<ActiveRecord::Relation [#<Contact id: 1, first_name: "steve", last_name: "rogers", email: "steverogers@gmail.com", phone_number: "555-555-1111", created_at: "2022-06-28 17:45:01.719280000 +0000", updated_at: "2022-06-28 17:45:01.719280000 +0000">, #<Contact id: 2, first_name: "bruce", last_name: "wayne", email: "brucewayne@gmail.com", phone_number: "555-555-5553", created_at: "2022-06-28 17:45:27.072974000 +0000", updated_at: "2022-06-28 17:45:27.072974000 +0000">, #<Contact id: 3, first_name: "clark", last_name: "kent", email: "clarkkent@gmail.com", phone_number: "555-555-2222", created_at: "2022-06-28 17:46:07.812993000 +0000", updated_at: "2022-06-28 17:47:52.874918000 +0000">]>
+Did you mean?  first!):
+  
+app/controllers/contacts_controller.rb:11:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:37:40 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:10:in `contact_all'
+Completed 500 Internal Server Error in 9ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 3592)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/contacts_controller.rb:11:in `block in contact_all'
+app/controllers/contacts_controller.rb:10:in `contact_all'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:38:49 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 6.1ms | Allocations: 3596)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:45:10 -0500
+  
+LoadError (cannot load such file -- http):
+  
+app/controllers/contacts_controller.rb:1:in `<main>'
+Started GET "/contact_all" for ::1 at 2022-06-28 13:45:27 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 39ms (Views: 0.4ms | ActiveRecord: 15.2ms | Allocations: 5588)
+
+
+Started GET "/" for ::1 at 2022-06-28 13:55:49 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 33)
+Completed 200 OK in 1ms (Views: 1.1ms | Allocations: 295)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-28 13:55:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-06-28 13:55:56 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 2ms (Views: 1.0ms | Allocations: 219)
+
+
+Started GET "/array_path" for ::1 at 2022-06-28 13:55:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/array_path"):
+  
+Started GET "/array_path" for ::1 at 2022-06-28 13:55:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/array_path"):
+  
+Started GET "/" for ::1 at 2022-06-28 13:55:58 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 219)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 13:55:58 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (1.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+
+Completed 200 OK in 54ms (Views: 0.8ms | ActiveRecord: 18.4ms | Allocations: 5621)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:02:33 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (1.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 44ms (Views: 0.5ms | ActiveRecord: 15.3ms | Allocations: 5543)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:02:46 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 820)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:02:56 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 804)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:03:09 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 804)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:05:10 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 804)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:05:48 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 804)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:06:17 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 804)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:06:44 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 804)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:06:55 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 804)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:07:02 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 805)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:09:14 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 804)
+
+
+Started GET "/contact_one" for ::1 at 2022-06-28 14:20:30 -0500
+Processing by ContactsController#contact_one as HTML
+Completed 500 Internal Server Error in 5ms (Allocations: 4159)
+
+
+  
+NoMethodError (undefined method `[]' for Contact:Class):
+  
+app/controllers/contacts_controller.rb:3:in `contact_one'
+Started GET "/contact_one" for ::1 at 2022-06-28 14:20:38 -0500
+Processing by ContactsController#contact_one as HTML
+  [1m[36mContact Load (1.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:3:in `contact_one'
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 15.1ms | Allocations: 5705)
+
+
+Started GET "/contact_all" for ::1 at 2022-06-28 14:20:45 -0500
+Processing by ContactsController#contact_all as HTML
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:11:in `contact_all'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 825)
+
+

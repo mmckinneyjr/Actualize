@@ -11,12 +11,14 @@ class Income
   end
 
   def assign_category(category)
-    if(CATEGORIES.include?(category))
+    if (CATEGORIES.include?(category))
       @category = category
     end
     self
   end
 end
+
+####################################################################################################
 
 class Expense
   attr_reader :name
@@ -31,18 +33,21 @@ class Expense
   end
 
   def assign_category(category)
-    if(CATEGORIES.include?(category))
+    if (CATEGORIES.include?(category))
       @category = category
     end
     self
   end
 end
 
+####################################################################################################
+
 class BudgetCalculator
   attr_reader :incomes, :expenses
 
-  def initialize
-    # Your job is to fill this in!
+  def initialize()
+    @incomes = []
+    @expenses = []
   end
 
   def add_income(name, dollar_amount, annual_frequency)
@@ -55,14 +60,14 @@ class BudgetCalculator
 
   def annual_income_total
     # Your job is to fill this in!
-  end 
+  end
 
   def annual_expenses_total
     # Your job is to fill this in!
-  end 
+  end
 
   def annual_net_income
-   # Your job is to fill this in!
+    # Your job is to fill this in!
   end
 
   def find_income(name)

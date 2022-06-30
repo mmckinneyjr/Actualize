@@ -1,4 +1,4 @@
-require_relative 'budget_calculator.rb'
+require_relative "budget_calculator.rb"
 
 # # Test 1
 puts "TEST 1: Test that new budget calculator should have empty array of incomes"
@@ -9,26 +9,26 @@ else
   puts "TEST #1 failed"
 end
 
-# # Test 2
-# puts
-# puts "TEST 2: Test that new budget calculator should have empty array of expenses"
-# calc = BudgetCalculator.new
-# if calc.expenses == []
-#   puts "TEST #2 passed"
-# else
-#   puts "TEST #2 failed"
-# end
+# Test 2
+puts
+puts "TEST 2: Test that new budget calculator should have empty array of expenses"
+calc = BudgetCalculator.new
+if calc.expenses == []
+  puts "TEST #2 passed"
+else
+  puts "TEST #2 failed"
+end
 
-# # # Test 3
-# puts
-# puts "TEST 3: Test that we can add a new income to the calculator"
-# calc = BudgetCalculator.new
-# calc.add_income("Salary", 5000, 12)
-# if calc.incomes[0].is_a?(Income)
-#   puts "TEST #3 passed"
-# else
-#   puts "TEST #3 failed"
-# end
+# # Test 3
+puts
+puts "TEST 3: Test that we can add a new income to the calculator"
+calc = BudgetCalculator.new
+calc.add_income("Salary", 5000, 12)
+if calc.incomes[0].is_a?(Income)
+  puts "TEST #3 passed"
+else
+  puts "TEST #3 failed"
+end
 
 # # # Test 4
 # puts

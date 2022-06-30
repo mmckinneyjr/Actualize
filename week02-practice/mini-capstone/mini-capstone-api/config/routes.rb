@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "/deadpool_figure_page", controller: "products", action: "deadpool_figure"
   get "/ironman_figure_page", controller: "products", action: "ironman_figure"
   get "/game_page", controller: "products", action: "game"
+
+  get "/:id", controller: "products", action: "find_all"
 end

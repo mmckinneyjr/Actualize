@@ -1,9 +1,9 @@
-Exercise: Begin the mini capstone. Where do you start?
-1 - Create a new rails api app called mini-capstone with a postgres database:
-rails new mini-capstone-api
-cd mini-capstone-api
-1.a - Use git to add and commit your code.
-1.b - Use GitHub to create a repo called mini-capstone-api, then copy and paste the commands to push your git repo to GitHub.
+#Exercise: Begin the mini capstone. Where do you start?
+#1 - Create a new rails api app called mini-capstone with a postgres database:
+#rails new mini-capstone-api
+#cd mini-capstone-api
+#1.a - Use git to add and commit your code.
+#1.b - Use GitHub to create a repo called mini-capstone-api, then copy and paste the commands to push your git repo to GitHub.
 2 -  Create a products controller (plural!)
 2.a Use git to add, commit, and push your code.
 3 - Create a Product model (singular!). Some important attributes include name, price (integer), image_url, and description.

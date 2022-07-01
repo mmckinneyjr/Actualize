@@ -1,7 +1,7 @@
 require "http"
 require "tty/table"
 
-response = HTTP.get("http://localhost:3000/products_page")
+response = HTTP.get("http://localhost:3000/products")
 products = response.parse(:json)
 puts ""
 

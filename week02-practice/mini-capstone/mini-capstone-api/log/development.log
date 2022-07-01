@@ -465,3 +465,652 @@ Processing by ProductsController#display_products as HTML
 Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 2851)
 
 
+Started GET "/contact_all" for ::1 at 2022-07-01 11:47:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/contact_all"):
+  
+Started GET "/favicon.ico" for ::1 at 2022-07-01 11:47:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/contact_all" for ::1 at 2022-07-01 11:47:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/contact_all"):
+  
+Started GET "/contact_all/2" for ::1 at 2022-07-01 11:48:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/contact_all/2"):
+  
+Started GET "/contact_all/2" for ::1 at 2022-07-01 11:49:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/contact_all/2"):
+  
+Started GET "/contact_all" for ::1 at 2022-07-01 11:50:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/contact_all"):
+  
+Started GET "/contact_all" for ::1 at 2022-07-01 11:50:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/contact_all"):
+  
+Started GET "/index" for ::1 at 2022-07-01 11:51:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/products" for ::1 at 2022-07-01 11:51:39 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (6.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 38ms (Views: 1.2ms | ActiveRecord: 20.3ms | Allocations: 7372)
+
+
+Started GET "/products" for ::1 at 2022-07-01 11:52:45 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 5.5ms | Allocations: 4289)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 11:52:48 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 1711)
+
+
+Started GET "/products/4" for ::1 at 2022-07-01 11:52:51 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 717)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 11:53:01 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 694)
+
+
+Started GET "/products" for ::1 at 2022-07-01 11:54:33 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 14.2ms | Allocations: 4276)
+
+
+Started GET "/products/3" for ::1 at 2022-07-01 11:55:01 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 925)
+
+
+Started GET "/products" for ::1 at 2022-07-01 11:55:40 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1507)
+
+
+Started GET "/products/3" for ::1 at 2022-07-01 11:56:15 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.6ms | Allocations: 701)
+
+
+Started GET "/products/3" for ::1 at 2022-07-01 11:56:22 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 701)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:01:50 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 53ms (Views: 0.8ms | ActiveRecord: 17.1ms | Allocations: 3107)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:02:06 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 694)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:02:49 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 14.7ms | Allocations: 3747)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:02:50 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 702)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:02:57 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 686)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:03:27 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 9.8ms | Allocations: 3639)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:03:39 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 710)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:04:34 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 694)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:04:40 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 694)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:04:49 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 694)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:04:58 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 694)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:05:13 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 694)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 12:05:20 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 694)
+
+
+Started GET "/products" for ::1 at 2022-07-01 12:06:34 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 1536)
+
+
+Started GET "/products" for ::1 at 2022-07-01 12:06:46 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1507)
+
+
+Started GET "/products" for ::1 at 2022-07-01 12:07:02 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1508)
+
+
+Started GET "/products" for ::1 at 2022-07-01 12:07:13 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1507)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2022-07-01 12:49:17 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (7.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 132ms (Views: 0.4ms | ActiveRecord: 77.2ms | Allocations: 5724)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-01 12:49:53 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1551)
+
+
+Started POST "/products" for 127.0.0.1 at 2022-07-01 12:56:15 -0500
+Processing by ProductsController#create as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (62.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", nil], ["price", nil], ["image_url", nil], ["description", nil], ["created_at", "2022-07-01 17:56:15.904431"], ["updated_at", "2022-07-01 17:56:15.904431"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 204 No Content in 114ms (ActiveRecord: 92.2ms | Allocations: 6913)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2022-07-01 12:56:27 -0500
+Processing by ProductsController#find_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 20ms (Views: 0.9ms | ActiveRecord: 3.4ms | Allocations: 1181)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-01 12:56:30 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1632)
+
+
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:01:47 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"name"=>"jack in the box", "price"=>"100", "image_url"=>"www.jackinthebox.com", "description"=>"jack in the box toy. pop", "product"=>{"name"=>"jack in the box", "price"=>"100", "image_url"=>"www.jackinthebox.com", "description"=>"jack in the box toy. pop"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (25.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "jack in the box"], ["price", 100], ["image_url", "www.jackinthebox.com"], ["description", "jack in the box toy. pop"], ["created_at", "2022-07-01 18:01:47.341687"], ["updated_at", "2022-07-01 18:01:47.341687"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 49.9ms | Allocations: 3561)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-01 13:01:56 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 1.0ms | Allocations: 1907)
+
+
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:10:52 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+...ce: (Faker::Commerce.price)to_i,
+...                           ^~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+      description: Faker::Lorem.sentence(word_c...
+      ^~~~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+    )
+    ^
+):
+  
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+Started GET "/products" for 127.0.0.1 at 2022-07-01 13:11:06 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+...ce: (Faker::Commerce.price)to_i,
+...                           ^~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+      description: Faker::Lorem.sentence(word_c...
+      ^~~~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+    )
+    ^
+):
+  
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+Started GET "/products" for 127.0.0.1 at 2022-07-01 13:11:10 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+...ce: (Faker::Commerce.price)to_i,
+...                           ^~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+      description: Faker::Lorem.sentence(word_c...
+      ^~~~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+    )
+    ^
+):
+  
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:11:25 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+...ce: (Faker::Commerce.price)to_i,
+...                           ^~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+      description: Faker::Lorem.sentence(word_c...
+      ^~~~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+    )
+    ^
+):
+  
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting `end'
+Started GET "/products" for 127.0.0.1 at 2022-07-01 13:12:44 -0500
+  
+LoadError (cannot load such file -- faker):
+  
+app/controllers/products_controller.rb:1:in `<main>'
+Started GET "/products/2" for 127.0.0.1 at 2022-07-01 13:12:52 -0500
+  
+LoadError (cannot load such file -- faker):
+  
+app/controllers/products_controller.rb:1:in `<main>'
+Started GET "/products" for 127.0.0.1 at 2022-07-01 13:13:28 -0500
+  
+LoadError (cannot load such file -- faker):
+  
+app/controllers/products_controller.rb:1:in `<main>'
+Started GET "/products" for 127.0.0.1 at 2022-07-01 13:14:13 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 214ms (Views: 1.6ms | ActiveRecord: 42.6ms | Allocations: 6615)
+
+
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:14:19 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"name"=>"jack in the box", "price"=>"100", "image_url"=>"www.jackinthebox.com", "description"=>"jack in the box toy. pop", "product"=>{"name"=>"jack in the box", "price"=>"100", "image_url"=>"www.jackinthebox.com", "description"=>"jack in the box toy. pop"}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2125)
+
+
+  
+NameError (uninitialized constant ProductsController::Faker
+
+      name: Faker::Commerce.product_name,
+            ^^^^^):
+  
+app/controllers/products_controller.rb:48:in `create'
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:14:38 -0500
+Processing by ProductsController#create as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 2004)
+
+
+  
+NameError (uninitialized constant ProductsController::Faker
+
+      name: Faker::Commerce.product_name,
+            ^^^^^):
+  
+app/controllers/products_controller.rb:48:in `create'
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:15:55 -0500
+Processing by ProductsController#create as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2602)
+
+
+  
+NameError (uninitialized constant ProductsController::Faker
+
+      name: "#{Faker::Commerce.product_name}",
+               ^^^^^):
+  
+app/controllers/products_controller.rb:48:in `create'
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:16:23 -0500
+Processing by ProductsController#create as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2602)
+
+
+  
+NameError (uninitialized constant ProductsController::Faker
+
+      name: "#{Faker::Commerce.product_name}",
+               ^^^^^):
+  
+app/controllers/products_controller.rb:48:in `create'
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:16:35 -0500
+Processing by ProductsController#create as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (8.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", nil], ["price", nil], ["image_url", nil], ["description", nil], ["created_at", "2022-07-01 18:16:36.137284"], ["updated_at", "2022-07-01 18:16:36.137284"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (29.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 200 OK in 72ms (Views: 0.3ms | ActiveRecord: 62.0ms | Allocations: 4808)
+
+
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:35:40 -0500
+  
+LoadError (cannot load such file -- faker):
+  
+app/controllers/products_controller.rb:2:in `<class:ProductsController>'
+app/controllers/products_controller.rb:1:in `<main>'
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:36:41 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:50: syntax error, unexpected local variable or method, expecting ')'
+      price: params["price"],
+      ^~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:52: syntax error, unexpected label, expecting '='
+      image_url: params["image_url"],
+      ^~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:54: syntax error, unexpected label, expecting '='
+      description: params["description"],
+      ^~~~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:56: syntax error, unexpected ')', expecting '='
+    )
+    ^
+):
+  
+app/controllers/products_controller.rb:50: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:52: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:54: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:56: syntax error, unexpected ')', expecting '='
+app/controllers/products_controller.rb:50: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:52: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:54: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:56: syntax error, unexpected ')', expecting '='
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:37:22 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:51: syntax error, unexpected local variable or method, expecting ')'
+      price: params["price"],
+      ^~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:53: syntax error, unexpected label, expecting '='
+      image_url: params["image_url"],
+      ^~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:55: syntax error, unexpected label, expecting '='
+      description: params["description"],
+      ^~~~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting '='
+    )
+    ^
+):
+  
+app/controllers/products_controller.rb:51: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:53: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:55: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting '='
+app/controllers/products_controller.rb:51: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:53: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:55: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:57: syntax error, unexpected ')', expecting '='
+Started POST "/products" for 127.0.0.1 at 2022-07-01 13:40:12 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+      price: params["price"],
+      ^~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:54: syntax error, unexpected label, expecting '='
+      image_url: params["image_url"],
+      ^~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+      description: params["description"],
+      ^~~~~~~~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/mini-capstone/mini-capstone-api/app/controllers/products_controller.rb:58: syntax error, unexpected ')', expecting '='
+    )
+    ^
+):
+  
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:54: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:58: syntax error, unexpected ')', expecting '='
+app/controllers/products_controller.rb:52: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/products_controller.rb:54: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:56: syntax error, unexpected label, expecting '='
+app/controllers/products_controller.rb:58: syntax error, unexpected ')', expecting '='
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:46:31 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/products/2"):
+  
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:47:29 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/products/2"):
+  
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:48:16 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/products/2"):
+  
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:49:22 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/products/2"):
+  
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:49:29 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/products/2"):
+  
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:49:58 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"name"=>"legos", "id"=>"2", "product"=>{"name"=>"legos"}}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mProduct Update (23.4ms)[0m  [1m[33mUPDATE "products" SET "name" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["name", "legos"], ["updated_at", "2022-07-01 18:49:58.671937"], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+Completed 200 OK in 56ms (Views: 0.2ms | ActiveRecord: 78.5ms | Allocations: 4543)
+
+
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:50:12 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"name"=>"legos", "price"=>"50", "image_url"=>"www.jackinthebox.com", "description"=>"jack in the box toy. pop", "id"=>"2", "product"=>{"name"=>"legos", "price"=>"50", "image_url"=>"www.jackinthebox.com", "description"=>"jack in the box toy. pop"}}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mProduct Update (1.0ms)[0m  [1m[33mUPDATE "products" SET "price" = $1, "image_url" = $2, "description" = $3, "updated_at" = $4 WHERE "products"."id" = $5[0m  [["price", 50], ["image_url", "www.jackinthebox.com"], ["description", "jack in the box toy. pop"], ["updated_at", "2022-07-01 18:50:12.118773"], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 3.6ms | Allocations: 2355)
+
+
+Started PATCH "/products/2" for 127.0.0.1 at 2022-07-01 13:50:40 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"name"=>"legos", "price"=>"50", "image_url"=>"www.legos.com", "description"=>"tons of pieces of fun", "id"=>"2", "product"=>{"name"=>"legos", "price"=>"50", "image_url"=>"www.legos.com", "description"=>"tons of pieces of fun"}}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mProduct Update (0.7ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "description" = $2, "updated_at" = $3 WHERE "products"."id" = $4[0m  [["image_url", "www.legos.com"], ["description", "tons of pieces of fun"], ["updated_at", "2022-07-01 18:50:40.567088"], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+Completed 200 OK in 25ms (Views: 0.8ms | ActiveRecord: 2.7ms | Allocations: 2338)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-01 13:51:13 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 17ms (Views: 4.5ms | ActiveRecord: 3.3ms | Allocations: 1824)
+
+
+Started DELETE "/products/10" for 127.0.0.1 at 2022-07-01 14:06:59 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mProduct Destroy (7.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+Completed 200 OK in 238ms (Views: 0.5ms | ActiveRecord: 72.2ms | Allocations: 7113)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-01 14:07:05 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 1787)
+
+
+Started DELETE "/products/8" for 127.0.0.1 at 2022-07-01 14:07:21 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 2020)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-01 14:07:25 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 1606)
+
+

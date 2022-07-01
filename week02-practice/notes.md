@@ -60,6 +60,9 @@ Removes database
 rails db:drop
 ```
 
+<img src="../misc/requests.png">
+
+
 Links:
 https://guides.rubyonrails.org/getting_started.html
 https://github.com/piotrmurach/tty-table

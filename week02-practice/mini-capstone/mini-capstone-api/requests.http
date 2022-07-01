@@ -1,0 +1,35 @@
+
+
+##### Shows all products
+GET http://localhost:3000/products
+
+##### Shows specific product by ID
+GET http://localhost:3000/products/2
+
+##### Creates new data object
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "jack in the box",
+  "price": "100",
+  "image_url": "www.jackinthebox.com",
+  "description": "jack in the box toy. pop"
+}
+
+##### Updates product based on ID
+PATCH http://localhost:3000/products/2
+Content-Type: application/json
+
+{
+  "name": "legos",
+  "price": "50",
+  "image_url": "www.legos.com",
+  "description": "tons of pieces of fun"
+}
+
+##### Deletes product based on ID
+DELETE http://localhost:3000/products/8
+
+
+

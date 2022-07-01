@@ -450,3 +450,18 @@ Processing by ProductsController#find_all as HTML
 Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 696)
 
 
+Started GET "/display_products" for ::1 at 2022-06-30 14:26:49 -0500
+Processing by ProductsController#find_all as HTML
+  Parameters: {"id"=>"display_products"}
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:25:in `find_all'
+Completed 200 OK in 127ms (Views: 0.3ms | ActiveRecord: 71.6ms | Allocations: 4277)
+
+
+Started GET "/products_page" for ::1 at 2022-06-30 14:27:08 -0500
+Processing by ProductsController#display_products as HTML
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:4:in `display_products'
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 2851)
+
+

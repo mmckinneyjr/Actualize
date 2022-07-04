@@ -220,3 +220,1506 @@ Processing by ActorsController#actors_all as HTML
 Completed 200 OK in 14ms (Views: 1.9ms | ActiveRecord: 1.0ms | Allocations: 3384)
 
 
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5947950197658372120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20220704204221)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (36.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying, "year" integer, "plot" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220704204221"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5947950197658372120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (2.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Back to the Future"], ["year", 1985], ["plot", "Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown."], ["created_at", "2022-07-04 20:54:07.817821"], ["updated_at", "2022-07-04 20:54:07.817821"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Requiem for a Dream"], ["year", 2000], ["plot", "The drug-induced utopias of four Coney Island people are shattered when their addictions run deep."], ["created_at", "2022-07-04 20:54:07.823613"], ["updated_at", "2022-07-04 20:54:07.823613"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Top Gun"], ["year", 1986], ["plot", "As students at the United States Navy's elite fighter weapons school compete to be best in the class, one daring young pilot learns a few things from a civilian instructor that are not taught in the classroom."], ["created_at", "2022-07-04 20:54:07.825904"], ["updated_at", "2022-07-04 20:54:07.825904"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Batman"], ["year", 1989], ["plot", "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker."], ["created_at", "2022-07-04 20:54:07.828331"], ["updated_at", "2022-07-04 20:54:07.828331"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Eternal Sunshine of the Spotless Mind"], ["year", 2004], ["plot", "When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories."], ["created_at", "2022-07-04 20:54:07.830619"], ["updated_at", "2022-07-04 20:54:07.830619"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+Started GET "/movies" for ::1 at 2022-07-04 16:05:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4063)
+
+
+  
+NameError (uninitialized constant MoviesController::Product
+
+    product = Product.all
+              ^^^^^^^
+Did you mean?  Proc):
+  
+app/controllers/movies_controller.rb:3:in `index'
+Started GET "/favicon.ico" for ::1 at 2022-07-04 16:05:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/movies/2" for ::1 at 2022-07-04 16:06:07 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (4.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 16.0ms | Allocations: 6877)
+
+
+Started GET "/movies/1" for ::1 at 2022-07-04 16:06:10 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 774)
+
+
+Started GET "/movies/5" for ::1 at 2022-07-04 16:06:13 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 684)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:06:18 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1901)
+
+
+  
+NameError (uninitialized constant MoviesController::Product
+
+    product = Product.all
+              ^^^^^^^
+Did you mean?  Proc):
+  
+app/controllers/movies_controller.rb:3:in `index'
+Started GET "/movies" for ::1 at 2022-07-04 16:06:47 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 817)
+
+
+  
+NoMethodError (undefined method `all' for nil:NilClass
+
+    movie = movie.all
+                 ^^^^):
+  
+app/controllers/movies_controller.rb:3:in `index'
+Started GET "/movies" for ::1 at 2022-07-04 16:07:37 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 780)
+
+
+  
+NoMethodError (undefined method `all' for nil:NilClass
+
+    movie = movie.all
+                 ^^^^):
+  
+app/controllers/movies_controller.rb:3:in `index'
+Started GET "/movies" for ::1 at 2022-07-04 16:07:38 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 688)
+
+
+  
+NoMethodError (undefined method `all' for nil:NilClass
+
+    movie = movie.all
+                 ^^^^):
+  
+app/controllers/movies_controller.rb:3:in `index'
+Started GET "/movies" for ::1 at 2022-07-04 16:07:56 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 6.6ms | Allocations: 3746)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:13:16 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 38ms (Views: 0.8ms | ActiveRecord: 13.4ms | Allocations: 3538)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:13:26 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1113)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:16:24 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 20.1ms | Allocations: 3778)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:16:35 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 827)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:17:15 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 2086)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:17:16 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 583)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:17:57 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 2085)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:17:59 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 583)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:18:41 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 2081)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:18:41 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 583)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:19:09 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 2084)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:19:18 -0500
+Processing by MoviesController#take_method as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/movies_controller.rb:14:in `take_method'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 7.9ms | Allocations: 3498)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:19:22 -0500
+Processing by MoviesController#take_method as HTML
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/movies_controller.rb:14:in `take_method'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 860)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:19:24 -0500
+Processing by MoviesController#take_method as HTML
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/movies_controller.rb:14:in `take_method'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 845)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:19:38 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.9ms | Allocations: 2085)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:19:46 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 2084)
+
+
+Started GET "/movies/take" for ::1 at 2022-07-04 16:20:06 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"take"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 2084)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:22:14 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 2083)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:22:24 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"batman"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 583)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:22:30 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 566)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:25:36 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 2084)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:25:43 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"batman"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 583)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:25:48 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 566)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:26:30 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:14: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/" for ::1 at 2022-07-04 16:27:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  
+Started GET "/movies/" for ::1 at 2022-07-04 16:27:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  
+Started GET "/movies/" for ::1 at 2022-07-04 16:27:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  
+Started GET "/movies/" for ::1 at 2022-07-04 16:27:55 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 6.8ms | Allocations: 3719)
+
+
+Started GET "/movies/2" for ::1 at 2022-07-04 16:28:17 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 8.3ms | Allocations: 3398)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:29:10 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:29:54 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:30:18 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:30:19 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:30:28 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:30:29 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:30:33 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+...e = Movie.find_by(:title params["title"])
+...                         ^~~~~~
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+...find_by(:title params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:13: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/movies_controller.rb:13: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:30:58 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 3457)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:31:15 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"pest"=>"3"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 3.7ms | Allocations: 1645)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column movies.pest does not exist
+LINE 1: SELECT "movies".* FROM "movies" WHERE "movies"."pest" IS NUL...
+                                              ^
+HINT:  Perhaps you meant to reference the column "movies.plot".
+):
+  
+app/controllers/movies_controller.rb:8:in `show'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:31:16 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"pest"=>"3"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 376)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column movies.pest does not exist
+LINE 1: SELECT "movies".* FROM "movies" WHERE "movies"."pest" IS NUL...
+                                              ^
+HINT:  Perhaps you meant to reference the column "movies.plot".
+):
+  
+app/controllers/movies_controller.rb:8:in `show'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:31:29 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"pest"=>"3"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 8.8ms | Allocations: 3461)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:31:30 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"pest"=>"3"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 682)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:31:53 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"pest"=>"the batman"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.6ms | Allocations: 2121)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:32:00 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"pest"=>"the batman"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 713)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:32:19 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"pest"=>"the batman"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.6ms | Allocations: 2120)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:32:51 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 2084)
+
+
+Started GET "/movies/back%20to%20the%20future" for ::1 at 2022-07-04 16:33:02 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"back to the future"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 581)
+
+
+Started GET "/movies/2" for ::1 at 2022-07-04 16:33:21 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 7.6ms | Allocations: 3453)
+
+
+Started GET "/movies/back%20to%20the%20future" for ::1 at 2022-07-04 16:33:46 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"back to the future"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 2085)
+
+
+Started GET "/movies/back%20to%20the%20future" for ::1 at 2022-07-04 16:34:07 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"back to the future"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 2083)
+
+
+Started GET "/the%20batman" for ::1 at 2022-07-04 16:34:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/the%20batman"):
+  
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:34:22 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 567)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:34:56 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 2085)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:35:42 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 7.8ms | Allocations: 3457)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:41:25 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 11.3ms | Allocations: 4348)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:41:32 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 581)
+
+
+Started GET "/movies/the" for ::1 at 2022-07-04 16:41:36 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 565)
+
+
+Started GET "/movies/the" for ::1 at 2022-07-04 16:42:06 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 11.1ms | Allocations: 2115)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:42:12 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the batman"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 581)
+
+
+Started GET "/movies/the" for ::1 at 2022-07-04 16:42:39 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 2085)
+
+
+Started GET "/movies/the" for ::1 at 2022-07-04 16:43:08 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 2082)
+
+
+Started GET "/movies/the" for ::1 at 2022-07-04 16:43:10 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"the"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 581)
+
+
+Started GET "/movies/the" for ::1 at 2022-07-04 16:43:37 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+...e(title:, params[:title] + "%")
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+Started GET "/movies/the" for ::1 at 2022-07-04 16:44:02 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+....where(id:, params["id"] + "%")
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+Started GET "/movies/3" for ::1 at 2022-07-04 16:44:05 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+....where(id:, params["id"] + "%")
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+Started GET "/movies/3" for ::1 at 2022-07-04 16:44:17 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+... Movie.where(id:, params["id"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting =>
+Started GET "/movies/3" for ::1 at 2022-07-04 16:45:06 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MoviesController):
+  
+actionpack (7.0.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:45:25 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1645)
+
+
+Started GET "/movies/2" for ::1 at 2022-07-04 16:45:29 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"2"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 639)
+
+
+Started GET "/movies/2" for ::1 at 2022-07-04 16:45:45 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"2"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1621)
+
+
+Started GET "/movies/2" for ::1 at 2022-07-04 16:46:06 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+    movie = Movie.where(id: = ?, params["id"])
+                            ^
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+...ie.where(id: = ?, params["id"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/2" for ::1 at 2022-07-04 16:46:45 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+    movie = Movie.where(id: = ?, params["id"])
+                            ^
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+...ie.where(id: = ?, params["id"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/2" for ::1 at 2022-07-04 16:46:53 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+    movie = Movie.where(id: = ?, params[:id])
+                            ^
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+...vie.where(id: = ?, params[:id])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/2" for ::1 at 2022-07-04 16:47:01 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+    movie = Movie.where("id" = ?, params[:id])
+                             ^
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+...ie.where("id" = ?, params[:id])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/2" for ::1 at 2022-07-04 16:47:02 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+    movie = Movie.where("id" = ?, params[:id])
+                             ^
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+...ie.where("id" = ?, params[:id])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/the" for ::1 at 2022-07-04 16:47:57 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"the"}
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'the')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1621)
+
+
+Started GET "/movies/the%20batman" for ::1 at 2022-07-04 16:48:00 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"the batman"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'the batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 639)
+
+
+Started GET "/movies" for ::1 at 2022-07-04 16:48:09 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 9.2ms | Allocations: 2766)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:48:18 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 623)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:48:35 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1619)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:48:36 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 640)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:48:52 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+    movie = Movie.where(:id = ?, params["title"])
+                            ^
+/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+...where(:id = ?, params["title"])
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+app/controllers/movies_controller.rb:14: syntax error, unexpected '=', expecting ')'
+app/controllers/movies_controller.rb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:49:21 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1623)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:49:25 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 640)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:49:42 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 8.2ms | Allocations: 3389)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:50:15 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (5.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (i = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 5.0ms | Allocations: 1590)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "i" does not exist
+LINE 1: SELECT "movies".* FROM "movies" WHERE (i = '3')
+                                               ^
+):
+  
+app/controllers/movies_controller.rb:15:in `by_title'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:50:24 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1623)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:50:28 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 639)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:50:38 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 623)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:50:52 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1620)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:50:58 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1623)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:50:59 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 639)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:51:07 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 8.0ms | Allocations: 3391)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:51:25 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = ?)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms | Allocations: 1557)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ")"
+LINE 1: SELECT "movies".* FROM "movies" WHERE (id = ?)
+                                                     ^
+):
+  
+app/controllers/movies_controller.rb:15:in `by_title'
+Started GET "/movies/3" for ::1 at 2022-07-04 16:51:54 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1626)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:51:58 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 639)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:52:07 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1618)
+
+
+Started GET "/movies/id" for ::1 at 2022-07-04 16:52:10 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"id"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'id')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 639)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:13 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 623)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:18 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1622)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:25 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1621)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:27 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 639)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:34 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1621)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:35 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 639)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:36 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = NULL)[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 623)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:42 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 8.5ms | Allocations: 3391)
+
+
+Started GET "/movies/3" for ::1 at 2022-07-04 16:52:58 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"pig"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (id = '3')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 7.5ms | Allocations: 3354)
+
+
+Started GET "/movies/1986" for ::1 at 2022-07-04 16:53:14 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"1986"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (year = '1986')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 8.2ms | Allocations: 3334)
+
+
+Started GET "/movies/1985" for ::1 at 2022-07-04 16:53:19 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"1985"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (year = '1985')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 757)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (3.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "highlander"], ["year", 1986], ["plot", "An immortal Scottish swordsman must confront the last of his immortal opponent, a murderously brutal barbarian who lusts for the fabled Prize."], ["created_at", "2022-07-04 21:56:17.299255"], ["updated_at", "2022-07-04 21:56:17.299255"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/movies/1985" for ::1 at 2022-07-04 16:56:20 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"1985"}
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (year = '1985')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 741)
+
+
+Started GET "/movies/1986" for ::1 at 2022-07-04 16:56:22 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"1986"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (year = '1986')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 843)
+
+
+Started GET "/movies/highlander" for ::1 at 2022-07-04 16:56:56 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"highlander"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'highlander')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 10.6ms | Allocations: 3334)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:57:02 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 639)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:57:08 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 623)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:57:16 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'batman')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 623)
+
+
+Started GET "/movies/Top%20Gun" for ::1 at 2022-07-04 16:57:22 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Top Gun"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'Top Gun')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 741)
+
+
+Started GET "/movies/Top%20gun" for ::1 at 2022-07-04 16:57:28 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Top gun"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title = 'Top gun')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 623)
+
+
+Started GET "/movies/Top%20Gun" for ::1 at 2022-07-04 16:59:33 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Top Gun"}
+  [1m[36mMovie Load (7.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'Top Gun%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 16.8ms | Allocations: 3372)
+
+
+Started GET "/movies/Top%20gun" for ::1 at 2022-07-04 16:59:37 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Top gun"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'Top gun%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 653)
+
+
+Started GET "/movies/Top" for ::1 at 2022-07-04 16:59:43 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Top"}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'Top%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 753)
+
+
+Started GET "/movies/batman" for ::1 at 2022-07-04 16:59:49 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"batman"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'batman%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 635)
+
+
+Started GET "/movies/sunshine" for ::1 at 2022-07-04 16:59:55 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"sunshine"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'sunshine%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 635)
+
+
+Started GET "/movies/Sunshine" for ::1 at 2022-07-04 17:00:03 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Sunshine"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'Sunshine%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 635)
+
+
+Started GET "/movies/Eternal" for ::1 at 2022-07-04 17:00:08 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Eternal"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'Eternal%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 754)
+
+
+Started GET "/movies/Spotless" for ::1 at 2022-07-04 17:00:14 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Spotless"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'Spotless%')[0m
+  ↳ app/controllers/movies_controller.rb:15:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 636)
+
+
+Started GET "/movies/2" for ::1 at 2022-07-04 17:02:02 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"2"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE '2%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1635)
+
+
+Started GET "/movies/2000" for ::1 at 2022-07-04 17:02:03 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"2000"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE '2000%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 652)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:03:22 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1633)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:03:37 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/week02-practice/movie-app/app/controllers/movies_controller.rb:18: syntax error, unexpected ':', expecting ')'
+...   movie = Movie.order("year" :desc)
+...                              ^
+):
+  
+app/controllers/movies_controller.rb:18: syntax error, unexpected ':', expecting ')'
+app/controllers/movies_controller.rb:18: syntax error, unexpected ':', expecting ')'
+Started GET "/movies/Top" for ::1 at 2022-07-04 17:04:06 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"Top"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'Top%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 3408)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:05:11 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1633)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:05:46 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1637)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:06:36 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1634)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:07:04 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1637)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:07:04 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 651)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:07:05 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 635)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:07:07 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 635)
+
+
+Started GET "/movies/" for ::1 at 2022-07-04 17:07:11 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 6.8ms | Allocations: 2868)
+
+
+Started GET "/movies/" for ::1 at 2022-07-04 17:07:58 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 7.7ms | Allocations: 3784)
+
+
+Started GET "/movies/" for ::1 at 2022-07-04 17:07:59 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1231)
+
+
+Started GET "/movies/" for ::1 at 2022-07-04 17:08:00 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 1216)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:08:03 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 683)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:08:20 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1636)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:08:22 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 651)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:08:44 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1637)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:12:25 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1637)
+
+
+Started GET "/year" for ::1 at 2022-07-04 17:12:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/year"):
+  
+Started GET "/year" for ::1 at 2022-07-04 17:12:44 -0500
+Processing by MoviesController#by_year as HTML
+  [1m[36mMovie Load (1.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:19:in `by_year'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 11.1ms | Allocations: 3822)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:13:04 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1637)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:13:28 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1637)
+
+
+Started GET "/movies/year" for ::1 at 2022-07-04 17:13:29 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 651)
+
+
+Started GET "/movies/year_path" for ::1 at 2022-07-04 17:15:17 -0500
+Processing by MoviesController#by_title as HTML
+  Parameters: {"title"=>"year_path"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title LIKE 'year\_path%')[0m
+  ↳ app/controllers/movies_controller.rb:14:in `by_title'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1644)
+
+
+Started GET "/year" for ::1 at 2022-07-04 17:15:41 -0500
+Processing by MoviesController#by_year as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:19:in `by_year'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 7.8ms | Allocations: 3822)
+
+
+Started GET "/year" for ::1 at 2022-07-04 17:16:03 -0500
+Processing by MoviesController#by_year as HTML
+  [1m[36mMovie Load (6.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY created_at ASC[0m
+  ↳ app/controllers/movies_controller.rb:21:in `by_year'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 14.0ms | Allocations: 3825)
+
+
+Started GET "/year" for ::1 at 2022-07-04 17:16:24 -0500
+Processing by MoviesController#by_year as HTML
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  ↳ app/controllers/movies_controller.rb:21:in `by_year'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 9.4ms | Allocations: 3841)
+
+
+Started GET "/year" for ::1 at 2022-07-04 17:16:33 -0500
+Processing by MoviesController#by_year as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."year" ASC[0m
+  ↳ app/controllers/movies_controller.rb:21:in `by_year'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 7.8ms | Allocations: 3896)
+
+
+Started GET "/year" for ::1 at 2022-07-04 17:16:52 -0500
+Processing by MoviesController#by_year as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 929)
+
+
+  
+ArgumentError (Direction "DSC" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/controllers/movies_controller.rb:20:in `by_year'
+Started GET "/year" for ::1 at 2022-07-04 17:17:12 -0500
+Processing by MoviesController#by_year as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."year" DESC[0m
+  ↳ app/controllers/movies_controller.rb:21:in `by_year'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 7.7ms | Allocations: 3905)
+
+

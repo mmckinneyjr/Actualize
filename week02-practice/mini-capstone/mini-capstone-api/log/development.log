@@ -1114,3 +1114,470 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 1606)
 
 
+Started GET "/restfull-rought" for ::1 at 2022-07-01 14:22:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/restfull-rought"):
+  
+Started GET "/restful-routes" for ::1 at 2022-07-01 14:23:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/restful-routes"):
+  
+Started GET "/restful-routes/products" for ::1 at 2022-07-01 14:23:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/restful-routes/products"):
+  
+Started GET "/products" for ::1 at 2022-07-01 14:23:26 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 34ms (Views: 1.0ms | ActiveRecord: 13.6ms | Allocations: 7479)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:24:20 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 21ms (Views: 1.3ms | ActiveRecord: 1.1ms | Allocations: 1695)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 14:25:03 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 3090)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 14:25:05 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 724)
+
+
+Started PATCH "/products/2" for ::1 at 2022-07-01 14:25:14 -0500
+Processing by ProductsController#update as JSON
+  Parameters: {"name"=>"legos", "price"=>50, "image_url"=>"https://images.unsplash.com/photo-1620309668391-26ac1c90f61b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80", "description"=>"tons of pieces of fun", "id"=>"2", "product"=>{"name"=>"legos", "price"=>50, "image_url"=>"https://images.unsplash.com/photo-1620309668391-26ac1c90f61b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80", "description"=>"tons of pieces of fun"}}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mProduct Update (6.7ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://images.unsplash.com/photo-1620309668391-26ac1c90f61b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"], ["updated_at", "2022-07-01 19:25:14.500106"], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 9.7ms | Allocations: 2872)
+
+
+Started GET "/products/2" for ::1 at 2022-07-01 14:25:14 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 699)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:25:18 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 1631)
+
+
+Started GET "/products/9" for ::1 at 2022-07-01 14:25:21 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 698)
+
+
+Started GET "/products/9" for ::1 at 2022-07-01 14:26:07 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 2.6ms | Allocations: 686)
+
+
+Started PATCH "/products/9" for ::1 at 2022-07-01 14:26:12 -0500
+Processing by ProductsController#update as JSON
+  Parameters: {"name"=>"jack in the box", "price"=>100, "image_url"=>"https://images.unsplash.com/photo-1635338345994-30fd5c1cee74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", "description"=>"jack in the box toy. pop", "id"=>"9", "product"=>{"name"=>"jack in the box", "price"=>100, "image_url"=>"https://images.unsplash.com/photo-1635338345994-30fd5c1cee74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", "description"=>"jack in the box toy. pop"}}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mProduct Update (0.9ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://images.unsplash.com/photo-1635338345994-30fd5c1cee74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"], ["updated_at", "2022-07-01 19:26:12.325492"], ["id", 9]]
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2356)
+
+
+Started GET "/products/9" for ::1 at 2022-07-01 14:26:12 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 700)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:26:14 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 1640)
+
+
+Started POST "/products" for ::1 at 2022-07-01 14:27:00 -0500
+Processing by ProductsController#create as JSON
+  Parameters: {"name"=>"Mario", "price"=>"25", "image_url"=>"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "description"=>"it's ah me Mario!!!!!", "product"=>{"name"=>"Mario", "price"=>"25", "image_url"=>"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "description"=>"it's ah me Mario!!!!!"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (3.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mario"], ["price", 25], ["image_url", "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"], ["description", "it's ah me Mario!!!!!"], ["created_at", "2022-07-01 19:27:00.816371"], ["updated_at", "2022-07-01 19:27:00.816371"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 204 No Content in 24ms (ActiveRecord: 4.9ms | Allocations: 1989)
+
+
+Started GET "/products/undefined" for ::1 at 2022-07-01 14:27:00 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 578)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:27:16 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 1767)
+
+
+Started GET "/products/11" for ::1 at 2022-07-01 14:27:20 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 699)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:27:29 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.5ms | Allocations: 1767)
+
+
+Started POST "/products" for ::1 at 2022-07-01 14:27:38 -0500
+Processing by ProductsController#create as JSON
+  Parameters: {"name"=>"sdfdsf", "price"=>"sdfsf", "image_url"=>"sdfsdf", "description"=>"sdfsfds", "product"=>{"name"=>"sdfdsf", "price"=>"sdfsf", "image_url"=>"sdfsdf", "description"=>"sdfsfds"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "sdfdsf"], ["price", 0], ["image_url", "sdfsdf"], ["description", "sdfsfds"], ["created_at", "2022-07-01 19:27:38.510286"], ["updated_at", "2022-07-01 19:27:38.510286"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 204 No Content in 8ms (ActiveRecord: 1.7ms | Allocations: 1805)
+
+
+Started GET "/products/undefined" for ::1 at 2022-07-01 14:27:38 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 573)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:28:18 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 12ms (Views: 2.1ms | ActiveRecord: 0.8ms | Allocations: 1880)
+
+
+Started GET "/products/12" for ::1 at 2022-07-01 14:28:20 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 685)
+
+
+Started DELETE "/products/12" for ::1 at 2022-07-01 14:28:22 -0500
+Processing by ProductsController#destroy as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 2096)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:28:22 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1768)
+
+
+Started POST "/products" for ::1 at 2022-07-01 14:29:21 -0500
+Processing by ProductsController#create as JSON
+  Parameters: {"name"=>"Dog", "price"=>"0", "image_url"=>"https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80", "description"=>"Mans best friend", "product"=>{"name"=>"Dog", "price"=>"0", "image_url"=>"https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80", "description"=>"Mans best friend"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dog"], ["price", 0], ["image_url", "https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"], ["description", "Mans best friend"], ["created_at", "2022-07-01 19:29:21.723456"], ["updated_at", "2022-07-01 19:29:21.723456"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 204 No Content in 28ms (ActiveRecord: 2.0ms | Allocations: 1806)
+
+
+Started GET "/products/undefined" for ::1 at 2022-07-01 14:29:21 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 573)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:29:56 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 1894)
+
+
+Started GET "/products/7" for ::1 at 2022-07-01 14:30:04 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 700)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:30:07 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 16ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 1894)
+
+
+Started GET "/products/13" for ::1 at 2022-07-01 14:30:11 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 700)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:30:14 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 1.1ms | Allocations: 1895)
+
+
+Started GET "/products/5" for ::1 at 2022-07-01 14:30:15 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 700)
+
+
+Started GET "/products/5" for ::1 at 2022-07-01 14:30:17 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 701)
+
+
+Started PATCH "/products/5" for ::1 at 2022-07-01 14:30:22 -0500
+Processing by ProductsController#update as JSON
+  Parameters: {"name"=>"Stormtrooper", "price"=>10, "image_url"=>"https://images.unsplash.com/photo-1608889825271-9696283ab804?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFjdGlvbiUyMGZpZ3VyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", "description"=>"Stormtroopers are elite shock troops fanatically loyal to the Empire and impossible to sway from the Imperial cause. They wear imposing white armor, which offers a wide range of survival equipment and temperature controls to allow the soldiers to survive in almost any environment.", "id"=>"5", "product"=>{"name"=>"Stormtrooper", "price"=>10, "image_url"=>"https://images.unsplash.com/photo-1608889825271-9696283ab804?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFjdGlvbiUyMGZpZ3VyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", "description"=>"Stormtroopers are elite shock troops fanatically loyal to the Empire and impossible to sway from the Imperial cause. They wear imposing white armor, which offers a wide range of survival equipment and temperature controls to allow the soldiers to survive in almost any environment."}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mProduct Update (1.0ms)[0m  [1m[33mUPDATE "products" SET "name" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["name", "Stormtrooper"], ["updated_at", "2022-07-01 19:30:22.518033"], ["id", 5]]
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 2355)
+
+
+Started GET "/products/5" for ::1 at 2022-07-01 14:30:22 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 700)
+
+
+Started GET "/products" for ::1 at 2022-07-01 14:30:25 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 1.8ms | Allocations: 1894)
+
+
+Started POST "/products" for ::1 at 2022-07-01 15:09:04 -0500
+Processing by ProductsController#create as JSON
+  Parameters: {"name"=>"ksdjfljsdkl", "price"=>"lkjljkl", "image_url"=>"lkjljkl", "description"=>"lkjlkjlkj", "product"=>{"name"=>"ksdjfljsdkl", "price"=>"lkjljkl", "image_url"=>"lkjljkl", "description"=>"lkjlkjlkj"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (8.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "ksdjfljsdkl"], ["price", 0], ["image_url", "lkjljkl"], ["description", "lkjlkjlkj"], ["created_at", "2022-07-01 20:09:04.598511"], ["updated_at", "2022-07-01 20:09:04.598511"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 204 No Content in 95ms (ActiveRecord: 46.4ms | Allocations: 4122)
+
+
+Started GET "/products/undefined" for ::1 at 2022-07-01 15:09:04 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 679)
+
+
+Started POST "/products" for ::1 at 2022-07-01 15:10:56 -0500
+Processing by ProductsController#create as JSON
+  Parameters: {"name"=>"jhkjhkhk", "price"=>"kjh", "image_url"=>"kjhk", "description"=>"hkj", "product"=>{"name"=>"jhkjhkhk", "price"=>"kjh", "image_url"=>"kjhk", "description"=>"hkj"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mProduct Create (1.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "jhkjhkhk"], ["price", 0], ["image_url", "kjhk"], ["description", "hkj"], ["created_at", "2022-07-01 20:10:56.078972"], ["updated_at", "2022-07-01 20:10:56.078972"]]
+  ↳ app/controllers/products_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:46:in `create'
+Completed 204 No Content in 22ms (ActiveRecord: 2.8ms | Allocations: 1805)
+
+
+Started GET "/products/undefined" for ::1 at 2022-07-01 15:10:56 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 13ms (Views: 4.9ms | ActiveRecord: 0.4ms | Allocations: 573)
+
+
+Started GET "/products" for ::1 at 2022-07-01 15:13:30 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 18ms (Views: 2.3ms | ActiveRecord: 0.8ms | Allocations: 2121)
+
+
+Started GET "/products/15" for ::1 at 2022-07-01 15:13:32 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 685)
+
+
+Started DELETE "/products/15" for ::1 at 2022-07-01 15:13:35 -0500
+Processing by ProductsController#destroy as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mProduct Destroy (2.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 2029)
+
+
+Started GET "/products" for ::1 at 2022-07-01 15:13:35 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 2008)
+
+
+Started GET "/products/14" for ::1 at 2022-07-01 15:13:38 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 685)
+
+
+Started DELETE "/products/14" for ::1 at 2022-07-01 15:13:41 -0500
+Processing by ProductsController#destroy as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mProduct Destroy (0.5ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:71:in `destroy'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 2029)
+
+
+Started GET "/products" for ::1 at 2022-07-01 15:13:41 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 1894)
+
+
+Started GET "/products/6" for ::1 at 2022-07-01 15:13:46 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 700)
+
+
+Started GET "/products/6" for ::1 at 2022-07-01 15:13:47 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 700)
+
+
+Started PATCH "/products/6" for ::1 at 2022-07-01 15:13:51 -0500
+Processing by ProductsController#update as JSON
+  Parameters: {"name"=>"Junk", "price"=>20, "image_url"=>"https://images.unsplash.com/photo-1609041958269-fc44467d925d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3R1ZmZ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "description"=>"Junk is defined as garbage, trash or worthless items, talk or ideas, or to bonds that are unlikely to be paid back to the investor, or is slang for a narcotic drug. Crumpled up papers and old toys are an example of junk. Silly reality television shows with no merit to them are an example of junk.", "id"=>"6", "product"=>{"name"=>"Junk", "price"=>20, "image_url"=>"https://images.unsplash.com/photo-1609041958269-fc44467d925d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3R1ZmZ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "description"=>"Junk is defined as garbage, trash or worthless items, talk or ideas, or to bonds that are unlikely to be paid back to the investor, or is slang for a narcotic drug. Crumpled up papers and old toys are an example of junk. Silly reality television shows with no merit to them are an example of junk."}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mProduct Update (1.7ms)[0m  [1m[33mUPDATE "products" SET "name" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["name", "Junk"], ["updated_at", "2022-07-01 20:13:51.671571"], ["id", 6]]
+  ↳ app/controllers/products_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:63:in `update'
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 4.5ms | Allocations: 2354)
+
+
+Started GET "/products/6" for ::1 at 2022-07-01 15:13:51 -0500
+Processing by ProductsController#find_product as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35:in `find_product'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 700)
+
+
+Started GET "/products" for ::1 at 2022-07-01 15:13:54 -0500
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:31:in `index'
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1894)
+
+

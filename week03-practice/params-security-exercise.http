@@ -1,0 +1,16 @@
+######
+GET http://localhost:3000/dbaf78yh3n3r2rfwfnd8andfh.json?secret=nasdf82fe2
+
+######
+GET http://localhost:3000/dbaf78yh3nnd844andfh66/centerfuge.json
+
+######
+POST http://localhost:3000/dbaf78qierwy8bqyh3nnd8andfh
+Content-Type: application/json
+
+{
+  "keyword": "budapest"
+}
+
+#####
+DELETE http://localhost:3000/dbaf78yh3nnd32438andfh

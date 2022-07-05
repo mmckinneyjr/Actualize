@@ -1,0 +1,628 @@
+Started GET "/" for ::1 at 2022-07-05 12:45:17 -0500
+Processing by SystemsController#init as HTML
+DEPRECATION WARNING: Rendering actions with '.' in the name is deprecated: systems/init.json.jb (called from init at /Users/codingbootcamp/Documents/Actualize/week03-practice/params-security-exercise/app/controllers/systems_controller.rb:4)
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 2.5ms | Allocations: 310)
+Completed 200 OK in 10ms (Views: 7.6ms | Allocations: 2826)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:53:14 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 6ms (Views: 3.2ms | Allocations: 355)
+
+
+Started GET "/systems" for ::1 at 2022-07-05 12:53:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/systems"):
+  
+Started GET "/system" for ::1 at 2022-07-05 12:53:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system"):
+  
+Started GET "/dbaf78naps8odfunyh3nnd8andfh" for ::1 at 2022-07-05 12:53:59 -0500
+  
+AbstractController::ActionNotFound (The action 'nascf' could not be found for SystemsController
+Did you mean?  ncu3fn8u
+               init
+               crypt_eval
+               open_gate_3):
+  
+actionpack (6.1.4.7) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.7) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.7) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.7) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.7) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+railties (6.1.4.7) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/open_gate_3" for ::1 at 2022-07-05 12:54:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/open_gate_3"):
+  
+Started GET "/open_gate_4" for ::1 at 2022-07-05 12:54:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/open_gate_4"):
+  
+Started GET "//dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 12:54:58 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (Allocations: 257)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:54:58 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.2ms | Allocations: 8)
+Completed 200 OK in 3ms (Views: 2.4ms | Allocations: 354)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:55:01 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 312)
+
+
+Started GET "//dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 12:55:01 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:55:02 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 12:55:05 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:55:05 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 312)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:56:09 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.2ms | Allocations: 312)
+
+
+Started GET "/public/481.html" for ::1 at 2022-07-05 12:56:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/public/481.html"):
+  
+Started GET "/dbaf78yh3nnd844andfh66/:operation" for ::1 at 2022-07-05 12:56:47 -0500
+Processing by SystemsController#cef3 as HTML
+  Parameters: {"operation"=>":operation"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (Allocations: 133)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:56:47 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.7ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3nnd844andfh66/:operation" for ::1 at 2022-07-05 12:56:50 -0500
+Processing by SystemsController#cef3 as HTML
+  Parameters: {"operation"=>":operation"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 132)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:56:50 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3nnd844andfh66/:operation" for ::1 at 2022-07-05 12:57:12 -0500
+Processing by SystemsController#cef3 as HTML
+  Parameters: {"operation"=>":operation"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (Allocations: 132)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:57:12 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3nnd844andfh66/centerfuge" for ::1 at 2022-07-05 12:57:15 -0500
+Processing by SystemsController#cef3 as HTML
+  Parameters: {"operation"=>"centerfuge"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 161)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:57:15 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.9ms | Allocations: 312)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:58:15 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.1ms | Allocations: 313)
+
+
+Started GET "/dbaf78qierwy8bqyh3nnd8andfh" for ::1 at 2022-07-05 12:58:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78qierwy8bqyh3nnd8andfh"):
+  
+Started GET "//dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 12:59:15 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (Allocations: 135)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:59:15 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.6ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 12:59:17 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 12:59:17 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh/nasdf82fe2" for ::1 at 2022-07-05 12:59:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh/nasdf82fe2"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 13:00:10 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:00:10 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.1ms | Allocations: 312)
+
+
+Started GET "/nasdf82fe2" for ::1 at 2022-07-05 13:00:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/nasdf82fe2"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh/ncu3fn8u.json.jb" for ::1 at 2022-07-05 13:00:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh/ncu3fn8u.json.jb"):
+  
+Started GET "/ncu3fn8u.json.jb" for ::1 at 2022-07-05 13:00:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/ncu3fn8u.json.jb"):
+  
+Started GET "//dbaf78yh3nnd844andfh66/budapest" for ::1 at 2022-07-05 13:01:54 -0500
+Processing by SystemsController#cef3 as HTML
+  Parameters: {"operation"=>"budapest"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (Allocations: 133)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:01:54 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.7ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3nnd844andfh66/budapest" for ::1 at 2022-07-05 13:02:20 -0500
+Processing by SystemsController#cef3 as HTML
+  Parameters: {"operation"=>"budapest"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 132)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:02:20 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh/budapest" for ::1 at 2022-07-05 13:02:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh/budapest"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh/nasdf82fe2" for ::1 at 2022-07-05 13:02:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh/nasdf82fe2"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 13:03:28 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:03:28 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.1ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh:nasdf82fe2" for ::1 at 2022-07-05 13:04:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh:nasdf82fe2"):
+  
+Started GET "/dbaf78yh3nnd32438andfh" for ::1 at 2022-07-05 13:06:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh"):
+  
+Started GET "/dbaf78yh3nnd32438andfh/4" for ::1 at 2022-07-05 13:06:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh/4"):
+  
+Started GET "/dbaf78yh3nnd32438andfh/3" for ::1 at 2022-07-05 13:06:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh/3"):
+  
+Started GET "/dbaf78yh3nnd32438andfh/2" for ::1 at 2022-07-05 13:07:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh/2"):
+  
+Started GET "/" for ::1 at 2022-07-05 13:12:52 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 2.7ms | Allocations: 313)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:14:48 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 1.0ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3nnd32438andfh" for ::1 at 2022-07-05 13:15:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh"):
+  
+Started GET "/dbaf78yh3nnd32438andfh.3" for ::1 at 2022-07-05 13:16:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh.3"):
+  
+Started GET "/dbaf78yh3nnd32438andfh.ncu3fn8u.json.jb" for ::1 at 2022-07-05 13:16:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh.ncu3fn8u.json.jb"):
+  
+Started GET "/dbaf78yh3nnd32438andfh/ncu3fn8u.json.jb" for ::1 at 2022-07-05 13:16:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd32438andfh/ncu3fn8u.json.jb"):
+  
+Started GET "/ncu3fn8u.json.jb" for ::1 at 2022-07-05 13:16:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/ncu3fn8u.json.jb"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 13:21:40 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (Allocations: 135)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:21:40 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 7ms (Views: 5.4ms | Allocations: 312)
+
+
+Started GET "/get/dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 13:22:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/get/dbaf78yh3n3r2rfwfnd8andfh"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh_path" for ::1 at 2022-07-05 13:22:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh_path"):
+  
+Started GET "/" for ::1 at 2022-07-05 13:23:46 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.0ms | Allocations: 313)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-05 13:24:04 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:24:04 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.3ms | Allocations: 313)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh/nasdf82fe2" for ::1 at 2022-07-05 13:24:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh/nasdf82fe2"):
+  
+Started GET "/nasdf82fe2" for ::1 at 2022-07-05 13:24:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/nasdf82fe2"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh:nasdf82fe2" for ::1 at 2022-07-05 13:24:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh:nasdf82fe2"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh=nasdf82fe2" for ::1 at 2022-07-05 13:24:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh=nasdf82fe2"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh.nasdf82fe2" for ::1 at 2022-07-05 13:24:51 -0500
+Processing by SystemsController#ncu3fn8u as */*
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (Allocations: 137)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh.get=nasdf82fe2" for ::1 at 2022-07-05 13:25:10 -0500
+Processing by SystemsController#ncu3fn8u as */*
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:25:10 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 2.1ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh?=secret=nasdf82fe2" for ::1 at 2022-07-05 13:26:39 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:26:39 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 2.3ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh?=nasdf82fe2" for ::1 at 2022-07-05 13:28:16 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 53ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:28:16 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh=nasdf82fe2" for ::1 at 2022-07-05 13:28:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh=nasdf82fe2"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh.secret=nasdf82fe2" for ::1 at 2022-07-05 13:28:56 -0500
+Processing by SystemsController#ncu3fn8u as */*
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:28:56 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 1.0ms | Allocations: 312)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:29:09 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh.nasdf82fe2" for ::1 at 2022-07-05 13:29:21 -0500
+Processing by SystemsController#ncu3fn8u as */*
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 134)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:29:21 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 312)
+
+
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh?=nasdf82fe2" for ::1 at 2022-07-05 13:30:05 -0500
+Processing by SystemsController#ncu3fn8u as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 135)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:30:05 -0500
+Processing by SystemsController#init as HTML
+  Rendering systems/init.json.jb
+  Rendered systems/init.json.jb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 312)
+
+
+Started GET "/init.json.jb" for ::1 at 2022-07-05 13:30:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/init.json.jb"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh.json?secret=nasdf82fe2" for ::1 at 2022-07-05 13:32:29 -0500
+Processing by SystemsController#ncu3fn8u as JSON
+  Parameters: {"secret"=>"nasdf82fe2"}
+DEPRECATION WARNING: Rendering actions with '.' in the name is deprecated: systems/ncu3fn8u.json.jb (called from ncu3fn8u at /Users/codingbootcamp/Documents/Actualize/week03-practice/params-security-exercise/app/controllers/systems_controller.rb:10)
+  Rendering systems/ncu3fn8u.json.jb
+  Rendered systems/ncu3fn8u.json.jb (Duration: 1.7ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 6.0ms | Allocations: 693)
+
+
+Started GET "/dbaf78yh3nnd844andfh66.json?operation=centerfuge" for ::1 at 2022-07-05 13:34:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd844andfh66.json"):
+  
+Started GET "/dbaf78yh3nnd844andfh66.json?operation=centerfuge" for ::1 at 2022-07-05 13:34:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3nnd844andfh66.json"):
+  
+Started GET "/dbaf78yh3nnd844andfh66/centerfuge.json?secret=centerfuge" for ::1 at 2022-07-05 13:36:40 -0500
+Processing by SystemsController#cef3 as JSON
+  Parameters: {"secret"=>"centerfuge", "operation"=>"centerfuge"}
+DEPRECATION WARNING: Rendering actions with '.' in the name is deprecated: systems/cef3.json.jb (called from cef3 at /Users/codingbootcamp/Documents/Actualize/week03-practice/params-security-exercise/app/controllers/systems_controller.rb:19)
+  Rendering systems/cef3.json.jb
+  Rendered systems/cef3.json.jb (Duration: 1.1ms | Allocations: 58)
+Completed 200 OK in 10ms (Views: 6.5ms | Allocations: 696)
+
+
+Started GET "//dbaf78qierwy8bqyh3nnd8andfh/budapest.json?secret=budapest" for ::1 at 2022-07-05 13:37:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78qierwy8bqyh3nnd8andfh/budapest.json"):
+  
+Started GET "/dbaf78qierwy8bqyh3nnd8andfh/budapest.json?secret=budapest" for ::1 at 2022-07-05 13:39:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78qierwy8bqyh3nnd8andfh/budapest.json"):
+  
+Started POST "/dbaf78qierwy8bqyh3nnd8andfh/budapest.json?secret=budapest" for 127.0.0.1 at 2022-07-05 13:49:47 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/dbaf78qierwy8bqyh3nnd8andfh/budapest.json"):
+  
+Started GET "/dbaf78yh3nnd844andfh66/centerfuge.json" for ::1 at 2022-07-05 13:50:19 -0500
+Processing by SystemsController#cef3 as JSON
+  Parameters: {"operation"=>"centerfuge"}
+  Rendering systems/cef3.json.jb
+  Rendered systems/cef3.json.jb (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 46ms (Views: 2.6ms | Allocations: 420)
+
+
+Started POST "/dbaf78qierwy8bqyh3nnd8andfh/budapest" for 127.0.0.1 at 2022-07-05 13:51:44 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/dbaf78qierwy8bqyh3nnd8andfh/budapest"):
+  
+Started GET "/dbaf78yh3n3r2rfwfnd8andfh.json?secret=nasdf82fe2" for 127.0.0.1 at 2022-07-05 13:53:17 -0500
+Processing by SystemsController#ncu3fn8u as JSON
+  Parameters: {"secret"=>"nasdf82fe2"}
+  Rendering systems/ncu3fn8u.json.jb
+  Rendered systems/ncu3fn8u.json.jb (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 18ms (Views: 16.8ms | Allocations: 336)
+
+
+Started GET "/dbaf78yh3nnd844andfh66/centerfuge.json" for 127.0.0.1 at 2022-07-05 13:53:20 -0500
+Processing by SystemsController#cef3 as JSON
+  Parameters: {"operation"=>"centerfuge"}
+  Rendering systems/cef3.json.jb
+  Rendered systems/cef3.json.jb (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 0.9ms | Allocations: 363)
+
+
+Started POST "/dbaf78qierwy8bqyh3nnd8andfh/budapest" for 127.0.0.1 at 2022-07-05 13:53:23 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/dbaf78qierwy8bqyh3nnd8andfh/budapest"):
+  
+Started POST "/dbaf78qierwy8bqyh3nnd8andfh" for 127.0.0.1 at 2022-07-05 13:54:49 -0500
+Processing by SystemsController#c34ew as HTML
+  Parameters: {"keyword"=>"budapest", "system"=>{"keyword"=>"budapest"}}
+Can't verify CSRF token authenticity.
+DEPRECATION WARNING: Rendering actions with '.' in the name is deprecated: systems/c34ew.json.jb (called from c34ew at /Users/codingbootcamp/Documents/Actualize/week03-practice/params-security-exercise/app/controllers/systems_controller.rb:29)
+  Rendering systems/c34ew.json.jb
+  Rendered systems/c34ew.json.jb (Duration: 1.2ms | Allocations: 64)
+Completed 200 OK in 11ms (Views: 7.2ms | Allocations: 798)
+
+
+Started DELETE "/dbaf78yh3nnd32438andfh" for 127.0.0.1 at 2022-07-05 13:56:24 -0500
+Processing by V1::FoldersController#snjnf39 as HTML
+Can't verify CSRF token authenticity.
+Completed 200 OK in 2ms (Views: 0.3ms | Allocations: 547)
+
+
+Started GET "/" for ::1 at 2022-07-05 13:56:42 -0500
+Processing by SystemsController#init as HTML
+  Rendering public/481.html
+  Rendered public/481.html (Duration: 0.6ms | Allocations: 7)
+Filter chain halted as :crypt_eval rendered or redirected
+Completed 200 OK in 8ms (Views: 6.6ms | Allocations: 385)
+
+
+Started GET "/" for ::1 at 2022-07-05 14:26:12 -0500
+Processing by SystemsController#init as HTML
+  Rendering public/481.html
+  Rendered public/481.html (Duration: 0.5ms | Allocations: 4)
+Filter chain halted as :crypt_eval rendered or redirected
+Completed 200 OK in 42ms (Views: 2.4ms | Allocations: 232)
+
+

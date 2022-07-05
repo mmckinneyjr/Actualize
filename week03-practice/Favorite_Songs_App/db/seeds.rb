@@ -1,0 +1,6 @@
+Song.create(title: "My Life for Hire", album: "Homesick", artist: "A Day to Remember", year: "2009")
+Song.create(title: "Give It All", album: "Siren Song of the Counter Culture", artist: "Rise Against", year: "2004")
+Song.create(title: "Sink or Swim", album: "The Drug in Me Is You", artist: "Falling in Reverse", year: "2011")
+Song.create(title: "Tears Don't Fall", album: "The Poison", artist: "Bullet For My Valentine", year: "2005")
+Song.create(title: "Machinehead", album: "Sixteen Stone", artist: "Bush", year: "1994")
+Song.create(title: "Lola Montez", album: "Outlaw Gentlemen & Shady Ladies", artist: "Volbeat", year: "2013")

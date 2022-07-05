@@ -1,0 +1,215 @@
+  [1m[35m (153.8ms)[0m  [1m[35mCREATE DATABASE "Favorite_Songs_App_development" ENCODING = 'unicode'[0m
+  [1m[35m (48.4ms)[0m  [1m[35mCREATE DATABASE "Favorite_Songs_App_test" ENCODING = 'unicode'[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3137754962539783110)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSongs (20220705161836)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "artist" character varying, "year" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (8.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220705161836"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (9.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-05 16:18:53.619508"], ["updated_at", "2022-07-05 16:18:53.619508"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(3137754962539783110)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (9.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "My Life for Hire"], ["album", "Homesick"], ["artist", "A Day to Remember"], ["year", "2009"], ["created_at", "2022-07-05 16:34:26.113499"], ["updated_at", "2022-07-05 16:34:26.113499"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (3.5ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Give It All"], ["album", "Siren Song of the Counter Culture"], ["artist", "Rise Against"], ["year", "2004"], ["created_at", "2022-07-05 16:34:26.135963"], ["updated_at", "2022-07-05 16:34:26.135963"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sink or Swim"], ["album", "The Drug in Me Is You"], ["artist", "Falling in Reverse"], ["year", "2011"], ["created_at", "2022-07-05 16:34:26.142394"], ["updated_at", "2022-07-05 16:34:26.142394"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Tears Don't Fall"], ["album", "The Poison"], ["artist", "Bullet For My Valentine"], ["year", "2005"], ["created_at", "2022-07-05 16:34:26.145439"], ["updated_at", "2022-07-05 16:34:26.145439"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Machinehead"], ["album", "Sixteen Stone"], ["artist", "Bush"], ["year", "1994"], ["created_at", "2022-07-05 16:34:26.148251"], ["updated_at", "2022-07-05 16:34:26.148251"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Lola Montez"], ["album", "Outlaw Gentlemen & Shady Ladies"], ["artist", "Volbeat"], ["year", "2013"], ["created_at", "2022-07-05 16:34:26.151093"], ["updated_at", "2022-07-05 16:34:26.151093"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/songs" for ::1 at 2022-07-05 11:49:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 7213)
+
+
+  
+NoMethodError (undefined method `All' for Song:Class
+Did you mean?  all):
+  
+app/controllers/songs_controller.rb:3:in `index'
+Started GET "/favicon.ico" for ::1 at 2022-07-05 11:49:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/songs" for ::1 at 2022-07-05 11:50:07 -0500
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 8.3ms | Allocations: 7048)
+
+
+Started GET "/songs/3" for ::1 at 2022-07-05 11:50:33 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (1.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:8:in `show'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 1696)
+
+
+Started GET "/songs/2" for ::1 at 2022-07-05 11:50:36 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 709)
+
+
+Started GET "/songs/6" for ::1 at 2022-07-05 11:50:41 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 708)
+
+
+Started OPTIONS "/products" for ::1 at 2022-07-05 11:52:55 -0500
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/products"):
+  
+Started OPTIONS "/products" for ::1 at 2022-07-05 11:53:20 -0500
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/products"):
+  
+Started GET "/songs" for ::1 at 2022-07-05 11:57:08 -0500
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 51ms (Views: 1.1ms | ActiveRecord: 16.4ms | Allocations: 4361)
+
+
+Started GET "/songs" for ::1 at 2022-07-05 11:57:18 -0500
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 1325)
+
+
+Started GET "/songs.json" for 127.0.0.1 at 2022-07-05 12:26:28 -0500
+Processing by SongsController#index as JSON
+  [1m[36mSong Load (1.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 47ms (Views: 0.7ms | ActiveRecord: 19.1ms | Allocations: 4205)
+
+
+Started GET "/songs/3.json" for 127.0.0.1 at 2022-07-05 12:26:35 -0500
+Processing by SongsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (5.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:8:in `show'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 5.6ms | Allocations: 718)
+
+
+Started POST "/songs.json" for 127.0.0.1 at 2022-07-05 12:26:45 -0500
+Processing by SongsController#create as JSON
+  Parameters: {"title"=>"No Heroes Allowed", "album"=>"Mayday Parade ", "artist"=>"Mayday Parade ", "year"=>"0011", "song"=>{"title"=>"No Heroes Allowed", "album"=>"Mayday Parade ", "artist"=>"Mayday Parade ", "year"=>"0011"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:13:in `create'
+  [1m[36mSong Create (4.6ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "No Heroes Allowed"], ["album", "Mayday Parade "], ["artist", "Mayday Parade "], ["year", "0011"], ["created_at", "2022-07-05 17:26:45.723000"], ["updated_at", "2022-07-05 17:26:45.723000"]]
+  ↳ app/controllers/songs_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:13:in `create'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 6.2ms | Allocations: 2459)
+
+
+Started GET "/songs.json" for 127.0.0.1 at 2022-07-05 12:26:51 -0500
+Processing by SongsController#index as JSON
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1443)
+
+
+Started PATCH "/songs/7.json" for 127.0.0.1 at 2022-07-05 12:26:59 -0500
+Processing by SongsController#update as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:23:in `update'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 847)
+
+
+Started GET "/songs.json" for 127.0.0.1 at 2022-07-05 12:27:17 -0500
+Processing by SongsController#index as JSON
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1444)
+
+
+Started PATCH "/songs/7.json" for 127.0.0.1 at 2022-07-05 12:27:24 -0500
+Processing by SongsController#update as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:23:in `update'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 784)
+
+
+Started PATCH "/songs/7.json" for 127.0.0.1 at 2022-07-05 12:27:57 -0500
+Processing by SongsController#update as JSON
+  Parameters: {"album"=>"Mayday Parade", "artist"=>"Mayday Parade", "year"=>"2011", "id"=>"7", "song"=>{"album"=>"Mayday Parade", "artist"=>"Mayday Parade", "year"=>"2011"}}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:30:in `update'
+  [1m[36mSong Update (1.8ms)[0m  [1m[33mUPDATE "songs" SET "album" = $1, "artist" = $2, "year" = $3, "updated_at" = $4 WHERE "songs"."id" = $5[0m  [["album", "Mayday Parade"], ["artist", "Mayday Parade"], ["year", "2011"], ["updated_at", "2022-07-05 17:27:57.089387"], ["id", 7]]
+  ↳ app/controllers/songs_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:30:in `update'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 2466)
+
+
+Started GET "/songs.json" for 127.0.0.1 at 2022-07-05 12:28:06 -0500
+Processing by SongsController#index as JSON
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1442)
+
+
+Started POST "/songs.json" for 127.0.0.1 at 2022-07-05 12:28:18 -0500
+Processing by SongsController#create as JSON
+  Parameters: {"title"=>"No Heroes Allowed", "album"=>"Mayday Parade ", "artist"=>"Mayday Parade ", "year"=>"0011", "song"=>{"title"=>"No Heroes Allowed", "album"=>"Mayday Parade ", "artist"=>"Mayday Parade ", "year"=>"0011"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:13:in `create'
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("title", "album", "artist", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "No Heroes Allowed"], ["album", "Mayday Parade "], ["artist", "Mayday Parade "], ["year", "0011"], ["created_at", "2022-07-05 17:28:18.169465"], ["updated_at", "2022-07-05 17:28:18.169465"]]
+  ↳ app/controllers/songs_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:13:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 1933)
+
+
+Started GET "/songs.json" for 127.0.0.1 at 2022-07-05 12:28:23 -0500
+Processing by SongsController#index as JSON
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 1561)
+
+
+Started DELETE "/songs/8.json" for 127.0.0.1 at 2022-07-05 12:28:28 -0500
+Processing by SongsController#destroy as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mSong Load (2.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:37:in `destroy'
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/songs_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:37:in `destroy'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 2085)
+
+

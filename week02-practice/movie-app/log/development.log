@@ -1723,3 +1723,64 @@ Processing by MoviesController#by_year as HTML
 Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 7.7ms | Allocations: 3905)
 
 
+  [1m[36mActor Load (3.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+Started GET "/" for ::1 at 2022-07-05 19:35:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 537)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 3973)
+
+
+Started GET "/actor?last_name=Murray" for ::1 at 2022-07-05 19:35:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actor"):
+  
+Started GET "/actor?last_name=Murray" for ::1 at 2022-07-05 19:35:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actor"):
+  
+Started GET "/actor?last_name=Murray" for ::1 at 2022-07-05 19:37:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actor"):
+  
+Started GET "/actor/Murray" for ::1 at 2022-07-05 19:37:09 -0500
+Processing by ActorsController#show_by_last_name as HTML
+  Parameters: {"last_name"=>"Murray"}
+  [1m[36mActor Load (2.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."last_name" = $1 LIMIT $2[0m  [["last_name", "Murray"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:3:in `show_by_last_name'
+Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 13.2ms | Allocations: 6790)
+
+
+Started GET "/actor" for 127.0.0.1 at 2022-07-05 19:37:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actor"):
+  
+Started GET "/actor" for 127.0.0.1 at 2022-07-05 19:38:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actor"):
+  
+Started GET "/actor" for 127.0.0.1 at 2022-07-05 19:39:58 -0500
+Processing by ActorsController#show_by_last_name as HTML
+  Parameters: {"last_name"=>"Murray", "actor"=>{"last_name"=>"Murray"}}
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."last_name" = $1 LIMIT $2[0m  [["last_name", "Murray"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:3:in `show_by_last_name'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 19.7ms | Allocations: 2293)
+
+
+Started GET "/actor/Murray" for ::1 at 2022-07-05 19:40:11 -0500
+Processing by ActorsController#show_by_last_name as HTML
+  Parameters: {"last_name"=>"Murray"}
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."last_name" = $1 LIMIT $2[0m  [["last_name", "Murray"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:3:in `show_by_last_name'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 672)
+
+
+Started GET "/actor?last_name=Murray" for ::1 at 2022-07-05 19:40:21 -0500
+Processing by ActorsController#show_by_last_name as HTML
+  Parameters: {"last_name"=>"Murray"}
+  [1m[36mActor Load (0.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."last_name" = $1 LIMIT $2[0m  [["last_name", "Murray"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:3:in `show_by_last_name'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 683)
+
+

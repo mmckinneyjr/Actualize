@@ -20,4 +20,6 @@ class MoviesController < ApplicationController
     movie = Movie.order(year: :DESC)
     render json: movie.as_json
   end
+
+
 end

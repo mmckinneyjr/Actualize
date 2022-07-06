@@ -53,6 +53,17 @@ git pull origin main --no-edit
 ```
 
 
+### Week 3
+
+|       | Deliberate Practice (mandatory)      | Deep Dives (optional, see [readme](DEEPDIVES_README.md)) |
+| ----- | ------------------------------------ | -------------------------------------------------------- |
+| Day 1 | No homework :)                       |                                                          |
+| Day 2 | [Params](w03/params)                 | [Temperatures](w03/temperatures)                         |
+| Day 3 | [Restful APIs](w03/restful_apis)     | [Phonebook](w03/phonebook)                               |
+| Day 4 | [Ruby Methods 2](w03/ruby_methods_2) | [Playlist](w03/playlist)                                 |
+| Day 5 | [Migrations](w03/migrations)         | [Nobel Prize Winners](w03/nobel_prize_winners)           |
+
+
 ### Week 2
 
 |       | Deliberate Practice (mandatory)            | Deep Dives (optional, see [readme](DEEPDIVES_README.md)) |

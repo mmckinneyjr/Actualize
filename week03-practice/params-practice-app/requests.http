@@ -1,0 +1,7 @@
+#####
+POST http://localhost:3000/phrase
+Content-Type: application/json
+
+{
+  "phrase": "This is a phrase that is now in all caps"
+}

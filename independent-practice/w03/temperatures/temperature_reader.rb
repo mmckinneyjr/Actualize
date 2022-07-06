@@ -13,7 +13,7 @@ class TemperatureReader
         @readings << line[0..-1].to_f
       end
     end
-    puts @readings
+    @readings
   end
 
   def average_fahrenheit

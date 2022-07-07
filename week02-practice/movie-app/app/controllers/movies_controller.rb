@@ -9,17 +9,28 @@ class MoviesController < ApplicationController
     render json: movie.as_json
   end
 
-  def by_title
-    movie = Movie.where("title LIKE ?", Movie.sanitize_sql_like(params[:title]) + "%")
+  def create
+    movie = Movie.new(
+      title: params["title"],
+      year: params["year"],
+      plot: params["plot"],
+    )
+    movie.save
     render json: movie.as_json
   end
 
-  def by_year
-    # movie = Movie.all
-    # render json: movie.as_json
-    movie = Movie.order(year: :DESC)
+  def update
+    movie = Movie.find_by(id: params["id"])
+    movie.title = params["title"] || movie.title
+    movie.year = params["year"] || movie.year
+    movie.plot = params["plot"] || movie.plot
+    movie.save
     render json: movie.as_json
   end
 
-
+  def destroy
+    movie = Movie.find_by(id: params["id"])
+    movie.destroy
+    render json: { message: "Successfully Deleted" }
+  end
 end

@@ -1784,3 +1784,345 @@ Processing by ActorsController#show_by_last_name as HTML
 Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 683)
 
 
+Started GET "/" for ::1 at 2022-07-06 20:03:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 537)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3540)
+
+
+Started GET "//dbaf78yh3n3r2rfwfnd8andfh" for ::1 at 2022-07-06 20:03:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/dbaf78yh3n3r2rfwfnd8andfh"):
+  
+Started GET "/" for ::1 at 2022-07-06 20:03:50 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.6ms | Allocations: 319)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 965)
+
+
+Started GET "/my_path2" for ::1 at 2022-07-06 20:03:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/my_path2"):
+  
+Started GET "/movies" for ::1 at 2022-07-06 20:03:52 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (5.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 52ms (Views: 0.5ms | ActiveRecord: 14.0ms | Allocations: 6574)
+
+
+Started GET "/" for ::1 at 2022-07-06 20:04:03 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 33)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 278)
+
+
+Started GET "/movies" for ::1 at 2022-07-06 20:04:07 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 1296)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-07-06 20:04:07 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/movies/2" for ::1 at 2022-07-06 20:04:21 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 3051)
+
+
+Started GET "/actors/2" for ::1 at 2022-07-06 20:04:26 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (1.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:8:in `show'
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 8.6ms | Allocations: 4028)
+
+
+Started GET "/actors" for ::1 at 2022-07-06 20:04:30 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 3341)
+
+
+Started GET "/actors.json" for 127.0.0.1 at 2022-07-06 20:06:24 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 3283)
+
+
+Started GET "/actors/2.json" for 127.0.0.1 at 2022-07-06 20:06:26 -0500
+Processing by ActorsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 669)
+
+
+Started GET "/actors/2.json" for 127.0.0.1 at 2022-07-06 20:07:45 -0500
+Processing by ActorsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 669)
+
+
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-06 20:09:13 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"christan", "last_name"=>"bale", "known_for"=>"batman", "actor"=>{"first_name"=>"christan", "last_name"=>"bale", "known_for"=>"batman"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:18:in `create'
+  [1m[36mActor Create (9.5ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "known_for", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "christan"], ["last_name", "bale"], ["known_for", "batman"], ["created_at", "2022-07-07 01:09:13.290946"], ["updated_at", "2022-07-07 01:09:13.290946"]]
+  ↳ app/controllers/actors_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:18:in `create'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 11.5ms | Allocations: 2398)
+
+
+Started GET "/actors.json" for 127.0.0.1 at 2022-07-06 20:09:19 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 3401)
+
+
+Started PATCH "/actors/26.json" for 127.0.0.1 at 2022-07-06 20:09:53 -0500
+Processing by ActorsController#update as JSON
+  Parameters: {"first_name"=>"clark", "last_name"=>"kent", "known_for"=>"superman", "id"=>"26", "actor"=>{"first_name"=>"clark", "last_name"=>"kent", "known_for"=>"superman"}}
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:27:in `update'
+  [1m[36mActor Update (2.5ms)[0m  [1m[33mUPDATE "actors" SET "first_name" = $1, "last_name" = $2, "known_for" = $3, "updated_at" = $4 WHERE "actors"."id" = $5[0m  [["first_name", "clark"], ["last_name", "kent"], ["known_for", "superman"], ["updated_at", "2022-07-07 01:09:53.602242"], ["id", 26]]
+  ↳ app/controllers/actors_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:27:in `update'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 3.6ms | Allocations: 2493)
+
+
+Started GET "/actors.json" for 127.0.0.1 at 2022-07-06 20:09:56 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 3390)
+
+
+Started DELETE "/actors/26.json" for 127.0.0.1 at 2022-07-06 20:10:08 -0500
+Processing by ActorsController#destroy as JSON
+  Parameters: {"id"=>"26"}
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:33:in `destroy'
+  [1m[36mActor Destroy (0.3ms)[0m  [1m[31mDELETE FROM "actors" WHERE "actors"."id" = $1[0m  [["id", 26]]
+  ↳ app/controllers/actors_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:33:in `destroy'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 2082)
+
+
+Started GET "/actors.json" for 127.0.0.1 at 2022-07-06 20:10:11 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 3283)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-06 20:10:17 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1216)
+
+
+Started GET "/movies/2.json" for 127.0.0.1 at 2022-07-06 20:10:20 -0500
+Processing by MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 665)
+
+
+Started POST "/movies.json" for 127.0.0.1 at 2022-07-06 20:11:15 -0500
+Processing by MoviesController#create as JSON
+  Parameters: {"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.", "movie"=>{"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son."}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 651)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'known_for' for Movie.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/movies_controller.rb:13:in `create'
+Started POST "/movies.json" for 127.0.0.1 at 2022-07-06 20:11:57 -0500
+Processing by MoviesController#create as JSON
+  Parameters: {"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.", "movie"=>{"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son."}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 499)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'known_for' for Movie.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/movies_controller.rb:13:in `create'
+Started POST "/movies.json" for 127.0.0.1 at 2022-07-06 20:12:25 -0500
+Processing by MoviesController#create as JSON
+  Parameters: {"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.", "movie"=>{"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son."}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:18:in `create'
+  [1m[36mMovie Create (2.8ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Godfather"], ["year", 1972], ["plot", "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son."], ["created_at", "2022-07-07 01:12:25.748502"], ["updated_at", "2022-07-07 01:12:25.748502"]]
+  ↳ app/controllers/movies_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:18:in `create'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 11.0ms | Allocations: 3426)
+
+
+Started PATCH "/movies/2.json" for 127.0.0.1 at 2022-07-06 20:13:32 -0500
+Processing by MoviesController#update as JSON
+  Parameters: {"title"=>"Breakfast at Tiffany's", "year"=>"1961", "plot"=>"A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way.", "id"=>"2", "movie"=>{"title"=>"Breakfast at Tiffany's", "year"=>"1961", "plot"=>"A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way."}}
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:27:in `update'
+  [1m[36mMovie Update (1.0ms)[0m  [1m[33mUPDATE "movies" SET "title" = $1, "year" = $2, "plot" = $3, "updated_at" = $4 WHERE "movies"."id" = $5[0m  [["title", "Breakfast at Tiffany's"], ["year", 1961], ["plot", "A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way."], ["updated_at", "2022-07-07 01:13:32.719033"], ["id", 2]]
+  ↳ app/controllers/movies_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:27:in `update'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 2676)
+
+
+Started GET "/actors.json" for 127.0.0.1 at 2022-07-06 20:13:37 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 6.3ms | Allocations: 5526)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-06 20:13:46 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 1357)
+
+
+Started GET "/movies/2.json" for 127.0.0.1 at 2022-07-06 20:14:00 -0500
+Processing by MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 698)
+
+
+Started POST "/movies.json" for 127.0.0.1 at 2022-07-06 20:14:17 -0500
+Processing by MoviesController#create as JSON
+  Parameters: {"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.", "movie"=>{"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son."}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:18:in `create'
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "plot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Godfather"], ["year", 1972], ["plot", "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son."], ["created_at", "2022-07-07 01:14:17.611558"], ["updated_at", "2022-07-07 01:14:17.611558"]]
+  ↳ app/controllers/movies_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:18:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 1930)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-06 20:14:40 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 1417)
+
+
+Started DELETE "/movies/8.json" for 127.0.0.1 at 2022-07-06 20:14:51 -0500
+Processing by MoviesController#destroy as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:33:in `destroy'
+  [1m[36mActor Destroy (0.7ms)[0m  [1m[31mDELETE FROM "actors" WHERE "actors"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/movies_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:33:in `destroy'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 2239)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-06 20:14:58 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 1417)
+
+
+Started DELETE "/movies/8.json" for 127.0.0.1 at 2022-07-06 20:15:17 -0500
+Processing by MoviesController#destroy as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:32:in `destroy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 1567)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass
+
+    movie.destroy
+         ^^^^^^^^):
+  
+app/controllers/movies_controller.rb:33:in `destroy'
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-06 20:15:29 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1418)
+
+
+Started DELETE "/movies/8" for 127.0.0.1 at 2022-07-06 20:15:40 -0500
+Processing by MoviesController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:32:in `destroy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 1485)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass
+
+    movie.destroy
+         ^^^^^^^^):
+  
+app/controllers/movies_controller.rb:33:in `destroy'
+Started DELETE "/movies/8" for 127.0.0.1 at 2022-07-06 20:16:35 -0500
+Processing by MoviesController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:33:in `destroy'
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/movies_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:33:in `destroy'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 6.0ms | Allocations: 4823)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-06 20:16:38 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1400)
+
+

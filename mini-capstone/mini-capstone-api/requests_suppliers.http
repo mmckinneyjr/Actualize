@@ -1,0 +1,34 @@
+##### SHOW ALL #####
+GET http://localhost:3000/suppliers.json
+
+##### SHOW SPECIFIC BY ID #####
+GET http://localhost:3000/suppliers/2.json
+
+##### CREATE NEW #####
+POST http://localhost:3000/supplier.json
+Content-Type: application/json
+
+{
+  "name": "Fender",
+  "email": "fender@example.com",
+  "phone_number": "555-555-6666"
+}
+
+##### Updates product based on ID
+PATCH http://localhost:3000/suppliers/20.json
+Content-Type: application/json
+
+{
+  "name": "Netflix",
+  "email": "netflix@example",
+  "phone_number": "555-555-1234"
+}
+
+##### Deletes product based on ID
+DELETE http://localhost:3000/suppliers/21
+
+
+
+
+
+

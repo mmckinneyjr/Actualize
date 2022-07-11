@@ -18,4 +18,8 @@ class Product < ApplicationRecord
   def total
     return tax + price
   end
+
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
 end

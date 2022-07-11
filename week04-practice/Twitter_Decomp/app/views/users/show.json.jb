@@ -1,0 +1,6 @@
+{
+  id: @user.id,
+  username: @user.username,
+  user_email: @user.user_email,
+  tweets: @user.tweets,
+}

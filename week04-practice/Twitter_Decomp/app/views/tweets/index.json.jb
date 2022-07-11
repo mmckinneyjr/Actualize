@@ -1,0 +1,6 @@
+@tweets.map do |tweet|
+  {
+    id: tweet.id,
+    tweet_text: tweet.tweet_text
+  }
+end

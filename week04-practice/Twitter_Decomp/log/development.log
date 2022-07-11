@@ -1,0 +1,923 @@
+  [1m[35m (156.2ms)[0m  [1m[35mCREATE DATABASE "Twitter_Decomp_development" ENCODING = 'unicode'[0m
+  [1m[35m (55.1ms)[0m  [1m[35mCREATE DATABASE "Twitter_Decomp_test" ENCODING = 'unicode'[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8233871505120333870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTweets (20220711185325)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "tweets" ("id" bigserial primary key, "tweet_text" character varying, "text" character varying, "user_id" character varying, "integer" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220711185325"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20220711185403)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "user_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220711185403"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (7.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-11 18:54:11.213408"], ["updated_at", "2022-07-11 18:54:11.213408"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8233871505120333870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (7823.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Twitter_Decomp_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (31.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Twitter_Decomp_development"[0m
+  [1m[35m (22.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Twitter_Decomp_test"[0m
+  [1m[35m (180.3ms)[0m  [1m[35mCREATE DATABASE "Twitter_Decomp_development" ENCODING = 'unicode'[0m
+  [1m[35m (48.2ms)[0m  [1m[35mCREATE DATABASE "Twitter_Decomp_test" ENCODING = 'unicode'[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8233871505120333870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220711185621)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "user_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220711185621"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTweets (20220711185638)
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "tweets" ("id" bigserial primary key, "tweet_text" text, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220711185638"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (7.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-11 18:57:35.219365"], ["updated_at", "2022-07-11 18:57:35.219365"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8233871505120333870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (6.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "ronnie_lubowitz"], ["user_email", "laureen.abernathy@greenfelder-white.net"], ["created_at", "2022-07-11 19:01:25.444677"], ["updated_at", "2022-07-11 19:01:25.444677"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "samuel.luettgen"], ["user_email", "katelyn.hodkiewicz@jones-rowe.com"], ["created_at", "2022-07-11 19:01:25.459917"], ["updated_at", "2022-07-11 19:01:25.459917"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "freeda_fisher"], ["user_email", "sydney@marks-wehner.com"], ["created_at", "2022-07-11 19:01:25.467011"], ["updated_at", "2022-07-11 19:01:25.467011"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "cari.townecari.towne"], ["user_email", "belva_bins@herzog.org"], ["created_at", "2022-07-11 19:01:25.480455"], ["updated_at", "2022-07-11 19:01:25.480455"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "breanna_mills"], ["user_email", "emeline.russel@luettgen-pfeffer.io"], ["created_at", "2022-07-11 19:01:25.490756"], ["updated_at", "2022-07-11 19:01:25.490756"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "pei.ritchie"], ["user_email", "windy_watsica@reichel-collier.name"], ["created_at", "2022-07-11 19:01:25.497330"], ["updated_at", "2022-07-11 19:01:25.497330"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "marjorie.oreilly"], ["user_email", "hildred@schinner.name"], ["created_at", "2022-07-11 19:01:25.504463"], ["updated_at", "2022-07-11 19:01:25.504463"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "benjamin.padberg"], ["user_email", "dot.collins@anderson.info"], ["created_at", "2022-07-11 19:01:25.509008"], ["updated_at", "2022-07-11 19:01:25.509008"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "karly.abshire"], ["user_email", "leta_brekke@hansen-okuneva.io"], ["created_at", "2022-07-11 19:01:25.512063"], ["updated_at", "2022-07-11 19:01:25.512063"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "emanuel_leannon"], ["user_email", "han@larkin-wisozk.com"], ["created_at", "2022-07-11 19:01:25.516505"], ["updated_at", "2022-07-11 19:01:25.516505"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "katelynnkatelynn"], ["user_email", "kenia@shields-hoeger.biz"], ["created_at", "2022-07-11 19:01:25.522316"], ["updated_at", "2022-07-11 19:01:25.522316"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "jason.trantow"], ["user_email", "lewis@leffler.name"], ["created_at", "2022-07-11 19:01:25.532082"], ["updated_at", "2022-07-11 19:01:25.532082"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "lane_connelly"], ["user_email", "kami@lehner-ondricka.name"], ["created_at", "2022-07-11 19:01:25.540422"], ["updated_at", "2022-07-11 19:01:25.540422"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "gennie.berge"], ["user_email", "victoria@auer.org"], ["created_at", "2022-07-11 19:01:25.547231"], ["updated_at", "2022-07-11 19:01:25.547231"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "valrie.haag"], ["user_email", "tristan@muller.co"], ["created_at", "2022-07-11 19:01:25.551049"], ["updated_at", "2022-07-11 19:01:25.551049"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (6.6ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7641029227711307598, :id_str=>\"7641029227711307598\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Dec 22 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>3769, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"TJ\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>300, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/mila_boyer\\\" rel=\\\"nofollow\\\">White-Murazik</a>\", :text=>\"Rerum alias rem quos.\", :truncated=>false}"], ["user_id", 7], ["created_at", "2022-07-11 19:04:50.126477"], ["updated_at", "2022-07-11 19:04:50.126477"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2171928780512354943, :id_str=>\"2171928780512354943\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Jul 10 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>9382, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"MZ\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>4803, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/susie_abernathy\\\" rel=\\\"nofollow\\\">Moore Inc</a>\", :text=>\"Inventore quasi praesentium tenetur.\", :truncated=>false}"], ["user_id", 10], ["created_at", "2022-07-11 19:04:50.138930"], ["updated_at", "2022-07-11 19:04:50.138930"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2551816755018982704, :id_str=>\"2551816755018982704\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Thu Dec 19 00:00:00 +0000 2019\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8484, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"CX\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>6662, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/lino\\\" rel=\\\"nofollow\\\">Jaskolski, Stiedemann and Cartwright</a>\", :text=>\"Aut saepe tempore excepturi.\", :truncated=>false}"], ["user_id", 2], ["created_at", "2022-07-11 19:04:50.143594"], ["updated_at", "2022-07-11 19:04:50.143594"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>5277173710347761863, :id_str=>\"5277173710347761863\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed Dec 13 00:00:00 +0000 2017\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>2056, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"GS\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>2909, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/donovan\\\" rel=\\\"nofollow\\\">Crist and Sons</a>\", :text=>\"Ea eos et consequuntur.\", :truncated=>false}"], ["user_id", 4], ["created_at", "2022-07-11 19:04:50.146556"], ["updated_at", "2022-07-11 19:04:50.146556"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>4434516735051128214, :id_str=>\"4434516735051128214\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sat Aug 28 00:00:00 +0000 2010\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>983, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"KG\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>2820, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/le_murphy\\\" rel=\\\"nofollow\\\">Reichel-Bauch</a>\", :text=>\"Et et eum quod.\", :truncated=>false}"], ["user_id", 1], ["created_at", "2022-07-11 19:04:50.149982"], ["updated_at", "2022-07-11 19:04:50.149982"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>1899110307023175388, :id_str=>\"1899110307023175388\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri May 08 00:00:00 +0000 2009\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>3424, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"DZ\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>4718, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/hildred.gibson\\\" rel=\\\"nofollow\\\">Farrell LLC</a>\", :text=>\"Explicabo cupiditate velit eos.\", :truncated=>false}"], ["user_id", 5], ["created_at", "2022-07-11 19:04:50.153117"], ["updated_at", "2022-07-11 19:04:50.153117"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>5395441356827227453, :id_str=>\"5395441356827227453\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sun Mar 29 00:00:00 +0000 2015\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>2478, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"TF\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>4640, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/queen\\\" rel=\\\"nofollow\\\">Kilback, Mills and Ryan</a>\", :text=>\"Fugit sit aperiam ipsum.\", :truncated=>false}"], ["user_id", 12], ["created_at", "2022-07-11 19:04:50.156234"], ["updated_at", "2022-07-11 19:04:50.156234"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2330511957188915553, :id_str=>\"2330511957188915553\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Mar 18 00:00:00 +0000 2014\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8534, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"CF\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>164, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/thanh.ratke\\\" rel=\\\"nofollow\\\">McKenzie, Reichert and Watsica</a>\", :text=>\"Id odit dignissimos delectus.\", :truncated=>false}"], ["user_id", 4], ["created_at", "2022-07-11 19:04:50.159200"], ["updated_at", "2022-07-11 19:04:50.159200"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>5167365222692953049, :id_str=>\"5167365222692953049\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Mon Jan 21 00:00:00 +0000 2013\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>604, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"BZ\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>9235, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/russell_corkery\\\" rel=\\\"nofollow\\\">Schaefer Group</a>\", :text=>\"Et cumque dolorum est.\", :truncated=>false}"], ["user_id", 14], ["created_at", "2022-07-11 19:04:50.162489"], ["updated_at", "2022-07-11 19:04:50.162489"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>252389952349047977, :id_str=>\"252389952349047977\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Thu Jan 20 00:00:00 +0000 2022\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8108, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"ZM\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>4413, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/taren\\\" rel=\\\"nofollow\\\">Sauer, Klein and Medhurst</a>\", :text=>\"Aut aperiam perferendis facilis.\", :truncated=>false}"], ["user_id", 11], ["created_at", "2022-07-11 19:04:50.165322"], ["updated_at", "2022-07-11 19:04:50.165322"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (1.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>8280703634377896444, :id_str=>\"8280703634377896444\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Apr 06 00:00:00 +0000 2021\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8019, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"VE\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>8812, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/glenn\\\" rel=\\\"nofollow\\\">Stehr and Sons</a>\", :text=>\"Et odio sint enim.\", :truncated=>false}"], ["user_id", 1], ["created_at", "2022-07-11 19:04:50.168070"], ["updated_at", "2022-07-11 19:04:50.168070"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2960929448761575763, :id_str=>\"2960929448761575763\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sun Aug 16 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8395, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"GR\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>3193, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/ignacio.mckenzie\\\" rel=\\\"nofollow\\\">Sipes, Mills and Schuster</a>\", :text=>\"Illo ex id beatae.\", :truncated=>false}"], ["user_id", 1], ["created_at", "2022-07-11 19:04:50.172051"], ["updated_at", "2022-07-11 19:04:50.172051"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>5260561717846085567, :id_str=>\"5260561717846085567\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sun Mar 03 00:00:00 +0000 2019\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>114, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"DE\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>659, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/georgine.walter\\\" rel=\\\"nofollow\\\">Walker-Cartwright</a>\", :text=>\"Aut fugiat omnis nihil.\", :truncated=>false}"], ["user_id", 7], ["created_at", "2022-07-11 19:04:50.175380"], ["updated_at", "2022-07-11 19:04:50.175380"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (1.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>4393909419229176858, :id_str=>\"4393909419229176858\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Jun 25 00:00:00 +0000 2021\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>6174, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"IE\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>7465, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/lemuel_hoppe\\\" rel=\\\"nofollow\\\">Jacobi, Schmitt and Fay</a>\", :text=>\"Ut aut sed quasi.\", :truncated=>false}"], ["user_id", 6], ["created_at", "2022-07-11 19:04:50.178426"], ["updated_at", "2022-07-11 19:04:50.178426"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>989109255079688504, :id_str=>\"989109255079688504\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed Apr 19 00:00:00 +0000 2017\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>6844, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"TF\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>8232, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/ai.ernser\\\" rel=\\\"nofollow\\\">Lueilwitz Group</a>\", :text=>\"Nihil et nihil at.\", :truncated=>false}"], ["user_id", 13], ["created_at", "2022-07-11 19:04:50.182471"], ["updated_at", "2022-07-11 19:04:50.182471"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>1970050632090511831, :id_str=>\"1970050632090511831\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Apr 26 00:00:00 +0000 2019\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>1661, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"KH\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>599, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/carl\\\" rel=\\\"nofollow\\\">Rodriguez Group</a>\", :text=>\"Ducimus eum voluptatibus minima.\", :truncated=>false}"], ["user_id", 10], ["created_at", "2022-07-11 19:04:50.185557"], ["updated_at", "2022-07-11 19:04:50.185557"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>4209813441243150458, :id_str=>\"4209813441243150458\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed May 02 00:00:00 +0000 2018\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>5628, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"NF\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>3521, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/randal\\\" rel=\\\"nofollow\\\">Rogahn-Walter</a>\", :text=>\"Veniam ut maiores consequuntur.\", :truncated=>false}"], ["user_id", 8], ["created_at", "2022-07-11 19:04:50.188310"], ["updated_at", "2022-07-11 19:04:50.188310"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>4697438313481702737, :id_str=>\"4697438313481702737\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Thu Feb 26 00:00:00 +0000 2009\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>2413, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"TK\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>7022, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/nicky.hamill\\\" rel=\\\"nofollow\\\">Considine, Mayert and Von</a>\", :text=>\"Suscipit illo asperiores officiis.\", :truncated=>false}"], ["user_id", 5], ["created_at", "2022-07-11 19:04:50.190889"], ["updated_at", "2022-07-11 19:04:50.190889"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>6744196569454338589, :id_str=>\"6744196569454338589\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Thu Mar 17 00:00:00 +0000 2011\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>1674, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"SR\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>2298, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/emerson_graham\\\" rel=\\\"nofollow\\\">Moen, Kreiger and Adams</a>\", :text=>\"Sed dolore est impedit.\", :truncated=>false}"], ["user_id", 2], ["created_at", "2022-07-11 19:04:50.193523"], ["updated_at", "2022-07-11 19:04:50.193523"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>8975523141219707839, :id_str=>\"8975523141219707839\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Mon Jun 09 00:00:00 +0000 2008\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>490, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"IM\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>6855, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/eusebio.wyman\\\" rel=\\\"nofollow\\\">Kassulke-Kuhlman</a>\", :text=>\"Ullam odit sequi vitae.\", :truncated=>false}"], ["user_id", 5], ["created_at", "2022-07-11 19:04:50.196298"], ["updated_at", "2022-07-11 19:04:50.196298"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.9ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7742139107261785250, :id_str=>\"7742139107261785250\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed Apr 21 00:00:00 +0000 2010\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>2103, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"DZ\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>2808, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/magen\\\" rel=\\\"nofollow\\\">Heathcote and Sons</a>\", :text=>\"Mollitia minima fugit et.\", :truncated=>false}"], ["user_id", 11], ["created_at", "2022-07-11 19:04:50.208603"], ["updated_at", "2022-07-11 19:04:50.208603"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>335100608532911285, :id_str=>\"335100608532911285\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sat Jul 14 00:00:00 +0000 2012\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>6357, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"HT\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>5403, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/milford\\\" rel=\\\"nofollow\\\">Nicolas Group</a>\", :text=>\"Sunt consequuntur perferendis fugit.\", :truncated=>false}"], ["user_id", 9], ["created_at", "2022-07-11 19:04:50.211872"], ["updated_at", "2022-07-11 19:04:50.211872"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>1437271134143746135, :id_str=>\"1437271134143746135\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Sep 09 00:00:00 +0000 2014\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8900, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"KY\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>1414, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/shavonne\\\" rel=\\\"nofollow\\\">Cole-Kuhlman</a>\", :text=>\"Quisquam placeat omnis et.\", :truncated=>false}"], ["user_id", 14], ["created_at", "2022-07-11 19:04:50.214601"], ["updated_at", "2022-07-11 19:04:50.214601"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2920903285748792558, :id_str=>\"2920903285748792558\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed Aug 05 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8979, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"NO\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>723, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/glinda_rath\\\" rel=\\\"nofollow\\\">O'Keefe Inc</a>\", :text=>\"In ipsum voluptates quae.\", :truncated=>false}"], ["user_id", 12], ["created_at", "2022-07-11 19:04:50.217331"], ["updated_at", "2022-07-11 19:04:50.217331"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2419059550114768996, :id_str=>\"2419059550114768996\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Mon Mar 07 00:00:00 +0000 2016\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>7387, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"PM\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>3132, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/carter.nitzsche\\\" rel=\\\"nofollow\\\">Harber and Sons</a>\", :text=>\"Minus ratione et dolores.\", :truncated=>false}"], ["user_id", 1], ["created_at", "2022-07-11 19:04:50.220156"], ["updated_at", "2022-07-11 19:04:50.220156"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>1441402264763354960, :id_str=>\"1441402264763354960\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed Jul 31 00:00:00 +0000 2019\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>6471, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"ZA\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>137, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/marcelina_daugherty\\\" rel=\\\"nofollow\\\">Grant and Sons</a>\", :text=>\"Non unde error illum.\", :truncated=>false}"], ["user_id", 8], ["created_at", "2022-07-11 19:04:50.222871"], ["updated_at", "2022-07-11 19:04:50.222871"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>3676244532231883141, :id_str=>\"3676244532231883141\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Mar 16 00:00:00 +0000 2007\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>5741, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"CN\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>1957, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/cortez\\\" rel=\\\"nofollow\\\">Greenfelder-Murray</a>\", :text=>\"Quas amet officia consequatur.\", :truncated=>false}"], ["user_id", 14], ["created_at", "2022-07-11 19:04:50.225214"], ["updated_at", "2022-07-11 19:04:50.225214"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>1776983353580075103, :id_str=>\"1776983353580075103\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Mon Mar 26 00:00:00 +0000 2012\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>3316, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"SR\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>5799, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/ellie_powlowski\\\" rel=\\\"nofollow\\\">MacGyver-Berge</a>\", :text=>\"Voluptatem ipsa eos voluptatem.\", :truncated=>false}"], ["user_id", 6], ["created_at", "2022-07-11 19:04:50.227851"], ["updated_at", "2022-07-11 19:04:50.227851"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7209861770257419462, :id_str=>\"7209861770257419462\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed Sep 07 00:00:00 +0000 2011\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>5157, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"NE\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>5151, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/gerry\\\" rel=\\\"nofollow\\\">Hodkiewicz-Mante</a>\", :text=>\"Sunt tenetur magnam cupiditate.\", :truncated=>false}"], ["user_id", 8], ["created_at", "2022-07-11 19:04:50.230220"], ["updated_at", "2022-07-11 19:04:50.230220"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>752501098321472707, :id_str=>\"752501098321472707\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Mar 07 00:00:00 +0000 2017\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>6817, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"TC\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>3278, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/darcel\\\" rel=\\\"nofollow\\\">Boyle and Sons</a>\", :text=>\"Minus quod ut officia.\", :truncated=>false}"], ["user_id", 14], ["created_at", "2022-07-11 19:04:50.232633"], ["updated_at", "2022-07-11 19:04:50.232633"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (1.0ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>5306024929915605607, :id_str=>\"5306024929915605607\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Jan 14 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>4447, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"TW\", :nil=>nil, :place=>nil, :possibly_sensitive=>true, :retweet_count=>1807, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/alberto\\\" rel=\\\"nofollow\\\">Hackett-Swaniawski</a>\", :text=>\"Ab beatae voluptatem fugiat.\", :truncated=>false}"], ["user_id", 5], ["created_at", "2022-07-11 19:04:50.235121"], ["updated_at", "2022-07-11 19:04:50.235121"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (1.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>6846621052544678605, :id_str=>\"6846621052544678605\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue May 17 00:00:00 +0000 2016\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>1392, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"CY\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>8595, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/king.becker\\\" rel=\\\"nofollow\\\">Dickinson LLC</a>\", :text=>\"Quo est cupiditate iure.\", :truncated=>false}"], ["user_id", 8], ["created_at", "2022-07-11 19:04:50.238658"], ["updated_at", "2022-07-11 19:04:50.238658"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>6209067885550494638, :id_str=>\"6209067885550494638\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sun May 09 00:00:00 +0000 2021\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>7010, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"SR\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>2178, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/buford\\\" rel=\\\"nofollow\\\">Langosh LLC</a>\", :text=>\"Ratione quo voluptatem quae.\", :truncated=>false}"], ["user_id", 4], ["created_at", "2022-07-11 19:04:50.242676"], ["updated_at", "2022-07-11 19:04:50.242676"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>408685539250866891, :id_str=>\"408685539250866891\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Dec 26 00:00:00 +0000 2006\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>4170, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"YE\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>4253, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/alexander\\\" rel=\\\"nofollow\\\">Batz-Larson</a>\", :text=>\"Dolorum quo voluptas vel.\", :truncated=>false}"], ["user_id", 13], ["created_at", "2022-07-11 19:04:50.245350"], ["updated_at", "2022-07-11 19:04:50.245350"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>634084950658704545, :id_str=>\"634084950658704545\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sun Aug 05 00:00:00 +0000 2007\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>2442, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"JP\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>9092, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/shani\\\" rel=\\\"nofollow\\\">Hintz, Cremin and Koss</a>\", :text=>\"Ex exercitationem doloribus et.\", :truncated=>false}"], ["user_id", 10], ["created_at", "2022-07-11 19:04:50.247983"], ["updated_at", "2022-07-11 19:04:50.247983"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>1220131663059971262, :id_str=>\"1220131663059971262\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Jul 27 00:00:00 +0000 2012\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>3257, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"US\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>1695, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/risa\\\" rel=\\\"nofollow\\\">Marvin, Ebert and O'Reilly</a>\", :text=>\"Cum harum ullam vero.\", :truncated=>false}"], ["user_id", 1], ["created_at", "2022-07-11 19:04:50.250719"], ["updated_at", "2022-07-11 19:04:50.250719"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>870347204845411780, :id_str=>\"870347204845411780\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed Apr 27 00:00:00 +0000 2022\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>936, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"DK\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>2915, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/dorie\\\" rel=\\\"nofollow\\\">MacGyver-Wolff</a>\", :text=>\"Delectus et sed est.\", :truncated=>false}"], ["user_id", 3], ["created_at", "2022-07-11 19:04:50.253437"], ["updated_at", "2022-07-11 19:04:50.253437"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7628482491858548185, :id_str=>\"7628482491858548185\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Feb 21 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>7811, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"DK\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>6031, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/leland_sporer\\\" rel=\\\"nofollow\\\">Runolfsdottir Inc</a>\", :text=>\"Ut molestiae non voluptatem.\", :truncated=>false}"], ["user_id", 13], ["created_at", "2022-07-11 19:04:50.255782"], ["updated_at", "2022-07-11 19:04:50.255782"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (1.0ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7709458929890883003, :id_str=>\"7709458929890883003\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Nov 17 00:00:00 +0000 2015\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>125, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"JP\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>5349, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/collene\\\" rel=\\\"nofollow\\\">Zemlak Group</a>\", :text=>\"Molestias sint exercitationem error.\", :truncated=>false}"], ["user_id", 7], ["created_at", "2022-07-11 19:04:50.258202"], ["updated_at", "2022-07-11 19:04:50.258202"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7622016126475286857, :id_str=>\"7622016126475286857\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Apr 17 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>2397, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"MC\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>3940, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/kieth.moore\\\" rel=\\\"nofollow\\\">Wunsch-Kautzer</a>\", :text=>\"Amet architecto aliquid rem.\", :truncated=>false}"], ["user_id", 5], ["created_at", "2022-07-11 19:04:50.262295"], ["updated_at", "2022-07-11 19:04:50.262295"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7908648694472768996, :id_str=>\"7908648694472768996\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Wed May 25 00:00:00 +0000 2016\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>6197, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"BZ\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>7869, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/sibyl\\\" rel=\\\"nofollow\\\">Koelpin-Fadel</a>\", :text=>\"Libero quasi sed sunt.\", :truncated=>false}"], ["user_id", 8], ["created_at", "2022-07-11 19:04:50.264984"], ["updated_at", "2022-07-11 19:04:50.264984"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2361234977750332996, :id_str=>\"2361234977750332996\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Tue Mar 31 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>6497, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"FJ\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>8512, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/nohemi_monahan\\\" rel=\\\"nofollow\\\">Ryan LLC</a>\", :text=>\"Odio temporibus omnis ipsum.\", :truncated=>false}"], ["user_id", 4], ["created_at", "2022-07-11 19:04:50.267343"], ["updated_at", "2022-07-11 19:04:50.267343"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>6351881885184832225, :id_str=>\"6351881885184832225\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Thu Aug 06 00:00:00 +0000 2020\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8427, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"GR\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>3843, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/jared.pfeffer\\\" rel=\\\"nofollow\\\">Rutherford Group</a>\", :text=>\"Hic eos nostrum eligendi.\", :truncated=>false}"], ["user_id", 15], ["created_at", "2022-07-11 19:04:50.270100"], ["updated_at", "2022-07-11 19:04:50.270100"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>6926425777344049293, :id_str=>\"6926425777344049293\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Fri Sep 28 00:00:00 +0000 2012\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>3715, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"GL\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>8949, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/rafael_rutherford\\\" rel=\\\"nofollow\\\">Stehr, Green and Gottlieb</a>\", :text=>\"Aperiam quod reiciendis rerum.\", :truncated=>false}"], ["user_id", 1], ["created_at", "2022-07-11 19:04:50.272771"], ["updated_at", "2022-07-11 19:04:50.272771"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>8643749616818858963, :id_str=>\"8643749616818858963\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sat Dec 14 00:00:00 +0000 2019\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>8665, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"GL\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>6486, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/lawrence\\\" rel=\\\"nofollow\\\">Wunsch-Becker</a>\", :text=>\"Id sequi aut iste.\", :truncated=>false}"], ["user_id", 6], ["created_at", "2022-07-11 19:04:50.275546"], ["updated_at", "2022-07-11 19:04:50.275546"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>6822519820405139561, :id_str=>\"6822519820405139561\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Mon Dec 14 00:00:00 +0000 2015\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>4224, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"MR\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>4035, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/elroy\\\" rel=\\\"nofollow\\\">Stiedemann-Champlin</a>\", :text=>\"Vel eum a ab.\", :truncated=>false}"], ["user_id", 6], ["created_at", "2022-07-11 19:04:50.278384"], ["updated_at", "2022-07-11 19:04:50.278384"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>7671534786012796569, :id_str=>\"7671534786012796569\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Thu Jun 28 00:00:00 +0000 2007\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>7952, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"VI\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>3892, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/odell\\\" rel=\\\"nofollow\\\">Mueller, Ledner and Cronin</a>\", :text=>\"Et facilis voluptatem voluptatem.\", :truncated=>false}"], ["user_id", 2], ["created_at", "2022-07-11 19:04:50.280984"], ["updated_at", "2022-07-11 19:04:50.280984"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>2183719664528708313, :id_str=>\"2183719664528708313\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Thu Jan 02 00:00:00 +0000 2014\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>7174, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"CM\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>7417, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/prudence\\\" rel=\\\"nofollow\\\">Cronin-Baumbach</a>\", :text=>\"Ut a debitis consequatur.\", :truncated=>false}"], ["user_id", 1], ["created_at", "2022-07-11 19:04:50.283341"], ["updated_at", "2022-07-11 19:04:50.283341"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.6ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>431022872852741272, :id_str=>\"431022872852741272\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sat Jul 21 00:00:00 +0000 2012\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>5043, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"NI\", :nil=>nil, :place=>nil, :possibly_sensitive=>false, :retweet_count=>8777, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/lenard\\\" rel=\\\"nofollow\\\">VonRueden-Williamson</a>\", :text=>\"Doloribus sunt nulla ut.\", :truncated=>false}"], ["user_id", 13], ["created_at", "2022-07-11 19:04:50.286118"], ["updated_at", "2022-07-11 19:04:50.286118"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "{:id=>5786324644771209032, :id_str=>\"5786324644771209032\", :contributors=>nil, :coordinates=>nil, :created_at=>\"Sat Apr 27 00:00:00 +0000 2019\", :entities=>{:hashtags=>[], :symbols=>[], :user_mentions=>[], :urls=>[]}, :favorite_count=>7783, :favorited=>false, :geo=>nil, :in_reply_to_screen_name=>nil, :in_reply_to_status_id=>nil, :in_reply_to_user_id_str=>nil, :in_reply_to_user_id=>nil, :is_quote_status=>false, :lang=>\"LB\", :nil=>nil, :place=>nil, :possibly_sensitive=>true, :retweet_count=>2334, :retweeted_status=>nil, :retweeted=>false, :source=>\"<a href=\\\"http://example.com/addie\\\" rel=\\\"nofollow\\\">Rogahn LLC</a>\", :text=>\"Natus culpa et perspiciatis.\", :truncated=>false}"], ["user_id", 4], ["created_at", "2022-07-11 19:04:50.290734"], ["updated_at", "2022-07-11 19:04:50.290734"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.9ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Recusandae asperiores voluptates laboriosam aut officia soluta non ex exercitationem assumenda aut quibusdam aut magni et eligendi quam molestiae sequi qui nobis corrupti labore possimus nihil."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.625006"], ["updated_at", "2022-07-11 19:07:13.625006"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Repellat qui vero nihil impedit non magnam recusandae delectus qui quaerat explicabo dolores fuga omnis earum neque excepturi quidem ea ipsum rem consequatur quae nam eius voluptas autem."], ["user_id", 11], ["created_at", "2022-07-11 19:07:13.634028"], ["updated_at", "2022-07-11 19:07:13.634028"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Qui eum praesentium ea optio odit nam pariatur laudantium ducimus et ea libero deleniti deserunt non id sint ipsum sit quos eius."], ["user_id", 7], ["created_at", "2022-07-11 19:07:13.636436"], ["updated_at", "2022-07-11 19:07:13.636436"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Fugit odio quia et beatae voluptates libero sit veniam quia hic corporis aut dicta qui numquam accusamus sunt aperiam aspernatur."], ["user_id", 14], ["created_at", "2022-07-11 19:07:13.638583"], ["updated_at", "2022-07-11 19:07:13.638583"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Debitis voluptates in et et soluta sequi earum consequuntur dolor sapiente nisi quo ea impedit deserunt quia."], ["user_id", 4], ["created_at", "2022-07-11 19:07:13.640840"], ["updated_at", "2022-07-11 19:07:13.640840"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Error debitis sit tempore iure autem repellat ea et ut nobis sit nostrum adipisci molestiae recusandae officiis sunt natus soluta aliquid aut consectetur atque distinctio in."], ["user_id", 9], ["created_at", "2022-07-11 19:07:13.643105"], ["updated_at", "2022-07-11 19:07:13.643105"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Rem dolore veritatis mollitia animi sed voluptatem."], ["user_id", 10], ["created_at", "2022-07-11 19:07:13.645528"], ["updated_at", "2022-07-11 19:07:13.645528"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Possimus vel quia nihil sint tempore consequatur quibusdam inventore eum non dicta vel quam dolores ut molestiae qui et sint."], ["user_id", 8], ["created_at", "2022-07-11 19:07:13.648054"], ["updated_at", "2022-07-11 19:07:13.648054"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Nostrum ratione dolor perferendis labore dicta."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.650510"], ["updated_at", "2022-07-11 19:07:13.650510"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Dolores provident aliquam enim fuga non voluptatem ut quas iusto molestiae alias et et non doloribus molestiae excepturi ea."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.653014"], ["updated_at", "2022-07-11 19:07:13.653014"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Et ab error unde dicta deserunt sequi."], ["user_id", 8], ["created_at", "2022-07-11 19:07:13.655201"], ["updated_at", "2022-07-11 19:07:13.655201"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Ut similique dolores sed nesciunt laboriosam id possimus qui amet aut labore dolorem pariatur."], ["user_id", 14], ["created_at", "2022-07-11 19:07:13.657424"], ["updated_at", "2022-07-11 19:07:13.657424"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Alias similique et pariatur maiores explicabo nostrum velit qui in commodi est amet nesciunt nemo."], ["user_id", 7], ["created_at", "2022-07-11 19:07:13.659876"], ["updated_at", "2022-07-11 19:07:13.659876"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Velit deserunt et sit molestiae doloremque sed ullam et voluptas voluptates id labore numquam sit laudantium ipsa et voluptatem nemo quo."], ["user_id", 10], ["created_at", "2022-07-11 19:07:13.662413"], ["updated_at", "2022-07-11 19:07:13.662413"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Excepturi delectus sit omnis eveniet laudantium facilis inventore qui aut."], ["user_id", 9], ["created_at", "2022-07-11 19:07:13.664706"], ["updated_at", "2022-07-11 19:07:13.664706"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Veniam quis minus quos assumenda corporis illo dignissimos sit deserunt vitae architecto deleniti in consequatur commodi doloremque ipsam repellendus fuga aut et dolores sapiente magnam enim labore quia ex quis."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.667016"], ["updated_at", "2022-07-11 19:07:13.667016"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Soluta sed vero placeat non qui dolor eos ducimus quisquam quod fugit molestiae possimus aut temporibus voluptate id odit eligendi itaque non voluptatem enim dolor molestiae."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.669865"], ["updated_at", "2022-07-11 19:07:13.669865"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Corporis enim consequatur qui ipsa quia at amet quasi praesentium ducimus voluptatem voluptas corrupti aut tenetur tempora qui sed aut cum ut a dolores expedita aut eveniet qui deserunt nostrum."], ["user_id", 1], ["created_at", "2022-07-11 19:07:13.672257"], ["updated_at", "2022-07-11 19:07:13.672257"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Qui aut dolorem culpa est tempora molestiae rerum tenetur ut occaecati amet odio accusantium corporis dicta numquam aspernatur quos quae."], ["user_id", 4], ["created_at", "2022-07-11 19:07:13.674841"], ["updated_at", "2022-07-11 19:07:13.674841"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (2.1ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Aut aliquam veniam ratione aut similique minima modi eum et delectus maxime ab ut accusamus quis est ut quos."], ["user_id", 13], ["created_at", "2022-07-11 19:07:13.677356"], ["updated_at", "2022-07-11 19:07:13.677356"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Reiciendis sunt rerum saepe iusto odio magni qui eos deserunt quidem eveniet autem itaque et quia modi voluptatem repudiandae natus."], ["user_id", 9], ["created_at", "2022-07-11 19:07:13.681832"], ["updated_at", "2022-07-11 19:07:13.681832"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (1.0ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Dolores dignissimos non blanditiis alias sed provident sunt deserunt quisquam et qui eum quam consequatur perferendis placeat laboriosam tenetur."], ["user_id", 10], ["created_at", "2022-07-11 19:07:13.684486"], ["updated_at", "2022-07-11 19:07:13.684486"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (1.1ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Numquam fugit sit quas quis a ut sequi deleniti velit sint doloremque porro rerum aut."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.687993"], ["updated_at", "2022-07-11 19:07:13.687993"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Ipsum laboriosam a dicta deleniti neque cupiditate quia non quisquam id quidem temporibus voluptatem similique libero tempore."], ["user_id", 2], ["created_at", "2022-07-11 19:07:13.691841"], ["updated_at", "2022-07-11 19:07:13.691841"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Soluta laborum deserunt est quia amet ullam harum vel."], ["user_id", 8], ["created_at", "2022-07-11 19:07:13.694545"], ["updated_at", "2022-07-11 19:07:13.694545"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Eum nihil ut hic debitis id ea nemo maxime quisquam neque aliquid voluptatibus quia et provident iusto et sit aut vel aut corporis dolorem accusamus ea eligendi aperiam."], ["user_id", 1], ["created_at", "2022-07-11 19:07:13.697243"], ["updated_at", "2022-07-11 19:07:13.697243"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Rerum laborum molestiae cumque illo magnam veniam dicta numquam optio dolorem et nihil aspernatur vero."], ["user_id", 13], ["created_at", "2022-07-11 19:07:13.708589"], ["updated_at", "2022-07-11 19:07:13.708589"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Sed quas quae et quia rerum et doloribus veniam aspernatur corporis aut magni sunt totam tenetur laudantium illum pariatur ad ullam similique non commodi inventore ex fugiat."], ["user_id", 9], ["created_at", "2022-07-11 19:07:13.711419"], ["updated_at", "2022-07-11 19:07:13.711419"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.6ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Sit et qui voluptatem est est consequatur quis quaerat dignissimos autem amet porro accusantium voluptate illo a voluptatibus quia nam."], ["user_id", 6], ["created_at", "2022-07-11 19:07:13.713961"], ["updated_at", "2022-07-11 19:07:13.713961"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Ea tempora iusto perspiciatis alias accusamus magnam molestiae deserunt dignissimos deleniti qui occaecati."], ["user_id", 5], ["created_at", "2022-07-11 19:07:13.716623"], ["updated_at", "2022-07-11 19:07:13.716623"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Ut dolor ut voluptatem sint atque illo et rerum ea quas tempora quis quae aperiam iure et eaque adipisci nihil excepturi maxime culpa ullam quia eos."], ["user_id", 5], ["created_at", "2022-07-11 19:07:13.719179"], ["updated_at", "2022-07-11 19:07:13.719179"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Reprehenderit vero dicta dolorum laboriosam recusandae et optio consequatur laborum rerum nesciunt nobis nam autem harum alias esse dolores qui odio possimus debitis rerum tempora magni excepturi explicabo animi."], ["user_id", 15], ["created_at", "2022-07-11 19:07:13.721913"], ["updated_at", "2022-07-11 19:07:13.721913"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Rerum optio quia iste veritatis quis et ea aspernatur est et nemo maiores a sit consequatur delectus molestiae."], ["user_id", 5], ["created_at", "2022-07-11 19:07:13.724045"], ["updated_at", "2022-07-11 19:07:13.724045"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Perferendis commodi est odio dolorem inventore illo consequuntur facere perspiciatis sint delectus aut id blanditiis est nostrum ut omnis distinctio libero mollitia."], ["user_id", 10], ["created_at", "2022-07-11 19:07:13.726128"], ["updated_at", "2022-07-11 19:07:13.726128"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Unde aut sunt accusantium dolores blanditiis incidunt debitis nulla accusamus repellendus quae non."], ["user_id", 10], ["created_at", "2022-07-11 19:07:13.728562"], ["updated_at", "2022-07-11 19:07:13.728562"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Laboriosam ut quasi incidunt omnis excepturi optio quaerat consequatur asperiores minus officia minima nihil sint ipsam pariatur corporis dolores fuga nisi in saepe sit repudiandae."], ["user_id", 6], ["created_at", "2022-07-11 19:07:13.730662"], ["updated_at", "2022-07-11 19:07:13.730662"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Dicta voluptatum sunt corporis atque sit ut sed enim iure mollitia fugiat blanditiis voluptatem quia incidunt dolores qui eligendi et accusantium placeat et similique tenetur aliquid."], ["user_id", 3], ["created_at", "2022-07-11 19:07:13.732803"], ["updated_at", "2022-07-11 19:07:13.732803"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Dolorem ut magnam nihil ad."], ["user_id", 3], ["created_at", "2022-07-11 19:07:13.734838"], ["updated_at", "2022-07-11 19:07:13.734838"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Et enim sunt est dolore odit omnis voluptas non voluptas eius similique officiis quidem laboriosam quasi nulla mollitia repellendus veniam doloribus dolorem."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.736920"], ["updated_at", "2022-07-11 19:07:13.736920"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Doloribus minus et quis consequatur at a eius ipsam rem recusandae possimus est ab numquam."], ["user_id", 13], ["created_at", "2022-07-11 19:07:13.739955"], ["updated_at", "2022-07-11 19:07:13.739955"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Corporis doloremque voluptas aut et esse quod deleniti excepturi perspiciatis labore voluptatem exercitationem rerum ea."], ["user_id", 7], ["created_at", "2022-07-11 19:07:13.742435"], ["updated_at", "2022-07-11 19:07:13.742435"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Sunt qui cumque earum accusamus excepturi totam dolore in et hic eaque ut et voluptatem id dicta quia ratione."], ["user_id", 7], ["created_at", "2022-07-11 19:07:13.744684"], ["updated_at", "2022-07-11 19:07:13.744684"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Adipisci deleniti quis eum vitae ex quia in non earum ut tempore sequi blanditiis et assumenda ut."], ["user_id", 3], ["created_at", "2022-07-11 19:07:13.747021"], ["updated_at", "2022-07-11 19:07:13.747021"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Facilis et necessitatibus et ut veniam dolorem voluptas magnam corrupti officiis nobis quam maxime cumque consequuntur nisi ullam consequatur pariatur sunt autem exercitationem."], ["user_id", 2], ["created_at", "2022-07-11 19:07:13.749299"], ["updated_at", "2022-07-11 19:07:13.749299"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Quia minus eaque alias amet fuga asperiores excepturi sequi consequuntur minima vel neque ipsam quis."], ["user_id", 9], ["created_at", "2022-07-11 19:07:13.751607"], ["updated_at", "2022-07-11 19:07:13.751607"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Esse adipisci laboriosam sed qui placeat incidunt quia ea accusantium est et nulla et veniam."], ["user_id", 14], ["created_at", "2022-07-11 19:07:13.753875"], ["updated_at", "2022-07-11 19:07:13.753875"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Aliquid nobis velit sit dolor quod hic expedita non illum ad quia corrupti id voluptatibus."], ["user_id", 13], ["created_at", "2022-07-11 19:07:13.756332"], ["updated_at", "2022-07-11 19:07:13.756332"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.3ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Odio ut dolores quam provident et aliquam non a architecto ab molestiae sed est alias pariatur ipsum nobis itaque consequatur id ducimus inventore facere."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.758398"], ["updated_at", "2022-07-11 19:07:13.758398"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Ab odio ut aliquam et doloribus quis voluptatem quo repellendus dolorum aut aperiam rem distinctio nam qui voluptatum est iste provident corrupti."], ["user_id", 12], ["created_at", "2022-07-11 19:07:13.761163"], ["updated_at", "2022-07-11 19:07:13.761163"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTweet Create (0.2ms)[0m  [1m[32mINSERT INTO "tweets" ("tweet_text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweet_text", "Et reprehenderit repudiandae pariatur atque tempore corrupti accusantium molestiae perferendis doloremque non id et ut ut cum ex beatae veniam quod ea."], ["user_id", 15], ["created_at", "2022-07-11 19:07:13.763497"], ["updated_at", "2022-07-11 19:07:13.763497"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTweet Load (1.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTweet Load (0.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTweet Load (0.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+Started GET "/users" for ::1 at 2022-07-11 14:29:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users.json" for ::1 at 2022-07-11 14:30:19 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 26.6ms | Allocations: 6548)
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 60ms (Views: 37.0ms | ActiveRecord: 19.6ms | Allocations: 29768)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 14:52:52 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 50.8ms | Allocations: 6476)
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 100ms (Views: 97.5ms | ActiveRecord: 17.7ms | Allocations: 26311)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 14:52:56 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 4.4ms | Allocations: 1197)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 4.3ms | Allocations: 17776)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 14:55:43 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 19.8ms | Allocations: 3794)
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 47ms (Views: 23.2ms | ActiveRecord: 22.1ms | Allocations: 23807)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 14:57:44 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 5.3ms | Allocations: 1412)
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 46ms (Views: 41.1ms | ActiveRecord: 4.4ms | Allocations: 18517)
+
+
+Started GET "/tweets.json" for ::1 at 2022-07-11 14:58:36 -0500
+Processing by TweetsController#index as JSON
+  Rendering tweets/index.json.jb
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/views/tweets/index.json.jb:1:in `map'
+  Rendered tweets/index.json.jb (Duration: 20.4ms | Allocations: 9169)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms | Allocations: 9896)
+
+
+  
+ActionView::Template::Error (undefined method `tweet' for #<Tweet id: 53, tweet_text: "Qui eum praesentium ea optio odit nam pariatur lau...", user_id: 7, created_at: "2022-07-11 19:07:13.636436000 +0000", updated_at: "2022-07-11 19:07:13.636436000 +0000">):
+    1: @tweets.map do |tweet|
+    2:   {
+    3:     id: tweet.id,
+    4:     tweet: tweet.tweet
+    5:   }
+    6: end
+  
+app/views/tweets/index.json.jb:4
+app/views/tweets/index.json.jb:1:in `map'
+app/views/tweets/index.json.jb:1
+app/controllers/tweets_controller.rb:4:in `index'
+Started GET "/tweets.json" for ::1 at 2022-07-11 14:59:24 -0500
+Processing by TweetsController#index as JSON
+  Rendering tweets/index.json.jb
+  [1m[36mTweet Load (3.0ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/views/tweets/index.json.jb:1:in `map'
+  Rendered tweets/index.json.jb (Duration: 11.8ms | Allocations: 1429)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 3.0ms | Allocations: 3063)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 14:59:37 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 6.1ms | Allocations: 1409)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 50ms (Views: 45.2ms | ActiveRecord: 4.6ms | Allocations: 18386)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 14:59:38 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 4.8ms | Allocations: 1192)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 53ms (Views: 47.3ms | ActiveRecord: 5.8ms | Allocations: 17752)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 15:00:00 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 2.7ms | Allocations: 1410)
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 3.3ms | Allocations: 18500)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 15:00:01 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 4.4ms | Allocations: 1192)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 46ms (Views: 40.5ms | ActiveRecord: 4.7ms | Allocations: 17752)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 15:00:02 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 4.1ms | Allocations: 1192)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 4.9ms | Allocations: 17737)
+
+
+Started GET "/users/2.json" for ::1 at 2022-07-11 15:00:07 -0500
+Processing by UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2344)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x00000000012e58>
+
+    @user = user.find_by(id: params["id"])
+            ^^^^
+Did you mean?  super):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/2.json" for ::1 at 2022-07-11 15:01:25 -0500
+Processing by UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.json.jb
+  Rendered users/show.json.jb (Duration: 1.7ms | Allocations: 1054)
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 23ms (Views: 4.9ms | ActiveRecord: 13.1ms | Allocations: 7843)
+
+
+Started GET "/users.json" for ::1 at 2022-07-11 15:02:11 -0500
+Processing by UsersController#index as JSON
+  Rendering users/index.json.jb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.json.jb:1:in `map'
+  Rendered users/index.json.jb (Duration: 4.1ms | Allocations: 1221)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 55ms (Views: 49.0ms | ActiveRecord: 5.4ms | Allocations: 17797)
+
+
+Started GET "/tweets.json" for ::1 at 2022-07-11 15:07:22 -0500
+Processing by TweetsController#index as JSON
+  Rendering tweets/index.json.jb
+  [1m[36mTweet Load (1.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/views/tweets/index.json.jb:1:in `map'
+  Rendered tweets/index.json.jb (Duration: 47.4ms | Allocations: 4510)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 21.7ms | Allocations: 6058)
+
+

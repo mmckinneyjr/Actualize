@@ -1,11 +1,13 @@
 class SuppliersController < ApplicationController
   def index
     supplier = Supplier.all
+    # render :index
     render json: supplier.as_json
   end
 
   def show
     supplier = Supplier.find_by(id: params["id"])
+    # render :show
     render json: supplier.as_json
   end
 

@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+  has_many :images
+
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :description, presence: true, length: { minimum: 10, maximum: 500 }
@@ -19,7 +22,13 @@ class Product < ApplicationRecord
     return tax + price
   end
 
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
+  ##### replaced by "belongs_to :supplier"
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+
+  ##### replaced by "has_many :images"
+  # def images
+  #   Image.where(product_id: id)
+  # end
 end

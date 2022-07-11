@@ -2,7 +2,7 @@
 GET http://localhost:3000/products.json
 
 ##### Shows specific product by ID
-GET http://localhost:3000/products/2.json
+GET http://localhost:3000/products/3.json
 
 ##### Creates new data object
 POST http://localhost:3000/products.json

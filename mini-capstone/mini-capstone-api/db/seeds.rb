@@ -13,13 +13,48 @@
 # product = Product.new(name: "game", price: 5, image_url: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FtZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", description: "a structured form of play, usually undertaken for entertainment or fun, and sometimes used as an educational tool. Games are different from work, which is usually carried out for remuneration, and from art, which is more often an expression of aesthetic or ideological elements.")
 # product.save
 
-supplier = Supplier.new(name: "Nike", email: "nike@example.com", phone_number: "555-555-1111")
-supplier.save
-supplier = Supplier.new(name: "Apple", email: "apple@example.com", phone_number: "555-555-2222")
-supplier.save
-supplier = Supplier.new(name: "Sony", email: "song@example.com", phone_number: "555-555-3333")
-supplier.save
-supplier = Supplier.new(name: "Dell", email: "dell@example.com", phone_number: "555-555-4444")
-supplier.save
-supplier = Supplier.new(name: "Samsung", email: "samsung@example.com", phone_number: "555-555-5555")
-supplier.save
+# supplier = Supplier.new(name: "Nike", email: "nike@example.com", phone_number: "555-555-1111")
+# supplier.save
+# supplier = Supplier.new(name: "Apple", email: "apple@example.com", phone_number: "555-555-2222")
+# supplier.save
+# supplier = Supplier.new(name: "Sony", email: "song@example.com", phone_number: "555-555-3333")
+# supplier.save
+# supplier = Supplier.new(name: "Dell", email: "dell@example.com", phone_number: "555-555-4444")
+# supplier.save
+# supplier = Supplier.new(name: "Samsung", email: "samsung@example.com", phone_number: "555-555-5555")
+# supplier.save
+
+image = Image.new(url: "https://images.unsplash.com/photo-1657214059264-99456d9aae24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1617005082133-548c4dd27f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1612188842101-f976582906fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1591254674198-a316f1aa8301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjZ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1589782182703-2aaa69037b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzd8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1587467063136-db173523594d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1616347466559-4536037d4bee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODZ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1626753846051-29b988f34fd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODd8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxwcm9kdWN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60")
+image.save
+image = Image.new(url: "https://images.unsplash.com/photo-1522273500616-6b4757e4c184?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA1fHxwcm9kdWN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60")
+image.save

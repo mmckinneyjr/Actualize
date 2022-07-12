@@ -53,6 +53,17 @@ git pull origin main --no-edit
 ```
 
 
+### Week 4
+
+|       | Deliberate Practice (mandatory)          | Deep Dives (optional, see [readme](DEEPDIVES_README.md) |
+| ----- | ---------------------------------------- | ------------------------------------------------------- |
+| Day 1 | [Validations](w04/validations)           | [Randomizer Gem](w04/randomizer_gem)                    |
+| Day 2 | [Has Many](w04/has_many)                 | [Randomizer Gem](w04/randomizer_gem)                    |
+| Day 3 | [Ruby Methods 3](w04/ruby_methods_3)     | [Randomizer Gem](w04/randomizer_gem)                    |
+| Day 4 | [Authentication](w04/authentication)     | [Lights Out](w04/lights_out)                            |
+| Day 5 | [Authorization](w04/authorization)       | [Tic Tac Toe](w04/tic_tac_toe)                          |
+
+
 ### Week 3
 
 |       | Deliberate Practice (mandatory)      | Deep Dives (optional, see [readme](DEEPDIVES_README.md)) |

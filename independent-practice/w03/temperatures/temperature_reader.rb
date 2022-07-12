@@ -2,41 +2,28 @@ class TemperatureReader
   attr_reader :readings
 
   def initialize(filename)
-    @readings = []
-
-    IO.foreach(filename) do |line|
-      if line.include? "K"
-        kelvin_to_fahrenheit(line)
-      elsif line.include? "C"
-        celsius_to_fahrenheit(line)
-      else
-        @readings << line[0..-1].to_f
-      end
-    end
-    @readings
+    # Here, you should read all the temperatures from the file,
+    # and store them in the @readings array as Fahrenheit degrees
   end
 
   def average_fahrenheit
-    sum = 0
-    @readings.each do |temp|
-      sum += temp
-    end
-    return (sum / @readings.size).round(3)
+    # This method should use the @readings array to compute the average
+    # temperature from all the readings
   end
 
   def kelvin_to_fahrenheit(degrees)
-    k = (degrees[0..-1]).to_f
-    fahrenheit_temp = (1.8 * (k - 273.15) + 32)
-    @readings << fahrenheit_temp
+    # This method should convert a number from Kelvin to Fahrenheit.
+    # This method should be called in the constructor (initialize) above.
   end
 
   def celsius_to_fahrenheit(degrees)
-    c = (degrees[0..-1]).to_f
-    fahrenheit_temp = (1.80 * (c) + 32)
-    @readings << fahrenheit_temp
+    # This method should convert a number from Celsius to Fahrenheit.
+    # This method should be called in the constructor (initialize) above.
   end
+
 end
 
-# Example usage of the reader:
+# Example usage of the reader: 
 reader = TemperatureReader.new("readings.txt")
 puts reader.average_fahrenheit
+

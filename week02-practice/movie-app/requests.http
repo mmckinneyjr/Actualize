@@ -12,9 +12,11 @@ POST http://localhost:3000/actors.json
 Content-Type: application/json
 
 {
-  "first_name": "christan",
-  "last_name": "bale",
-  "known_for": "batman"
+  "first_name": "Af",
+  "last_name": "Kd",
+  "known_for": "batman",
+  "gender": ,
+  "age": 14
 }
 
 #####
@@ -28,7 +30,7 @@ Content-Type: application/json
 }
 
 #####
-DELETE http://localhost:3000/actors/26.json
+DELETE http://localhost:3000/actors/27.json
 
 
 ######################################################

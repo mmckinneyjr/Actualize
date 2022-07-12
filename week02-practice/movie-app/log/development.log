@@ -2188,3 +2188,146 @@ Processing by MoviesController#index as JSON
 Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 1466)
 
 
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-12 08:33:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (5.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 15.9ms | Allocations: 10308)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2022-07-12 08:33:33 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1550)
+
+
+Started GET "/actors.json" for 127.0.0.1 at 2022-07-12 08:35:55 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (1.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 1.6ms | ActiveRecord: 7.5ms | Allocations: 8132)
+
+
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:37:26 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"A", "last_name"=>"bale", "known_for"=>"batman", "actor"=>{"first_name"=>"A", "last_name"=>"bale", "known_for"=>"batman"}}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 6084)
+
+
+  
+NoMethodError (undefined method `name' for #<Actor id: nil, first_name: "A", last_name: "bale", known_for: "batman", created_at: nil, updated_at: nil, gender: nil, age: nil>):
+  
+app/controllers/actors_controller.rb:21:in `create'
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:38:00 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"christan", "last_name"=>"bale", "known_for"=>"batman", "actor"=>{"first_name"=>"christan", "last_name"=>"bale", "known_for"=>"batman"}}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 5477)
+
+
+  
+NoMethodError (undefined method `name' for #<Actor id: nil, first_name: "christan", last_name: "bale", known_for: "batman", created_at: nil, updated_at: nil, gender: nil, age: nil>):
+  
+app/controllers/actors_controller.rb:21:in `create'
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:38:49 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"A", "last_name"=>"bale", "known_for"=>"batman", "actor"=>{"first_name"=>"A", "last_name"=>"bale", "known_for"=>"batman"}}
+Completed 200 OK in 124ms (Views: 0.1ms | ActiveRecord: 6.6ms | Allocations: 277607)
+
+
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:39:01 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"A", "last_name"=>"K", "known_for"=>"batman", "actor"=>{"first_name"=>"A", "last_name"=>"K", "known_for"=>"batman"}}
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1902)
+
+
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:39:27 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "first_name": "A",
+  "last_name": "K",
+  "known_for": "batman",
+  "age:" 12
+}
+Processing by ActorsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 132)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/actors_controller.rb:14:in `create'
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:39:37 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"A", "last_name"=>"K", "known_for"=>"batman", "age"=>12, "actor"=>{"first_name"=>"A", "last_name"=>"K", "known_for"=>"batman", "age"=>12}}
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1549)
+
+
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:39:43 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"A", "last_name"=>"K", "known_for"=>"batman", "age"=>14, "actor"=>{"first_name"=>"A", "last_name"=>"K", "known_for"=>"batman", "age"=>14}}
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1087)
+
+
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:39:49 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"A", "last_name"=>"Kd", "known_for"=>"batman", "age"=>14, "actor"=>{"first_name"=>"A", "last_name"=>"Kd", "known_for"=>"batman", "age"=>14}}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 679)
+
+
+Started GET "/actors.json" for ::1 at 2022-07-12 08:40:15 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 3810)
+
+
+Started POST "/actors.json" for 127.0.0.1 at 2022-07-12 08:40:46 -0500
+Processing by ActorsController#create as JSON
+  Parameters: {"first_name"=>"Af", "last_name"=>"Kd", "known_for"=>"batman", "age"=>14, "actor"=>{"first_name"=>"Af", "last_name"=>"Kd", "known_for"=>"batman", "age"=>14}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:21:in `create'
+  [1m[36mActor Create (4.6ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "known_for", "created_at", "updated_at", "gender", "age") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Af"], ["last_name", "Kd"], ["known_for", "batman"], ["created_at", "2022-07-12 13:40:46.158400"], ["updated_at", "2022-07-12 13:40:46.158400"], ["gender", nil], ["age", 14]]
+  ↳ app/controllers/actors_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:21:in `create'
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 6.8ms | Allocations: 2333)
+
+
+Started GET "/actors.json" for ::1 at 2022-07-12 08:40:51 -0500
+Processing by ActorsController#index as JSON
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors"[0m
+  ↳ app/controllers/actors_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 3730)
+
+
+Started DELETE "/actors/27.json" for 127.0.0.1 at 2022-07-12 08:41:33 -0500
+Processing by ActorsController#destroy as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mActor Load (2.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:44:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:45:in `destroy'
+  [1m[36mActor Destroy (1.6ms)[0m  [1m[31mDELETE FROM "actors" WHERE "actors"."id" = $1[0m  [["id", 27]]
+  ↳ app/controllers/actors_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:45:in `destroy'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 4372)
+
+
+Started POST "/movies.json" for 127.0.0.1 at 2022-07-12 09:16:31 -0500
+Processing by MoviesController#create as JSON
+  Parameters: {"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.", "movie"=>{"title"=>"The Godfather", "year"=>"1972", "plot"=>"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son."}}
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 18.9ms | Allocations: 3994)
+
+
+Started GET "/movies.json" for ::1 at 2022-07-12 09:17:33 -0500
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 1760)
+
+

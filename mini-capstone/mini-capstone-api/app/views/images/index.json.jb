@@ -1,0 +1,7 @@
+@images.map do |image|
+  {
+    id: image.id,
+    product_id: product_id,
+    url: url
+  }
+end

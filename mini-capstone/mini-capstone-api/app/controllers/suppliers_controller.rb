@@ -1,8 +1,10 @@
 class SuppliersController < ApplicationController
+  before_action :authenticate_admin
+
   def index
     supplier = Supplier.all
-    # render :index
-    render json: supplier.as_json
+    render :index
+    # render json: supplier.as_json
   end
 
   def show
@@ -17,6 +19,7 @@ class SuppliersController < ApplicationController
       email: params["email"],
       phone_number: params["phone_number"],
     )
+    supplier.save
     render json: supplier.as_json
   end
 

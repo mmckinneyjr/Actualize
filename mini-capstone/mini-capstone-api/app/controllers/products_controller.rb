@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @products = Product.all
     render :index
@@ -14,8 +16,9 @@ class ProductsController < ApplicationController
     @product = Product.new(
       name: params["name"],
       price: params["price"],
-      image_url: params["image_url"],
+      # image_url: params["image_url"],
       description: params["description"],
+      supplier_id: params["supplier_id"],
     )
     if @product.save
       render template: "products/show"
@@ -29,7 +32,7 @@ class ProductsController < ApplicationController
 
     @product.name = params["name"] || product.name
     @product.price = params["price"] || product.price
-    @product.image_url = params["image_url"] || product.image_url
+    # @product.image_url = params["image_url"] || product.image_url
     @product.description = params["description"] || product.description
 
     if @product.save

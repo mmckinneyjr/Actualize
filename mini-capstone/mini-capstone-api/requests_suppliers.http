@@ -1,10 +1,10 @@
-##### SHOW ALL #####
+########## SHOW ALL ##########
 GET http://localhost:3000/suppliers.json
 
-##### SHOW SPECIFIC BY ID #####
+####### SHOW SPECIFIC ########
 GET http://localhost:3000/suppliers/2.json
 
-##### CREATE NEW #####
+######### CREATE NEW #########
 POST http://localhost:3000/supplier.json
 Content-Type: application/json
 
@@ -24,7 +24,7 @@ Content-Type: application/json
   "phone_number": "555-555-1234"
 }
 
-##### Deletes product based on ID
+##### DELETE #####
 DELETE http://localhost:3000/suppliers/21
 
 

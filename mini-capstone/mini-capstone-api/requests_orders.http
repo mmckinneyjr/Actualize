@@ -1,0 +1,27 @@
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MjYxMjJ9.WrV30xnOCoOE4JGN_cDD-tgqauEZodynIKbTZlZ3s8k
+
+########## SHOW ALL ##########
+GET http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
+
+
+####### SHOW SPECIFIC ########
+GET http://localhost:3000/orders/6.json
+Authorization: Bearer {{jwt}}
+
+
+######### CREATE NEW #########
+POST http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
+
+{
+  "product_id": "1",
+  "quantity": "1"
+}
+
+
+##### DELETE #####
+DELETE http://localhost:3000/orders/16
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MjU4MTN9.Frb9TEiOCQ0CkFsUlAc3qIUUqXAq3tZ78fVpBO09ezY
+

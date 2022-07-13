@@ -1,18 +1,22 @@
-##### Shows all products
+########## SHOW ALL ##########
 GET http://localhost:3000/products.json
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MTgzNjR9.wiveZ5gcYa_5VRzrUJIPl8Ijlw4oUBrmygXueANSoZg
 
-##### Shows specific product by ID
+
+####### SHOW SPECIFIC ########
 GET http://localhost:3000/products/3.json
 
-##### Creates new data object
+######### CREATE NEW #########
 POST http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc3NDMyODd9.82zAcbv4SHbfH0T8LWA86xaLdshqPActlUw2yBg5ovA
 Content-Type: application/json
 
 {
-  "name": "jack in the box 2",
+  "name": "jack in the box 7",
   "price": "1",
   "image_url": "www.jackinthebox.com",
-  "description": "jacksldkfjlsdjflsdjflksdjflsjlfs"
+  "description": "jacksldkfjlsdjflsdjflksdjflsjlfs",
+  "supplier_id": 2
 }
 
 ##### Updates product based on ID
@@ -26,7 +30,7 @@ Content-Type: application/json
   "description": "tons of pieces of fun"
 }
 
-##### Deletes product based on ID
+##### DELETE #####
 DELETE http://localhost:3000/products/21
 
 

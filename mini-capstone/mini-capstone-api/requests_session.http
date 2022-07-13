@@ -1,0 +1,21 @@
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MjYxMjJ9.WrV30xnOCoOE4JGN_cDD-tgqauEZodynIKbTZlZ3s8k
+
+######### CREATE NEW #########
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "ringo@example.com",
+  "password": "password"
+}
+
+
+##### DELETE #####
+DELETE http://localhost:3000/sessions
+Content-Type: application/json
+
+
+
+
+

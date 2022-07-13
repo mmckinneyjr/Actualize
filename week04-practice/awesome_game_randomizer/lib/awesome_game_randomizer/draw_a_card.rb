@@ -1,5 +1,5 @@
 module AwesomeGameRandomizer
-  class DrawCard
+  class PlayingCard
     def self.draw
       suits = ["\u2660 Spades", "\u2665 Hearts", "\u2666 Diamonds", "\u2663 Clubs"]
       value = rand(2..14)

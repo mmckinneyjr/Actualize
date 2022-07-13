@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
     movie = Movie.all
-    render json: movie.as_json
+    render json: movie.as_json(include: [actors: { only: [:first_name, :last_name, :gender, :age] }])
   end
 
   def show

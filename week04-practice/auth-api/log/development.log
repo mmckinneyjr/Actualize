@@ -1,0 +1,774 @@
+  [1m[35m (228.5ms)[0m  [1m[35mCREATE DATABASE "auth_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (56.3ms)[0m  [1m[35mCREATE DATABASE "auth_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3824928847131387765)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220714211433)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220714211433"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (7.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-14 21:15:18.726639"], ["updated_at", "2022-07-14 21:15:18.726639"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3824928847131387765)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (4.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (7756.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "auth_api_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (35.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "auth_api_development"[0m
+  [1m[35m (25.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "auth_api_test"[0m
+  [1m[35m (169.0ms)[0m  [1m[35mCREATE DATABASE "auth_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (51.8ms)[0m  [1m[35mCREATE DATABASE "auth_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3824928847131387765)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220714212009)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220714212009"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (6.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-14 21:20:15.345550"], ["updated_at", "2022-07-14 21:20:15.345550"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3824928847131387765)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:26:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 400 Bad Request in 45ms (Views: 0.2ms | ActiveRecord: 20.8ms | Allocations: 15347)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:28:18 -0500
+Processing by UsersController#create as JSON
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 400 Bad Request in 15ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 2971)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:29:15 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Bruce Wayne", "email"=>"brucewayne@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Bruce Wayne", "email"=>"brucewayne@example.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "brucewayne@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (12.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bruce Wayne"], ["email", "brucewayne@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-14 21:29:15.543874"], ["updated_at", "2022-07-14 21:29:15.543874"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 201 Created in 319ms (Views: 0.1ms | ActiveRecord: 15.2ms | Allocations: 3198)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:29:36 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent@example.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clark Kent"], ["email", "clarkkent@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-14 21:29:36.644975"], ["updated_at", "2022-07-14 21:29:36.644975"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 201 Created in 300ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 2707)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:31:39 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 316ms (Views: 0.3ms | ActiveRecord: 13.7ms | Allocations: 4010)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:33:12 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 320ms (Views: 0.3ms | ActiveRecord: 12.4ms | Allocations: 3676)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:34:02 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 295ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 693)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:34:07 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent@example.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 400 Bad Request in 289ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 3135)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:34:18 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (9.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clark Kent"], ["email", "clarkkent2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-14 21:34:19.224653"], ["updated_at", "2022-07-14 21:34:19.224653"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 201 Created in 319ms (Views: 0.3ms | ActiveRecord: 11.0ms | Allocations: 2790)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:37:25 -0500
+Processing by UsersController#create as JSON
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 400 Bad Request in 16ms (Views: 0.2ms | ActiveRecord: 7.8ms | Allocations: 5955)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:37:25 -0500
+Processing by UsersController#create as JSON
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Exists? (32.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 400 Bad Request in 94ms (Views: 0.2ms | ActiveRecord: 47.6ms | Allocations: 2861)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:37:34 -0500
+Processing by UsersController#index as JSON
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2018)
+
+
+  
+NameError (uninitialized constant UsersController::Users
+
+    users = Users.all
+            ^^^^^):
+  
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:39:22 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 7.0ms | Allocations: 3714)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:39:39 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 294ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1134)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:39:57 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 839)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:40:01 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 302ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 676)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:40:03 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 815)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:41:29 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 7.9ms | Allocations: 4540)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:41:42 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 294ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1088)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:41:47 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1450)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:43:40 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 8.4ms | Allocations: 5424)
+
+
+  
+NameError (uninitialized constant UsersController::Current_user
+
+    pp current_user = Current_user
+                      ^^^^^^^^^^^^):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:44:06 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 7.2ms | Allocations: 5371)
+
+
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 16:46:32 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/sessions.json"):
+  
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 16:46:52 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/sessions.json"):
+  
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 16:46:54 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/sessions.json"):
+  
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 16:47:17 -0500
+Processing by SessionsController#destroy as JSON
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 169)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2..4)):
+  
+app/controllers/sessions_controller.rb:20:in `destroy'
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 16:50:03 -0500
+Processing by SessionsController#destroy as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1265)
+
+
+  
+NoMethodError (undefined method `destroy' for JWT:Module
+
+    jwt = JWT.destroy
+             ^^^^^^^^):
+  
+app/controllers/sessions_controller.rb:20:in `destroy'
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:56:48 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 396ms (Views: 0.6ms | ActiveRecord: 69.9ms | Allocations: 6880)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:57:08 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"brucewaynet@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"brucewaynet@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "brucewaynet@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 582)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:57:25 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2658)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:57:39 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"brucewaynef@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"brucewaynef@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "brucewaynef@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 575)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 16:58:54 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"brucewayne@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"brucewayne@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "brucewayne@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 328ms (Views: 0.3ms | ActiveRecord: 13.7ms | Allocations: 3697)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:59:09 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (5.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clark Kent"], ["email", "clarkkent2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-14 21:59:10.256383"], ["updated_at", "2022-07-14 21:59:10.256383"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 313ms (Views: 0.1ms | ActiveRecord: 8.9ms | Allocations: 4106)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 16:59:42 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 400 Bad Request in 308ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 3151)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 16:59:51 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 2314)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:00:09 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 400 Bad Request in 270ms (Views: 0.1ms | ActiveRecord: 11.1ms | Allocations: 5067)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:00:12 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 400 Bad Request in 304ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 3090)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:00:20 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"brucewayne@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"brucewayne@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "brucewayne@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 344ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1106)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:00:24 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 400 Bad Request in 296ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 3200)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:00:27 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 2329)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:00:30 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 2237)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:00:37 -0500
+Processing by UsersController#index as JSON
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 131)
+
+
+  
+JWT::DecodeError (Invalid segment encoding):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/controllers/application_controller.rb:21:in `authenticate_user'
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:01:23 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 301ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 676)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:01:26 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 400 Bad Request in 301ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 3083)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:01:32 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkente2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkente2@example.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkente2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clark Kent"], ["email", "clarkkente2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-14 22:01:32.334179"], ["updated_at", "2022-07-14 22:01:32.334179"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 308ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 3359)
+
+
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 17:02:06 -0500
+Processing by SessionsController#destroy as JSON
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1231)
+
+
+  
+NoMethodError (undefined method `destroy' for JWT:Module
+
+    jwt = JWT.destroy
+             ^^^^^^^^):
+  
+app/controllers/sessions_controller.rb:20:in `destroy'
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 17:02:27 -0500
+Processing by SessionsController#destroy as JSON
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1224)
+
+
+  
+NoMethodError (undefined method `destroy' for JWT:Module
+
+    jwt.destroy
+       ^^^^^^^^):
+  
+app/controllers/sessions_controller.rb:21:in `destroy'
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 17:02:57 -0500
+Processing by SessionsController#destroy as JSON
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2..4)):
+  
+app/controllers/sessions_controller.rb:20:in `destroy'
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 17:03:20 -0500
+Processing by SessionsController#destroy as JSON
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2..4)):
+  
+app/controllers/sessions_controller.rb:20:in `destroy'
+Started DELETE "/sessions.json" for 127.0.0.1 at 2022-07-14 17:04:56 -0500
+Processing by SessionsController#destroy as JSON
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:05:03 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 400 Bad Request in 304ms (Views: 0.2ms | ActiveRecord: 10.2ms | Allocations: 5115)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:05:07 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 1.4ms | ActiveRecord: 1.0ms | Allocations: 2440)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:05:34 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent3@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent3@example.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent3@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clark Kent"], ["email", "clarkkent3@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-14 22:05:34.818733"], ["updated_at", "2022-07-14 22:05:34.818733"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 306ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 3359)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:11:06 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent3@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent3@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent3@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 301ms (Views: 0.5ms | ActiveRecord: 9.9ms | Allocations: 829)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:11:12 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 29ms (Views: 0.6ms | ActiveRecord: 12.8ms | Allocations: 2453)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:11:27 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 2345)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:11:29 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 2345)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:12:16 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 298ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 676)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:12:27 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 2346)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:13:00 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 12ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 691)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:13:16 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (8.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clark Kent"], ["email", "clarkkent2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-14 22:13:16.551793"], ["updated_at", "2022-07-14 22:13:16.551793"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 317ms (Views: 0.1ms | ActiveRecord: 9.9ms | Allocations: 3284)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:13:36 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 297ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 676)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:14:09 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 14ms (Views: 0.9ms | ActiveRecord: 0.9ms | Allocations: 685)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:14:11 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 685)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2022-07-14 17:14:12 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Clark Kent", "email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Clark Kent", "email"=>"clarkkent2@example.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 685)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:14:14 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 685)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:14:17 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 566)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:14:20 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 566)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:14:21 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 565)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:14:22 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent2@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 565)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-14 17:14:35 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"clarkkent@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"clarkkent@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clarkkent@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 299ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 676)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2022-07-14 17:14:45 -0500
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 2236)
+
+

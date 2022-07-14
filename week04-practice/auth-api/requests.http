@@ -1,0 +1,27 @@
+
+##### view all users
+GET http://localhost:3000/users.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTc5MjMyNzZ9.b_fagTcZ-7YG9W6m0YZvoQUfWpFtsh6FcysPXyJb3mw
+
+##### Create user 
+POST http://localhost:3000/users.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE2NTc5MjMyMTZ9.7kiSym4boX8dDdk9VlXnmIuuJlZRpHX39WdyrSzJ6yw
+Content-Type: application/json
+ 
+{
+  "name": "Clark Kent",
+  "email": "clarkkent2@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+ 
+{
+  "email": "clarkkent@example.com",
+  "password": "password"
+}
+

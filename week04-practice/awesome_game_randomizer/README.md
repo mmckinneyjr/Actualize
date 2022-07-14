@@ -10,11 +10,11 @@ require 'awesome_game_randomizer'
 ````
 ##### Flip a coin for heads or tails
 ````
-AwesomeGameRandomizer::Flip.flip_coin
+AwesomeGameRandomizer::Coin.flip
 ````
 ##### Draws a random card from a 52 card deck
 ````
-AwesomeGameRandomizer::DrawCard.draw
+AwesomeGameRandomizer::PlayingCard.draw
 ````
 ##### Number of 6 sided dice to roll
 ````

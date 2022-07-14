@@ -1,18 +1,19 @@
 module AwesomeGameRandomizer
   class Lotto
-    def self.pick(count, nums)
-      lotto_nums = []
+    def self.pick()
+      n = []
       i = 0
-      if count <= nums
-        while i < count
-          pick = rand(1..nums)
-          unless lotto_nums.include?(pick)
-            lotto_nums << pick
+      if 7 <= 50
+        while i < 7
+          pick = rand(1..50)
+          unless n.include?(pick)
+            n << pick
             i += 1
           end
         end
       end
-      puts "Error: not enough numbers"
+      puts "#{n[0]}, #{n[1]}, #{n[2]}, #{n[3]}, #{n[4]}, #{n[5]}, [#{n[6]}]"
     end
+    self.pick
   end
 end

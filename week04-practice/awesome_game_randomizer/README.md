@@ -18,10 +18,10 @@ AwesomeGameRandomizer::PlayingCard.draw
 ````
 ##### Number of 6 sided dice to roll
 ````
-AwesomeGameRandomizer::Dice.roll(20)
+AwesomeGameRandomizer::Dice.roll
 ````
 ##### First number is the number of selected numbers
 ##### Second number is the range 1 to your number
 ````
-AwesomeGameRandomizer::Dice.roll(20)
+AwesomeGameRandomizer::Lotto.pick
 ````

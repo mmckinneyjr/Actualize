@@ -1,0 +1,26 @@
+### Users create (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "ringo",
+  "email": "ringo@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+
+
+### Dog create 
+POST http://localhost:3000/dogs.json
+Content-Type: application/json
+
+{
+  "name": "charlie",
+  "age": "13",
+  "breed": "beagle",
+}
+
+
+
+

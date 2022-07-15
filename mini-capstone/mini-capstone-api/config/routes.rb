@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   #Session routes
   post "/sessions" => "sessions#create"
+  delete "/sessions" => "sessions#destroy"
 
   #Orders routes
   get "/orders" => "orders#index"

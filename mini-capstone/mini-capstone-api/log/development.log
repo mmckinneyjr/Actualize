@@ -15484,3 +15484,1300 @@ Processing by OrdersController#index as JSON
 Completed 200 OK in 135ms (Views: 1.3ms | ActiveRecord: 39.5ms | Allocations: 12700)
 
 
+Started GET "/" for ::1 at 2022-07-13 15:24:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 537)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 3431)
+
+
+Started GET "/" for ::1 at 2022-07-13 15:24:07 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 319)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1009)
+
+
+Started GET "/products.json" for ::1 at 2022-07-13 15:24:07 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (5.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (7.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (1.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 81.6ms | Allocations: 25058)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (1.8ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 140ms (Views: 84.7ms | ActiveRecord: 43.1ms | Allocations: 50782)
+
+
+Started GET "/products" for ::1 at 2022-07-13 15:24:26 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 29.1ms | Allocations: 13448)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (2.8ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (3.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (4.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (1.7ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 70ms (Views: 49.1ms | ActiveRecord: 19.2ms | Allocations: 33148)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:24:29 -0500
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 224)
+
+
+Started GET "/products" for ::1 at 2022-07-13 15:24:39 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 35.3ms | Allocations: 13569)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 67ms (Views: 59.3ms | ActiveRecord: 7.2ms | Allocations: 33211)
+
+
+Started GET "/products/2" for ::1 at 2022-07-13 15:24:41 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `show'
+  Rendering products/show.json.jb
+  [1m[36mSupplier Load (1.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/show.json.jb:9
+  Rendered products/show.json.jb (Duration: 3.3ms | Allocations: 834)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:12:in `show'
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 1.7ms | Allocations: 2937)
+
+
+Started POST "/orders" for ::1 at 2022-07-13 15:24:46 -0500
+Processing by OrdersController#create as JSON
+  Parameters: {"product_id"=>2, "quantity"=>"3", "order"=>{"product_id"=>2, "quantity"=>"3"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 4.5ms | Allocations: 145)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:24:48 -0500
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 101)
+
+
+Started GET "/orders.json" for ::1 at 2022-07-13 15:25:00 -0500
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 96)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:25:06 -0500
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 101)
+
+
+Started POST "/sessions" for ::1 at 2022-07-13 15:25:45 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"ringo@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ringo@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ringo@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 316ms (Views: 0.2ms | ActiveRecord: 7.8ms | Allocations: 4827)
+
+
+Started GET "/products" for ::1 at 2022-07-13 15:25:46 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 35.1ms | Allocations: 13469)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (1.8ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 55ms (Views: 48.2ms | ActiveRecord: 6.6ms | Allocations: 33096)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:25:49 -0500
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 34ms (Views: 1.5ms | ActiveRecord: 5.1ms | Allocations: 7152)
+
+
+Started GET "/suppliers" for ::1 at 2022-07-13 15:25:59 -0500
+Processing by SuppliersController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering suppliers/index.json.jb
+  Rendered suppliers/index.json.jb (Duration: 7.2ms | Allocations: 1497)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 3347)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+
+            @virtual_path = "suppliers/index";;@suppliers.map do |supplier|
+                                                         ^^^^):
+    1: @suppliers.map do |supplier|
+    2:   {
+    3:     id: supplier.id,
+    4:     name: supplier.name,
+  
+app/views/suppliers/index.json.jb:1
+app/controllers/suppliers_controller.rb:6:in `index'
+Started GET "/products" for ::1 at 2022-07-13 15:26:02 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 35.5ms | Allocations: 13570)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 77ms (Views: 66.9ms | ActiveRecord: 8.7ms | Allocations: 33231)
+
+
+Started GET "/products/19" for ::1 at 2022-07-13 15:26:03 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"19"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `show'
+  Rendering products/show.json.jb
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.json.jb:9
+  Rendered products/show.json.jb (Duration: 3.2ms | Allocations: 726)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:12:in `show'
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 1.2ms | Allocations: 2354)
+
+
+Started POST "/orders" for ::1 at 2022-07-13 15:26:06 -0500
+Processing by OrdersController#create as JSON
+  Parameters: {"product_id"=>19, "quantity"=>"2", "order"=>{"product_id"=>19, "quantity"=>"2"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mOrder Create (5.1ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "quantity", "subtotal", "tax", "total", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 4], ["product_id", 19], ["quantity", 2], ["subtotal", "10.0"], ["tax", "0.9"], ["total", "10.9"], ["created_at", "2022-07-13 20:26:06.850840"], ["updated_at", "2022-07-13 20:26:06.850840"]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 8.0ms | Allocations: 6363)
+
+
+Started GET "/orders/17" for ::1 at 2022-07-13 15:26:06 -0500
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 AND "orders"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2148)
+
+
+Started GET "/orders/17" for ::1 at 2022-07-13 15:26:19 -0500
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 AND "orders"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2074)
+
+
+Started GET "/orders/17" for ::1 at 2022-07-13 15:26:27 -0500
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 AND "orders"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2073)
+
+
+Started GET "/orders/17" for ::1 at 2022-07-13 15:26:35 -0500
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 AND "orders"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 2073)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:26:43 -0500
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 3623)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:32:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 41ms (Views: 0.5ms | ActiveRecord: 18.7ms | Allocations: 18781)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:35:08 -0500
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 4.0ms | Allocations: 3798)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:35:54 -0500
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 3639)
+
+
+Started GET "/products" for ::1 at 2022-07-13 15:41:49 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.9ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 95.6ms | Allocations: 23794)
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 170ms (Views: 164.4ms | ActiveRecord: 49.6ms | Allocations: 48727)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:41:58 -0500
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 3751)
+
+
+Started GET "/suppliers" for ::1 at 2022-07-13 15:42:36 -0500
+Processing by SuppliersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering suppliers/index.json.jb
+  Rendered suppliers/index.json.jb (Duration: 4.4ms | Allocations: 1502)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 3355)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+
+            @virtual_path = "suppliers/index";;@suppliers.map do |supplier|
+                                                         ^^^^):
+    1: @suppliers.map do |supplier|
+    2:   {
+    3:     id: supplier.id,
+    4:     name: supplier.name,
+  
+app/views/suppliers/index.json.jb:1
+app/controllers/suppliers_controller.rb:6:in `index'
+Started GET "/products" for ::1 at 2022-07-13 15:42:38 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 40.8ms | Allocations: 13560)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 136ms (Views: 127.9ms | ActiveRecord: 7.6ms | Allocations: 33218)
+
+
+Started GET "/products/2" for ::1 at 2022-07-13 15:42:45 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `show'
+  Rendering products/show.json.jb
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/show.json.jb:9
+  Rendered products/show.json.jb (Duration: 4.7ms | Allocations: 833)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:12:in `show'
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 1.2ms | Allocations: 2916)
+
+
+Started POST "/orders" for ::1 at 2022-07-13 15:42:52 -0500
+Processing by OrdersController#create as JSON
+  Parameters: {"product_id"=>2, "quantity"=>"19", "order"=>{"product_id"=>2, "quantity"=>"19"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mOrder Create (4.1ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "quantity", "subtotal", "tax", "total", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 4], ["product_id", 2], ["quantity", 19], ["subtotal", "950.0"], ["tax", "85.5"], ["total", "1035.5"], ["created_at", "2022-07-13 20:42:52.432583"], ["updated_at", "2022-07-13 20:42:52.432583"]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 7.0ms | Allocations: 6348)
+
+
+Started GET "/orders/18" for ::1 at 2022-07-13 15:42:52 -0500
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 AND "orders"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 2148)
+
+
+Started DELETE "/sessions" for 127.0.0.1 at 2022-07-13 15:44:14 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/sessions"):
+  
+Started DELETE "/sessions" for 127.0.0.1 at 2022-07-13 15:44:55 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"session"=>{}}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:20:in `destroy'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.7ms | Allocations: 4209)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass
+
+    product.destroy
+           ^^^^^^^^):
+  
+app/controllers/sessions_controller.rb:22:in `destroy'
+Started DELETE "/sessions" for 127.0.0.1 at 2022-07-13 15:45:59 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2166)
+
+
+  
+NameError (uninitialized constant SessionsController::Session
+
+    session = Session.find_by(id: params["id"])
+              ^^^^^^^):
+  
+app/controllers/sessions_controller.rb:20:in `destroy'
+Started GET "/products" for ::1 at 2022-07-13 15:46:42 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 44.3ms | Allocations: 19516)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 86ms (Views: 53.2ms | ActiveRecord: 24.8ms | Allocations: 43113)
+
+
+Started POST "/sessions" for ::1 at 2022-07-13 15:46:57 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"ringo@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ringo@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ringo@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 309ms (Views: 0.3ms | ActiveRecord: 9.0ms | Allocations: 3984)
+
+
+Started GET "/products" for ::1 at 2022-07-13 15:46:58 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 14.2ms | Allocations: 13468)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 5.2ms | Allocations: 33095)
+
+
+Started GET "/products/2" for ::1 at 2022-07-13 15:47:02 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `show'
+  Rendering products/show.json.jb
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/show.json.jb:9
+  Rendered products/show.json.jb (Duration: 2.9ms | Allocations: 727)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:12:in `show'
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 1.2ms | Allocations: 2681)
+
+
+Started POST "/orders" for ::1 at 2022-07-13 15:47:06 -0500
+Processing by OrdersController#create as JSON
+  Parameters: {"product_id"=>2, "quantity"=>"19", "order"=>{"product_id"=>2, "quantity"=>"19"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "quantity", "subtotal", "tax", "total", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 4], ["product_id", 2], ["quantity", 19], ["subtotal", "950.0"], ["tax", "85.5"], ["total", "1035.5"], ["created_at", "2022-07-13 20:47:06.865230"], ["updated_at", "2022-07-13 20:47:06.865230"]]
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:30:in `create'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 7.4ms | Allocations: 8124)
+
+
+Started GET "/orders/19" for ::1 at 2022-07-13 15:47:06 -0500
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 AND "orders"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 2356)
+
+
+Started GET "/orders/19" for ::1 at 2022-07-13 15:51:35 -0500
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 AND "orders"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 2072)
+
+
+Started GET "/products" for ::1 at 2022-07-13 15:52:43 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 30.1ms | Allocations: 13439)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 75ms (Views: 66.6ms | ActiveRecord: 7.5ms | Allocations: 33048)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:52:46 -0500
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 15.7ms | ActiveRecord: 1.0ms | Allocations: 4101)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:54:11 -0500
+Processing by OrdersController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 1.0ms | ActiveRecord: 1.2ms | Allocations: 3926)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:56:41 -0500
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 109)
+
+
+Started GET "/orders" for ::1 at 2022-07-13 15:57:04 -0500
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 101)
+
+

@@ -17,9 +17,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    product = Product.find_by(id: params["id"])
+    session = Session.find_by(id: params["id"])
 
-    product.destroy
+    session.destroy
     render json: { message: "Session Successfully Termintated" }
   end
 end

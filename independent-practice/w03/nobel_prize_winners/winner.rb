@@ -1,7 +1,6 @@
 class Winner
-
   attr_reader :first_name, :last_name, :motivation, :category, :year
-  
+
   def initialize(first_name, last_name, motivation, category, year)
     @first_name = first_name
     @last_name = last_name

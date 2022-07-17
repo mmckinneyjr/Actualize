@@ -1,0 +1,42 @@
+
+# @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE2NTgxNjQzODV9.-drMuSbjJiIl_ZZD28qmneNhkr6SKBk3A7hTcfcnvT4
+
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTgxNjQ0NTl9.KNPayeXMBWJOCqxFROJZL194ylsNIGaKm2hX3VdzNTk
+
+################## ACTOR REQUESTS ####################
+
+##### Select All
+GET http://localhost:3000/actors.json
+
+##### Select One
+GET http://localhost:3000/actors/2.json
+
+##### Create
+POST http://localhost:3000/actors.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "first_name": "Tony",
+  "last_name": "Stark",
+  "known_for": "Batman",
+  "gender": "male",
+  "age": 47
+}
+
+
+##### Update
+PATCH http://localhost:3000/actors/25.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "last_name": "Pitt",
+  "gender": "male"
+}
+
+##### Delete
+DELETE http://localhost:3000/actors/27.json
+Authorization: Bearer {{jwt}}
+

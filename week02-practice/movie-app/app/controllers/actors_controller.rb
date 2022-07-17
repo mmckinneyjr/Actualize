@@ -1,8 +1,9 @@
 class ActorsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @actor = Actor.all
     render json: @actor.to_json
-                                
   end
 
   def show

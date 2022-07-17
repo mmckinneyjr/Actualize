@@ -28,4 +28,7 @@
 
 # Movie.create(title: "Eternal Sunshine of the Spotless Mind", year: "2004", plot: "When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories.")
 
-Movie.create(title: "highlander", year: "1986", plot: "An immortal Scottish swordsman must confront the last of his immortal opponent, a murderously brutal barbarian who lusts for the fabled Prize.")
+# Movie.create(title: "highlander", year: "1986", plot: "An immortal Scottish swordsman must confront the last of his immortal opponent, a murderously brutal barbarian who lusts for the fabled Prize.")
+
+user = User.new({ name: "bob", email: "bob@example", password: "password" })
+user.save

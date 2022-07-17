@@ -1,0 +1,37 @@
+
+
+################## ACTOR REQUESTS ####################
+
+##### Select All
+GET http://localhost:3000/users.json
+
+##### Select One
+GET http://localhost:3000/users/4.json
+
+##### Create
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "ken",
+  "email": "ken@example.com",
+  "password": "password",
+  "password_confirmation": "password",
+  "admin": false
+
+}
+
+##### Update
+PATCH http://localhost:3000/users/2.json
+Content-Type: application/json
+
+{
+  "name": "clark",
+  "email": "kent",
+  "password": "superman",
+  "admin": true
+}
+
+##### Delete
+DELETE http://localhost:3000/users/2.json
+

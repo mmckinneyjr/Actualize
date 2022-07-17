@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  #Users Routes
+  resources :users
+
   #Actors Routes
   get "/actors" => "actors#index"
   get "/actors/:id" => "actors#show"
@@ -12,4 +16,7 @@ Rails.application.routes.draw do
   post "/movies" => "movies#create"
   patch "/movies/:id" => "movies#update"
   delete "/movies/:id" => "movies#destroy"
+
+  #Sessions Routes
+  post "/sessions" => "sessions#create"
 end

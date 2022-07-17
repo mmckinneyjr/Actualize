@@ -1,0 +1,11 @@
+
+######### CREATE NEW #########
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "mark@example.com",
+  "password": "password"
+}
+
+

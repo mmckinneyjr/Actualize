@@ -30,5 +30,20 @@
 
 # Movie.create(title: "highlander", year: "1986", plot: "An immortal Scottish swordsman must confront the last of his immortal opponent, a murderously brutal barbarian who lusts for the fabled Prize.")
 
-user = User.new({ name: "bob", email: "bob@example", password: "password" })
-user.save
+# user = User.new({ name: "bob", email: "bob@example", password: "password" })
+# user.save
+
+# genre = Genre.create(name: "Thriller")
+# genre = Genre.create(name: "Romcom")
+# genre = Genre.create(name: "Action")
+# genre = Genre.create(name: "Indie")
+# genre = Genre.create(name: "Comedy")
+# genre = Genre.create(name: "Drama")
+
+movie_genre = MovieGenre.create(genre_id: 6, movie_id: 1)
+# movie_genre = MovieGenre.create(genre_id: 3, movie_id: 6)
+# movie_genre = MovieGenre.create(genre_id: 3, movie_id: 3)
+# movie_genre = MovieGenre.create(genre_id: 3, movie_id: 4)
+# movie_genre = MovieGenre.create(genre_id: 4, movie_id: 5)
+# movie_genre = MovieGenre.create(genre_id: 6, movie_id: 2)
+# movie_genre = MovieGenre.create(genre_id: 6, movie_id: 7)

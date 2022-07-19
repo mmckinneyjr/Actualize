@@ -53,3 +53,4 @@ end
 
 gem 'jwt'
 
+gem 'jb'

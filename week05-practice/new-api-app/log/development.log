@@ -1,0 +1,449 @@
+Started GET "/actors.json" for ::1 at 2022-07-19 11:53:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actors.json"):
+  
+Started GET "/" for ::1 at 2022-07-19 11:53:05 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 644)
+Completed 200 OK in 17ms (Views: 13.9ms | Allocations: 3437)
+
+
+Started GET "/articles" for ::1 at 2022-07-19 11:53:13 -0500
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 0ms (Allocations: 191)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/favicon.ico" for ::1 at 2022-07-19 11:53:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 11:56:22 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 200 OK in 377ms (Views: 24.1ms | Allocations: 13459)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 11:59:59 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 204 No Content in 231ms (Allocations: 1394)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 12:00:31 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 204 No Content in 139ms (Allocations: 1367)
+
+
+Started GET "/articles?search_term=bike" for ::1 at 2022-07-19 12:00:38 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"bike"}
+Completed 204 No Content in 261ms (Allocations: 1109)
+
+
+Started GET "/articles?search_term=bike" for ::1 at 2022-07-19 12:00:47 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"bike"}
+Completed 204 No Content in 114ms (Allocations: 1145)
+
+
+Started GET "/articles?search_term=bike" for ::1 at 2022-07-19 12:00:55 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"bike"}
+Completed 204 No Content in 145ms (Allocations: 1366)
+
+
+Started GET "/artmuseums" for ::1 at 2022-07-19 12:31:32 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArtmuseumsController):
+  
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/artmuseums,hson" for ::1 at 2022-07-19 12:31:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/artmuseums,hson"):
+  
+Started GET "/artmuseums.json" for ::1 at 2022-07-19 12:31:40 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArtmuseumsController):
+  
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/artmuseums.json" for ::1 at 2022-07-19 12:31:57 -0500
+Processing by ArtmuseumsController#index as JSON
+Completed 200 OK in 258ms (Views: 2.2ms | Allocations: 2139)
+
+
+Started GET "/artmuseums.json?=resourse=gallery" for ::1 at 2022-07-19 12:33:15 -0500
+Processing by ArtmuseumsController#index as JSON
+Completed 500 Internal Server Error in 239ms (Allocations: 1225)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Found. Redirecting to https://www.harvardartmuseums.org'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resourse=gallery" for ::1 at 2022-07-19 12:33:41 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resourse"=>"gallery"}
+Completed 200 OK in 243ms (Views: 4.5ms | Allocations: 2151)
+
+
+Started GET "/artmuseums.json?resourse=gallery" for ::1 at 2022-07-19 12:33:54 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resourse"=>"gallery"}
+Completed 200 OK in 210ms (Views: 3.1ms | Allocations: 2141)
+
+
+Started GET "/artmuseums.json?resourse=color" for ::1 at 2022-07-19 12:34:08 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resourse"=>"color"}
+Completed 200 OK in 254ms (Views: 0.9ms | Allocations: 1461)
+
+
+Started GET "/artmuseums.json?resource=color" for ::1 at 2022-07-19 12:37:18 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"color"}
+Completed 200 OK in 385ms (Views: 1.2ms | Allocations: 4943)
+
+
+Started GET "/artmuseums.json?resource=color" for 127.0.0.1 at 2022-07-19 12:38:08 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"color"}
+Completed 200 OK in 261ms (Views: 1.0ms | Allocations: 1739)
+
+
+Started GET "/artmuseums.json" for 127.0.0.1 at 2022-07-19 12:39:22 -0500
+Processing by ArtmuseumsController#index as JSON
+Completed 500 Internal Server Error in 235ms (Allocations: 1020)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Found. Redirecting to https://www.harvardartmuseums.org'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resource=color?q=name:blueviolet" for ::1 at 2022-07-19 12:47:08 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"color?q=name:blueviolet"}
+Completed 500 Internal Server Error in 329ms (Allocations: 936)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Unauthorized'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resource=image?q=width:%3E2000" for ::1 at 2022-07-19 12:47:43 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image?q=width:>2000"}
+Completed 500 Internal Server Error in 237ms (Allocations: 933)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Unauthorized'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resource=image?q=width:%3E2000" for ::1 at 2022-07-19 12:47:44 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image?q=width:>2000"}
+Completed 500 Internal Server Error in 212ms (Allocations: 930)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Unauthorized'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json/image?q=width:%3E2000" for ::1 at 2022-07-19 12:47:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/artmuseums.json/image"):
+  
+Started GET "/artmuseums.json?resource=image?q=width:%3E2000" for ::1 at 2022-07-19 12:48:24 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image?q=width:>2000"}
+Completed 500 Internal Server Error in 249ms (Allocations: 1119)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Unauthorized'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resource=image" for ::1 at 2022-07-19 12:48:36 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image"}
+Completed 200 OK in 258ms (Views: 6.3ms | Allocations: 6458)
+
+
+Started GET "/artmuseums.json?resource=image/465905" for ::1 at 2022-07-19 12:49:24 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image/465905"}
+Completed 200 OK in 271ms (Views: 2.3ms | Allocations: 1598)
+
+
+Started GET "/artmuseums.json?resource=image/" for ::1 at 2022-07-19 12:50:20 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image/"}
+Completed 200 OK in 314ms (Views: 11.7ms | Allocations: 6423)
+
+
+Started GET "/artmuseums.json?resource=image?q=idsid:20668655" for ::1 at 2022-07-19 12:51:06 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image?q=idsid:20668655"}
+Completed 500 Internal Server Error in 246ms (Allocations: 930)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Unauthorized'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resource=image?q=idsid:20668655" for ::1 at 2022-07-19 12:52:02 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image?q=idsid:20668655"}
+Completed 500 Internal Server Error in 242ms (Allocations: 930)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Unauthorized'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resource=image/?q=idsid:20668655" for ::1 at 2022-07-19 12:52:30 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image/?q=idsid:20668655"}
+Completed 500 Internal Server Error in 244ms (Allocations: 946)
+
+
+  
+JSON::ParserError (859: unexpected token at 'Unauthorized'):
+  
+app/controllers/artmuseums_controller.rb:4:in `index'
+Started GET "/artmuseums.json?resource=image/idsid:20668655" for ::1 at 2022-07-19 12:52:36 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image/idsid:20668655"}
+Completed 200 OK in 211ms (Views: 0.4ms | Allocations: 996)
+
+
+Started GET "/artmuseums.json?resource=image/idsid=20668655" for ::1 at 2022-07-19 12:52:46 -0500
+Processing by ArtmuseumsController#index as JSON
+  Parameters: {"resource"=>"image/idsid=20668655"}
+Completed 200 OK in 246ms (Views: 0.5ms | Allocations: 995)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:05:46 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 4ms (Allocations: 4037)
+
+
+  
+NameError (uninitialized constant ArticlesController::Rail
+
+    key = Rail.application.credentials.news_api["api_key"]
+          ^^^^
+Did you mean?  Rails):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:06:23 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 2ms (Allocations: 1063)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+    key = Rails.application.credentials.news_api["api_key"]
+                                                ^^^^^^^^^^^):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:07:55 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 1ms (Allocations: 782)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+    key = Rails.application.credentials.news_api[:api_key]
+                                                ^^^^^^^^^^):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:12:05 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 1ms (Allocations: 783)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+    key = Rails.application.credentials.news_api["api_key"]
+                                                ^^^^^^^^^^^):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:13:20 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 8ms (Allocations: 700)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+    key = Rails.application.credentials.news_api["api_key"]
+                                                ^^^^^^^^^^^):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:14:29 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 200 OK in 207ms (Views: 0.9ms | Allocations: 2028)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:15:05 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 1ms (Allocations: 785)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+    key = Rails.application.credentials.news_api_key[:api_key]
+                                                    ^^^^^^^^^^):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:15:25 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 1ms (Allocations: 906)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+    response = HTTP.get("https://newsapi.org/v2/everything?q=#{params[:search_term]}&apiKey=#{Rails.application.credentials.news_api_key[:api_key]}")
+                                                                                                                                        ^^^^^^^^^^):
+  
+app/controllers/articles_controller.rb:4:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:16:38 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 500 Internal Server Error in 1ms (Allocations: 189)
+
+
+  
+KeyError (:news_api_key is blank):
+  
+app/controllers/articles_controller.rb:3:in `index'
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:17:08 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 200 OK in 209ms (Views: 0.9ms | Allocations: 1412)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:17:31 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 200 OK in 345ms (Views: 21.7ms | Allocations: 12901)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:17:43 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 200 OK in 220ms (Views: 0.4ms | Allocations: 1406)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:34:23 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 200 OK in 254ms (Views: 0.9ms | Allocations: 1130)
+
+
+Started GET "/articles?search_term=breakfast" for ::1 at 2022-07-19 13:35:44 -0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"search_term"=>"breakfast"}
+Completed 200 OK in 380ms (Views: 24.4ms | Allocations: 15858)
+
+

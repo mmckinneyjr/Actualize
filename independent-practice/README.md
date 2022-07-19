@@ -51,7 +51,15 @@ Pull down the new exercises into your repository.
 ```
 git pull origin main --no-edit
 ```
+### Week 5
 
+|       | Deliberate Practice (mandatory)                         | Deep Dives (optional, see [readme](DEEPDIVES_README.md) |
+| ----- | ------------------------------------------------------- | ------------------------------------------------------- |
+| Day 1 | [Has Many Through](w05/has_many_through)                | [Quicknotes](w05/quicknotes)                           |
+| Day 2 | [Has Many Through 2](w05/has_many_through_2)            | [Firebase](w05/firebase)                                |
+| Day 3 | [Third Party APIs](w05/third_party_apis)                | [Firebase](w05/firebase)                                |
+| Day 4 | [Rails Guide Exploration](w05/rails_guides_exploration) | [Take Home #1](w05/takehome_1)                          |
+| Day 5 | [Ruby Methods 4](w05/ruby_methods_4)                    | [Take Home #1](w05/takehome_1)                          |
 
 ### Week 4
 

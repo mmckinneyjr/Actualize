@@ -16781,3 +16781,2170 @@ Filter chain halted as :authenticate_user rendered or redirected
 Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 101)
 
 
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6108137445983127870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategoryProducts (20220715165040)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "category_products" ("id" bigserial primary key, "product_id" integer, "category_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220715165040"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20220715165053)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220715165053"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6108137445983127870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (6.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "toys"], ["created_at", "2022-07-15 16:52:44.671445"], ["updated_at", "2022-07-15 16:52:44.671445"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "electronics"], ["created_at", "2022-07-15 16:53:16.245506"], ["updated_at", "2022-07-15 16:53:16.245506"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "automotive"], ["created_at", "2022-07-15 16:53:32.217324"], ["updated_at", "2022-07-15 16:53:32.217324"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "games"], ["created_at", "2022-07-15 16:53:57.824843"], ["updated_at", "2022-07-15 16:53:57.824843"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products.json" for ::1 at 2022-07-15 11:54:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (6.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (6.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 53.4ms | Allocations: 25211)
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 107ms (Views: 58.5ms | ActiveRecord: 42.9ms | Allocations: 51959)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-07-15 11:54:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategoryProduct Create (5.7ms)[0m  [1m[32mINSERT INTO "category_products" ("product_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["category_id", 1], ["created_at", "2022-07-15 16:57:46.178134"], ["updated_at", "2022-07-15 16:57:46.178134"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategoryProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "category_products" ("product_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["category_id", 2], ["created_at", "2022-07-15 16:57:53.986222"], ["updated_at", "2022-07-15 16:57:53.986222"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategoryProduct Create (1.9ms)[0m  [1m[32mINSERT INTO "category_products" ("product_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["category_id", 3], ["created_at", "2022-07-15 16:57:57.686832"], ["updated_at", "2022-07-15 16:57:57.686832"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategoryProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "category_products" ("product_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 2], ["category_id", 3], ["created_at", "2022-07-15 16:58:13.043322"], ["updated_at", "2022-07-15 16:58:13.043322"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategoryProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "category_products" ("product_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 2], ["category_id", 2], ["created_at", "2022-07-15 16:58:16.005875"], ["updated_at", "2022-07-15 16:58:16.005875"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategoryProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "category_products" ("product_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 2], ["category_id", 1], ["created_at", "2022-07-15 16:58:18.907940"], ["updated_at", "2022-07-15 16:58:18.907940"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products.json" for 127.0.0.1 at 2022-07-15 12:52:39 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (1.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.5ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 129.9ms | Allocations: 22386)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 33.2ms | Allocations: 25879)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 4, product_id: 2, category_id: 3, created_at: "2022-07-15 16:58:13.043322000 +0000", updated_at: "2022-07-15 16:58:13.043322000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products.json" for 127.0.0.1 at 2022-07-15 12:53:08 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.8ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 41.9ms | Allocations: 13731)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 81ms (Views: 72.9ms | ActiveRecord: 7.6ms | Allocations: 35228)
+
+
+Started GET "/products.json" for 127.0.0.1 at 2022-07-15 12:53:23 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (1.0ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 38.3ms | Allocations: 10902)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.6ms | Allocations: 11531)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 4, product_id: 2, category_id: 3, created_at: "2022-07-15 16:58:13.043322000 +0000", updated_at: "2022-07-15 16:58:13.043322000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products.json" for 127.0.0.1 at 2022-07-15 12:53:49 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.5ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 25.6ms | Allocations: 10559)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.5ms | Allocations: 10760)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 4, product_id: 2, category_id: 3, created_at: "2022-07-15 16:58:13.043322000 +0000", updated_at: "2022-07-15 16:58:13.043322000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 12:59:41 -0500
+Processing by ProductsController#index as JSON
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3600)
+
+
+  
+NoMethodError (undefined method `product' for nil:NilClass
+
+      @products = category.product
+                          ^^^^^^^^):
+  
+app/controllers/products_controller.rb:10:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 13:00:07 -0500
+Processing by ProductsController#index as JSON
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3548)
+
+
+  
+NoMethodError (undefined method `product' for nil:NilClass
+
+      @products = category.product
+                          ^^^^^^^^):
+  
+app/controllers/products_controller.rb:10:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 13:00:18 -0500
+Processing by ProductsController#index as JSON
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3548)
+
+
+  
+NoMethodError (undefined method `product' for nil:NilClass
+
+      @products = category.product
+                          ^^^^^^^^):
+  
+app/controllers/products_controller.rb:10:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 13:01:14 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 54.5ms | Allocations: 19556)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 23.4ms | Allocations: 22665)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 4, product_id: 2, category_id: 3, created_at: "2022-07-15 16:58:13.043322000 +0000", updated_at: "2022-07-15 16:58:13.043322000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/" for ::1 at 2022-07-15 14:05:44 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.6ms | Allocations: 329)
+Completed 200 OK in 9ms (Views: 2.7ms | Allocations: 2153)
+
+
+Started GET "/products.json" for ::1 at 2022-07-15 15:29:32 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (3.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.5ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 71.1ms | Allocations: 21074)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 21.0ms | Allocations: 24428)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 4, product_id: 2, category_id: 3, created_at: "2022-07-15 16:58:13.043322000 +0000", updated_at: "2022-07-15 16:58:13.043322000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/favicon.ico" for ::1 at 2022-07-15 15:29:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/products.json" for ::1 at 2022-07-15 15:30:55 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 57.0ms | Allocations: 10441)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.7ms | Allocations: 10650)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 4, product_id: 2, category_id: 3, created_at: "2022-07-15 16:58:13.043322000 +0000", updated_at: "2022-07-15 16:58:13.043322000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:32:02 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.5ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 62.6ms | Allocations: 19756)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 5.2ms | Allocations: 19942)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 1, product_id: 1, category_id: 1, created_at: "2022-07-15 16:57:46.178134000 +0000", updated_at: "2022-07-15 16:57:46.178134000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:34:31 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 69.5ms | Allocations: 28942)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 33.2ms | Allocations: 32188)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 1, product_id: 1, category_id: 1, created_at: "2022-07-15 16:57:46.178134000 +0000", updated_at: "2022-07-15 16:57:46.178134000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:34:32 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 63.7ms | Allocations: 19887)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 4.9ms | Allocations: 20108)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 1, product_id: 1, category_id: 1, created_at: "2022-07-15 16:57:46.178134000 +0000", updated_at: "2022-07-15 16:57:46.178134000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:34:34 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.7ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 64.6ms | Allocations: 19881)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 5.0ms | Allocations: 20069)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 1, product_id: 1, category_id: 1, created_at: "2022-07-15 16:57:46.178134000 +0000", updated_at: "2022-07-15 16:57:46.178134000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:35:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.5ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.1ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 54.6ms | Allocations: 35768)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 18.3ms | Allocations: 41318)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 1, product_id: 1, category_id: 1, created_at: "2022-07-15 16:57:46.178134000 +0000", updated_at: "2022-07-15 16:57:46.178134000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:35:52 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 36.1ms | Allocations: 10882)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.3ms | Allocations: 11535)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 3, product_id: 2, category_id: 3, created_at: "2022-07-15 16:57:57.686832000 +0000", updated_at: "2022-07-15 16:57:57.686832000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:36:21 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.2ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 119.0ms | Allocations: 19892)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 4.3ms | Allocations: 20110)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 1, product_id: 1, category_id: 1, created_at: "2022-07-15 16:57:46.178134000 +0000", updated_at: "2022-07-15 16:57:46.178134000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:36:49 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.4ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/models/product.rb:13:in `map'
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCategoryProduct Load (0.3ms)[0m  [1m[34mSELECT "category_products".* FROM "category_products" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:13:in `map'
+  Rendered products/index.json.jb (Duration: 40.7ms | Allocations: 10544)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.0ms | Allocations: 10740)
+
+
+  
+ActionView::Template::Error (undefined method `category_product' for #<CategoryProduct id: 5, product_id: 2, category_id: 3, created_at: "2022-07-15 16:58:16.005875000 +0000", updated_at: "2022-07-15 16:58:16.005875000 +0000">
+Did you mean?  category_id):
+     9:     total: product.total,
+    10:     supplier: product.supplier,
+    11:     images: product.images,
+    12:     categories: product.categories
+    13:   }
+    14: end
+  
+app/models/product.rb:14:in `block in categories'
+app/models/product.rb:13:in `map'
+app/models/product.rb:13:in `categories'
+app/views/products/index.json.jb:12
+app/views/products/index.json.jb:1:in `map'
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:37:48 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 43.1ms | Allocations: 23787)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 111ms (Views: 64.3ms | ActiveRecord: 42.5ms | Allocations: 70012)
+
+
+Started GET "/products/2.json" for ::1 at 2022-07-15 15:38:36 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:16:in `show'
+  Rendering products/show.json.jb
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/show.json.jb:9
+  Rendered products/show.json.jb (Duration: 3.4ms | Allocations: 899)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:17:in `show'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:17:in `show'
+Completed 200 OK in 27ms (Views: 9.2ms | ActiveRecord: 1.2ms | Allocations: 4059)
+
+
+Started GET "/categories.json" for ::1 at 2022-07-15 15:38:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/categories.json"):
+  
+Started GET "/category.json" for ::1 at 2022-07-15 15:39:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/category.json"):
+  
+Started GET "/products/?category=electronics" for ::1 at 2022-07-15 15:39:47 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"category"=>"electronics"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "electronics"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms | Allocations: 1697)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jb]}.
+
+Searched in:
+  * "/Users/codingbootcamp/Documents/Actualize/mini-capstone/mini-capstone-api/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.3/app/views"
+):
+  
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products?category=electronics" for ::1 at 2022-07-15 15:40:17 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"category"=>"electronics"}
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "electronics"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.5ms | Allocations: 1388)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jb]}.
+
+Searched in:
+  * "/Users/codingbootcamp/Documents/Actualize/mini-capstone/mini-capstone-api/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.3/app/views"
+):
+  
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products?category=1" for ::1 at 2022-07-15 15:40:41 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"category"=>"1"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 1353)
+
+
+  
+NoMethodError (undefined method `products' for nil:NilClass
+
+      @category = category.products
+                          ^^^^^^^^^):
+  
+app/controllers/products_controller.rb:7:in `index'
+Started GET "/products?category=toys" for ::1 at 2022-07-15 15:41:08 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"category"=>"toys"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "toys"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 1259)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jb]}.
+
+Searched in:
+  * "/Users/codingbootcamp/Documents/Actualize/mini-capstone/mini-capstone-api/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.3/app/views"
+):
+  
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/toys.json" for ::1 at 2022-07-15 15:41:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/toys.json"):
+  
+Started GET "/products/toys.json" for ::1 at 2022-07-15 15:41:59 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"toys"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:16:in `show'
+  Rendering products/show.json.jb
+  Rendered products/show.json.jb (Duration: 5.1ms | Allocations: 940)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.7ms | Allocations: 1609)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass
+
+  id: @product.id,
+              ^^^):
+    1: {
+    2:   id: @product.id,
+    3:   name: @product.name,
+    4:   price: @product.price,
+    5:   description: @product.description,
+  
+app/views/products/show.json.jb:2
+app/controllers/products_controller.rb:17:in `show'
+Started GET "/products/toys.json" for ::1 at 2022-07-15 15:42:21 -0500
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"toys"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:16:in `show'
+  Rendering products/show.json.jb
+  Rendered products/show.json.jb (Duration: 0.9ms | Allocations: 972)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 17.4ms | Allocations: 5416)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass
+
+  id: @product.id,
+              ^^^):
+    1: {
+    2:   id: @product.id,
+    3:   name: @product.name,
+    4:   price: @product.price,
+    5:   description: @product.description,
+  
+app/views/products/show.json.jb:2
+app/controllers/products_controller.rb:17:in `show'
+Started GET "/category.json" for ::1 at 2022-07-15 15:42:27 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/category.json"):
+  
+Started GET "/products.json" for ::1 at 2022-07-15 15:42:37 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 88.2ms | Allocations: 22299)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 159ms (Views: 117.8ms | ActiveRecord: 41.4ms | Allocations: 63771)
+
+
+Started GET "/products?category=toys" for ::1 at 2022-07-15 15:42:55 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"category"=>"toys"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 761)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jb]}.
+
+Searched in:
+  * "/Users/codingbootcamp/Documents/Actualize/mini-capstone/mini-capstone-api/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.3/app/views"
+):
+  
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products?category=toys" for ::1 at 2022-07-15 15:43:40 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"category"=>"toys"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "toys"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 14.5ms | Allocations: 7961)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jb]}.
+
+Searched in:
+  * "/Users/codingbootcamp/Documents/Actualize/mini-capstone/mini-capstone-api/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3/app/views"
+  * "/Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.3/app/views"
+):
+  
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json?category=toys" for ::1 at 2022-07-15 15:43:53 -0500
+Processing by ProductsController#index as JSON
+  Parameters: {"category"=>"toys"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "toys"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  Rendering products/index.json.jb
+  Rendered products/index.json.jb (Duration: 1.9ms | Allocations: 990)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 1807)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+
+            @virtual_path = "products/index";;@products.map do |product|
+                                                       ^^^^):
+    1: @products.map do |product|
+    2:   {
+    3:     id: product.id,
+    4:     name: product.name,
+  
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products?category=toys.json" for ::1 at 2022-07-15 15:44:03 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"category"=>"toys.json"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "toys.json"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1306)
+
+
+  
+NoMethodError (undefined method `products' for nil:NilClass
+
+      @category = category.products
+                          ^^^^^^^^^):
+  
+app/controllers/products_controller.rb:7:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:44:44 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  Rendered products/index.json.jb (Duration: 9.4ms | Allocations: 961)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 1137)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+
+            @virtual_path = "products/index";;@products.map do |product|
+                                                       ^^^^):
+    1: @products.map do |product|
+    2:   {
+    3:     id: product.id,
+    4:     name: product.name,
+  
+app/views/products/index.json.jb:1
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products.json" for ::1 at 2022-07-15 15:44:57 -0500
+Processing by ProductsController#index as JSON
+  Rendering products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/index.json.jb:10
+  Rendered products/index.json.jb (Duration: 37.9ms | Allocations: 22846)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 19]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 25]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 26]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 27]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 28]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 29]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 93ms (Views: 57.6ms | ActiveRecord: 31.6ms | Allocations: 67235)
+
+
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/orders.json" for ::1 at 2022-07-17 12:22:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Started GET "/orders.json" for ::1 at 2022-07-17 12:22:42 -0500
+Processing by OrdersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 99)
+
+
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (8.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (2.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (1.0ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1 ORDER BY "images"."id" ASC LIMIT $2[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1 ORDER BY "images"."id" ASC LIMIT $2[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 ORDER BY "orders"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 ORDER BY "orders"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1 ORDER BY "orders"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSupplier Load (2.9ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6108137445983127870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCartedProducts (20220718172439)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "carted_products" ("id" bigserial primary key, "user_id" integer, "product_id" integer, "quantity" integer, "status" character varying, "order_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "orders" DROP COLUMN "product_id"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "orders" DROP COLUMN "quantity"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220718172439"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6108137445983127870)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 12:55:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant CartedCroductsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CartedProductsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 12:57:46 -0500
+  
+ActionController::RoutingError (uninitialized constant CartedCroductsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CartedProductsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 12:59:07 -0500
+  
+ActionController::RoutingError (uninitialized constant CartedCroductsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CartedProductsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 13:01:58 -0500
+  
+ActionController::RoutingError (uninitialized constant CartedCroductsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CartedProductsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 13:04:32 -0500
+  
+ActionController::RoutingError (uninitialized constant CartedCroductsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CartedProductsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 13:04:40 -0500
+  
+ActionController::RoutingError (uninitialized constant CartedCroductsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CartedProductsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 13:05:05 -0500
+  
+ActionController::RoutingError (uninitialized constant CartedCroductsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  CartedProductsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 13:06:09 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"user_id"=>1, "product_id"=>1, "quantity"=>2, "status"=>"carted", "order_id"=>1, "carted_product"=>{"user_id"=>1, "product_id"=>1, "quantity"=>2, "status"=>"carted", "order_id"=>1}}
+  [1m[36mCartedProduct Load (4.8ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE "carted_products"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mCartedProduct Create (8.1ms)[0m  [1m[32mINSERT INTO "carted_products" ("user_id", "product_id", "quantity", "status", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["product_id", 1], ["quantity", 2], ["status", "carted"], ["order_id", 1], ["created_at", "2022-07-18 18:06:09.195941"], ["updated_at", "2022-07-18 18:06:09.195941"]]
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+Completed 200 OK in 68ms (Views: 0.2ms | ActiveRecord: 35.3ms | Allocations: 22807)
+
+
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 13:56:28 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"user_id"=>1, "product_id"=>2, "quantity"=>2, "status"=>"carted", "order_id"=>1, "carted_product"=>{"user_id"=>1, "product_id"=>2, "quantity"=>2, "status"=>"carted", "order_id"=>1}}
+  [1m[36mCartedProduct Load (0.8ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE "carted_products"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mCartedProduct Create (6.5ms)[0m  [1m[32mINSERT INTO "carted_products" ("user_id", "product_id", "quantity", "status", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["product_id", 2], ["quantity", 2], ["status", "carted"], ["order_id", 1], ["created_at", "2022-07-18 18:56:29.006166"], ["updated_at", "2022-07-18 18:56:29.006166"]]
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:13:in `create'
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 38.9ms | Allocations: 14759)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-18 14:03:02 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"ringo@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ringo@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ringo@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 325ms (Views: 0.2ms | ActiveRecord: 15.0ms | Allocations: 6816)
+
+
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:04:02 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{
+      "product_id": 2,
+      "quantity": 2,
+}
+Processing by CartedProductsController#create as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Completed 400 Bad Request in 5ms (ActiveRecord: 1.0ms | Allocations: 1082)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/carted_products_controller.rb:5:in `create'
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:04:24 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"product_id"=>2, "quantity"=>2, "carted_product"=>{"product_id"=>2, "quantity"=>2}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:10:in `create'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:10:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:10:in `create'
+  [1m[36mCartedProduct Create (2.1ms)[0m  [1m[32mINSERT INTO "carted_products" ("user_id", "product_id", "quantity", "status", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["product_id", 2], ["quantity", 2], ["status", "carted"], ["order_id", nil], ["created_at", "2022-07-18 19:04:24.087295"], ["updated_at", "2022-07-18 19:04:24.087295"]]
+  ↳ app/controllers/carted_products_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:10:in `create'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 4.8ms | Allocations: 11327)
+
+
+Started GET "/carted_products.json" for ::1 at 2022-07-18 14:08:14 -0500
+Processing by CartedProductsController#index as JSON
+No template found for CartedProductsController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 633)
+
+
+Started GET "/carted_products.json" for ::1 at 2022-07-18 14:08:17 -0500
+Processing by CartedProductsController#index as JSON
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 801)
+
+
+  
+NoMethodError (undefined method `carted_products' for nil:NilClass
+
+      orcarted_productders = current_user.carted_products.where(status: "carted")
+                                         ^^^^^^^^^^^^^^^^):
+  
+app/controllers/carted_products_controller.rb:4:in `index'
+Started GET "/favicon.ico" for ::1 at 2022-07-18 14:08:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/carted_products.json" for ::1 at 2022-07-18 14:09:32 -0500
+Processing by CartedProductsController#index as JSON
+No template found for CartedProductsController#index, rendering head :no_content
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 162)
+
+
+Started GET "/carted_products.json" for ::1 at 2022-07-18 14:09:33 -0500
+Processing by CartedProductsController#index as JSON
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 766)
+
+
+  
+NoMethodError (undefined method `carted_products' for nil:NilClass
+
+      carted_productders = current_user.carted_products.where(status: "carted")
+                                       ^^^^^^^^^^^^^^^^):
+  
+app/controllers/carted_products_controller.rb:4:in `index'
+Started GET "/carted_products.json" for ::1 at 2022-07-18 14:10:16 -0500
+Processing by CartedProductsController#index as JSON
+No template found for CartedProductsController#index, rendering head :no_content
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Started GET "/carted_products.json" for ::1 at 2022-07-18 14:10:18 -0500
+Processing by CartedProductsController#index as JSON
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 766)
+
+
+  
+NoMethodError (undefined method `carted_products' for nil:NilClass
+
+      carted_productders = current_user.carted_products.where(status: "carted")
+                                       ^^^^^^^^^^^^^^^^):
+  
+app/controllers/carted_products_controller.rb:4:in `index'
+Started GET "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:11:07 -0500
+Processing by CartedProductsController#index as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 16.2ms | Allocations: 10934)
+
+
+  
+NameError (undefined local variable or method `carted_product' for #<CartedProductsController:0x00000000031308>
+
+      render json: carted_product.as_json
+                   ^^^^^^^^^^^^^^
+Did you mean?  carted_productders):
+  
+app/controllers/carted_products_controller.rb:5:in `index'
+Started GET "/orders.json" for 127.0.0.1 at 2022-07-18 14:11:40 -0500
+Processing by OrdersController#index as JSON
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 952)
+
+
+  
+NoMethodError (undefined method `orders' for nil:NilClass
+
+    orders = current_user.orders
+                         ^^^^^^^):
+  
+app/controllers/orders_controller.rb:5:in `index'
+Started POST "/users.json" for 127.0.0.1 at 2022-07-18 14:11:52 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Ringo", "email"=>"ringo@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Ringo", "email"=>"ringo@example.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ringo@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 400 Bad Request in 467ms (Views: 0.1ms | ActiveRecord: 9.8ms | Allocations: 278720)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-18 14:17:53 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"ringo@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ringo@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ringo@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 313ms (Views: 0.3ms | ActiveRecord: 18.8ms | Allocations: 6708)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-18 14:18:37 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 720)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-18 14:18:54 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 686)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-18 14:19:08 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 686)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-18 14:20:57 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 12ms (Views: 0.1ms | ActiveRecord: 8.2ms | Allocations: 3083)
+
+
+Started POST "/sessions.json" for 127.0.0.1 at 2022-07-18 14:21:22 -0500
+Processing by SessionsController#create as JSON
+  Parameters: {"email"=>"ringo@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ringo@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ringo@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 307ms (Views: 0.1ms | ActiveRecord: 6.4ms | Allocations: 2188)
+
+
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:21:43 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"carted_product"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+Completed 422 Unprocessable Entity in 21ms (Views: 0.2ms | ActiveRecord: 5.3ms | Allocations: 7142)
+
+
+Started POST "/orders.json" for 127.0.0.1 at 2022-07-18 14:22:19 -0500
+Processing by OrdersController#create as JSON
+Filter chain halted as :authenticate_admin rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started POST "/orders.json" for 127.0.0.1 at 2022-07-18 14:22:29 -0500
+Processing by OrdersController#create as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCartedProduct Load (0.8ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE "carted_products"."user_id" = $1 AND "carted_products"."status" = $2[0m  [["user_id", 4], ["status", "carted"]]
+  ↳ app/controllers/orders_controller.rb:19:in `create'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:20:in `block in create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 12.8ms | Allocations: 11255)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'product_id' for Order.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/orders_controller.rb:26:in `create'
+Started POST "/orders.json" for 127.0.0.1 at 2022-07-18 14:23:54 -0500
+Processing by OrdersController#create as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCartedProduct Load (0.6ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE "carted_products"."user_id" = $1 AND "carted_products"."status" = $2[0m  [["user_id", 4], ["status", "carted"]]
+  ↳ app/controllers/orders_controller.rb:19:in `create'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:20:in `block in create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.7ms | Allocations: 4119)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'product_id' for Order.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/orders_controller.rb:26:in `create'
+Started DELETE "/carted_products/1.json" for 127.0.0.1 at 2022-07-18 14:27:26 -0500
+Processing by CartedProductsController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mCartedProduct Load (6.8ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE (1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:25:in `destroy'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 6.8ms | Allocations: 2531)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: ..."carted_products".* FROM "carted_products" WHERE (1) LIMIT $...
+                                                             ^
+):
+  
+app/controllers/carted_products_controller.rb:25:in `destroy'
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:27:39 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"carted_product"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+Completed 422 Unprocessable Entity in 90ms (Views: 0.2ms | ActiveRecord: 13.6ms | Allocations: 10292)
+
+
+Started GET "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:28:07 -0500
+Processing by CartedProductsController#index as JSON
+No template found for CartedProductsController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 121)
+
+
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:28:19 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"product_id"=>"1", "quantity"=>"1", "carted_product"=>{"product_id"=>"1", "quantity"=>"1"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mCartedProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "carted_products" ("user_id", "product_id", "quantity", "status", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["product_id", 1], ["quantity", 1], ["status", "carted"], ["order_id", nil], ["created_at", "2022-07-18 19:28:19.450646"], ["updated_at", "2022-07-18 19:28:19.450646"]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 9.5ms | Allocations: 6877)
+
+
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 14:28:22 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"product_id"=>"1", "quantity"=>"1", "carted_product"=>{"product_id"=>"1", "quantity"=>"1"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mCartedProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "carted_products" ("user_id", "product_id", "quantity", "status", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["product_id", 1], ["quantity", 1], ["status", "carted"], ["order_id", nil], ["created_at", "2022-07-18 19:28:22.611551"], ["updated_at", "2022-07-18 19:28:22.611551"]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 4234)
+
+
+Started DELETE "/carted_products/1.json" for 127.0.0.1 at 2022-07-18 14:28:32 -0500
+Processing by CartedProductsController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mCartedProduct Load (0.8ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE (1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:25:in `destroy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms | Allocations: 721)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: ..."carted_products".* FROM "carted_products" WHERE (1) LIMIT $...
+                                                             ^
+):
+  
+app/controllers/carted_products_controller.rb:25:in `destroy'
+Started DELETE "/carted_products/1.json" for 127.0.0.1 at 2022-07-18 14:28:43 -0500
+Processing by CartedProductsController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mCartedProduct Load (1.0ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE (1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:25:in `destroy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.0ms | Allocations: 688)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: ..."carted_products".* FROM "carted_products" WHERE (1) LIMIT $...
+                                                             ^
+):
+  
+app/controllers/carted_products_controller.rb:25:in `destroy'
+Started DELETE "/carted_products/5.json" for 127.0.0.1 at 2022-07-18 14:29:28 -0500
+Processing by CartedProductsController#destroy as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mCartedProduct Load (1.2ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE (5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:25:in `destroy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms | Allocations: 688)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: ..."carted_products".* FROM "carted_products" WHERE (5) LIMIT $...
+                                                             ^
+):
+  
+app/controllers/carted_products_controller.rb:25:in `destroy'
+Started DELETE "/carted_products/5.json" for 127.0.0.1 at 2022-07-18 14:30:15 -0500
+Processing by CartedProductsController#destroy as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mCartedProduct Load (0.2ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE "carted_products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mCartedProduct Update (2.2ms)[0m  [1m[33mUPDATE "carted_products" SET "status" = $1, "updated_at" = $2 WHERE "carted_products"."id" = $3[0m  [["status", "removed"], ["updated_at", "2022-07-18 19:30:15.654504"], ["id", 5]]
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 23.2ms | Allocations: 19389)
+
+
+  
+NoMethodError (undefined method `carted_product' for #<CartedProductsController:0x000000000462d0>
+
+    carted_product json: { status: "Carted product successfully removed" }
+    ^^^^^^^^^^^^^^
+Did you mean?  carted_products_url):
+  
+app/controllers/carted_products_controller.rb:28:in `destroy'
+Started DELETE "/carted_products/5.json" for 127.0.0.1 at 2022-07-18 14:31:40 -0500
+Processing by CartedProductsController#destroy as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mCartedProduct Load (0.2ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE "carted_products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 17.4ms | Allocations: 18578)
+
+
+  
+NoMethodError (undefined method `carted_product' for #<CartedProductsController:0x0000000004a650>
+
+    carted_product json: { message: "Carted product successfully removed" }
+    ^^^^^^^^^^^^^^
+Did you mean?  carted_products_url):
+  
+app/controllers/carted_products_controller.rb:28:in `destroy'
+Started DELETE "/orders/16" for 127.0.0.1 at 2022-07-18 14:33:27 -0500
+Processing by OrdersController#destroy as HTML
+  Parameters: {"id"=>"16"}
+Filter chain halted as :authenticate_admin rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started DELETE "/carted_products/5.json" for 127.0.0.1 at 2022-07-18 14:33:41 -0500
+  
+SyntaxError (/Users/codingbootcamp/Documents/Actualize/mini-capstone/mini-capstone-api/app/controllers/carted_products_controller.rb:28: syntax error, unexpected ':', expecting `end'
+    json: { message: "Carted product s...
+        ^
+):
+  
+app/controllers/carted_products_controller.rb:28: syntax error, unexpected ':', expecting `end'
+app/controllers/carted_products_controller.rb:28: syntax error, unexpected ':', expecting `end'
+Started DELETE "/carted_products/5.json" for 127.0.0.1 at 2022-07-18 14:34:46 -0500
+Processing by CartedProductsController#destroy as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mCartedProduct Load (1.9ms)[0m  [1m[34mSELECT "carted_products".* FROM "carted_products" WHERE "carted_products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:27:in `destroy'
+Completed 200 OK in 58ms (Views: 0.3ms | ActiveRecord: 31.5ms | Allocations: 16399)
+
+
+Started POST "/carted_products.json" for 127.0.0.1 at 2022-07-18 15:02:15 -0500
+Processing by CartedProductsController#create as JSON
+  Parameters: {"product_id"=>"1", "quantity"=>"1", "carted_product"=>{"product_id"=>"1", "quantity"=>"1"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mCartedProduct Create (1.6ms)[0m  [1m[32mINSERT INTO "carted_products" ("user_id", "product_id", "quantity", "status", "order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["product_id", 1], ["quantity", 1], ["status", "carted"], ["order_id", nil], ["created_at", "2022-07-18 20:02:15.661583"], ["updated_at", "2022-07-18 20:02:15.661583"]]
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/carted_products_controller.rb:17:in `create'
+Completed 200 OK in 91ms (Views: 0.6ms | ActiveRecord: 22.3ms | Allocations: 7007)
+
+
+Started GET "/carted_products.json" for ::1 at 2022-07-18 15:03:05 -0500
+Processing by CartedProductsController#index as JSON
+No template found for CartedProductsController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 121)
+
+
+Started GET "/carted_products.json" for ::1 at 2022-07-18 15:03:08 -0500
+Processing by CartedProductsController#index as JSON
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 779)
+
+
+  
+NoMethodError (undefined method `carted_products' for nil:NilClass
+
+      carted_product = current_user.carted_products.where(status: "carted")
+                                   ^^^^^^^^^^^^^^^^):
+  
+app/controllers/carted_products_controller.rb:4:in `index'

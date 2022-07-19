@@ -1,5 +1,5 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MjYxMjJ9.WrV30xnOCoOE4JGN_cDD-tgqauEZodynIKbTZlZ3s8k
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTgyNTg0ODN9.K_95xzwSLqCRqXFJH7Up-Rc-agKAyZQ-sh92Sex3y2M
 
 ########## SHOW ALL ##########
 GET http://localhost:3000/orders.json

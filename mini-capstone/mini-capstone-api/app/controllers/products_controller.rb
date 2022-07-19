@@ -2,7 +2,12 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    @products = Product.all
+    if params[:category]
+      category = Category.find_by(name: params[:category])
+      @category = category.products
+    else
+      @products = Product.all
+    end
     render :index
     #render json: product.as_json(methods: [:friendly_created_at, :is_discounted?, :tax, :total])
   end

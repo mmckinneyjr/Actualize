@@ -1,0 +1,24 @@
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTgyNTg0ODN9.K_95xzwSLqCRqXFJH7Up-Rc-agKAyZQ-sh92Sex3y2M
+
+########## SHOW ALL ##########
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+
+
+
+######### CREATE NEW #########
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "product_id": "1",
+  "quantity": "1"
+}
+
+
+
+##### DELETE #####
+DELETE http://localhost:3000/carted_products/5.json
+Authorization: Bearer {{jwt}}

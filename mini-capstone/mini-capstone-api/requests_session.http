@@ -1,8 +1,9 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTc4MjYxMjJ9.WrV30xnOCoOE4JGN_cDD-tgqauEZodynIKbTZlZ3s8k
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTgyNTgyNzN9.uiA3XevWVgDb6wTcsohkQ1RVD8m0--DcYG8RGrpXsgo
 
 ######### CREATE NEW #########
 POST http://localhost:3000/sessions.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {

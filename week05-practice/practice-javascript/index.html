@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Example</title>
+	
+<style>		
+	body {  
+		background-color: red; 
+	}
+	.highcharts-background {
+		background:red !important;
+	}
+	
+	.highcharts-point .highcharts-color-2{
+		color:blue !important;
+	}
+
+    .highcharts-root{
+        background:red !important;
+    }
+
+    .highcharts-container {
+        background:red !important;
+    }
+	
+</style>
+	
+<script src="https://code.highcharts.com/highcharts.js"></script>
+	
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const chart = Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Fruit Consumption'
+      },
+      xAxis: {
+          categories: ['Apples', 'Bananas', 'Oranges']
+      },
+      yAxis: {
+          title: {
+              text: 'Fruit eaten'
+          }
+      },
+      series: [{
+          name: 'Jane',
+          data: [1, 1, 4]
+      }, {
+          name: 'John',
+          data: [5, 7, 3]
+      }, {
+          name: 'Bob',
+          data: [2, 9, 1]
+      }, {
+          name: 'Kevin',
+          data: [1, 2, 3]
+      }]
+  });
+});
+</script>
+	
+</head>
+
+<body>
+  <div id="container" style="width:100%; height:800px;"></div>
+</body>
+</html>

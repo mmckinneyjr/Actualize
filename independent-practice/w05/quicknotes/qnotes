@@ -1,0 +1,90 @@
+#!/usr/bin/env ruby
+require 'csv'
+require 'optparse'
+
+path = "/Users/#{ENV['USER']}/.qnotes.csv"
+arg = ARGV[0].downcase 
+
+if File.exists?(path) == false
+  File.write(path, "")
+end
+
+
+if arg == "help"
+  puts "help: Welcome to Quick Notes"
+  puts ""
+  puts "    save <text>           Saves note"
+  puts "    show <number>         Displays note at the indexed number"  
+  puts "    show-all              Displays all notes"
+  puts "    delete <number>       Removed note at indexed number"
+  puts "    search <term>         Seach all notes by word or phrase"
+  puts "    help                  Displays options"
+  puts
+end
+
+
+if arg == "save"
+  note = ARGV.drop(1).join(" ")
+  time = Time.now.strftime("%m-%e-%y %H%M")
+  CSV.open(path, "ab") do |csv|
+    csv << [note, time]
+  end
+end
+
+
+if arg == "show-all"
+  notes = CSV.open(path)
+  notes.each_with_index do |row, index|
+    puts "#{index+1}: #{row[1]}: #{row[0]}"  
+  end
+end
+
+
+if arg == "show"
+  notes = CSV.read(path)
+  if ARGV[1].to_i > 0 && ARGV[1].to_i <= notes.length
+    arg2 = ARGV[1].to_i
+    puts "#{arg2}: #{notes[arg2 - 1][1]}: #{notes[arg2 - 1][0]}"
+  else
+    puts "There is no note there, try show-all"
+  end
+end
+
+
+if arg == "delete"
+  notes = CSV.read(path, headers: false)
+  temp = []
+
+  notes.each do |x|
+    temp << x
+  end
+
+
+  if temp.size >= 0 && ARGV[1].to_i - 1 < temp.size  && ARGV[1].to_i - 1 >= 0
+    temp.delete_at(ARGV[1].to_i - 1)
+
+    x = CSV.open(path, "w")
+    temp.each do |y|
+      x << y     
+    end
+  else 
+    puts "There is no note there, try show-all"
+  end
+end
+
+
+if arg == "search"
+  term = ARGV.drop(1).join(" ")
+  notes = CSV.read(path, headers: false)
+  temp = []
+
+  notes.each do |x|
+    if x[0].include?(term)
+      temp << x
+    end
+  end
+
+  temp.each_with_index do |row, index|
+    puts "#{index+1}: #{row[1]}: #{row[0]}"  
+  end
+end

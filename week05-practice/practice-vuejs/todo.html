@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="todo.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<style>
+.titleColor {
+  color: #0278a4;
+  font-weight: 600;
+}
+.title{
+text-align: center;
+font-size: 30px;
+font-weight: 600;
+}
+
+table { 
+  /* page-break-inside:auto;  */
+  padding: 0px;
+  margin: 0px;
+  border-collapse: collapse;
+}
+td    { 
+  border:0.5px solid darkgray; 
+  padding: 0px 5px 0px 5px;
+  margin: 0px;
+
+}
+tr    { 
+  /* page-break-inside:auto;  */
+  padding: 0px;
+  margin: 0px;
+}
+
+.userid{
+  width: 90px;
+
+}
+.taskid{
+  width: 90px;
+}
+.titletext{
+  width: 700px;
+}
+.status{
+  width: 150px;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+  <div id="app">
+    <!-- <button v-on:click="loadTodos()">Load ToDo's</button> -->
+
+    <!-- <div class="title"><u>ToDo's</u></div>
+    <div v-for="list in todoStuff">
+      <p>
+      <span class="titleColor">User ID:</span> {{list.userId}}<br>
+      <span class="titleColor">Task ID:</span> {{list.id}}<br>
+      <span class="titleColor">Title:</span> {{list.title}}<br>
+      <span class="titleColor">Status:</span> {{status(list.completed)}}
+      </p>
+    </div> -->
+
+
+    <div class="title"><u>ToDo's</u></div>
+    <!-- <button v-on:click="loadTodos()">Load ToDo's</button> -->
+    <div v-for="list in todoStuff">
+      <table>
+        <tr>
+          <td class="userid"><span class="titleColor">User ID:</span> {{list.userId}}</td>
+          <td class="taskid"><span class="titleColor">Task ID:</span> {{list.id}}</td>
+          <td class="titletext"><span class="titleColor">Title:</span> {{list.title}}</td>
+          <td class="status"><span class="titleColor">Status:</span> {{status(list.completed)}}</td>
+          </tr>
+      </table>
+    </div>
+
+  </div>
+
+
+
+</body>
+</html>

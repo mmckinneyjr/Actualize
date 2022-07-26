@@ -21,7 +21,8 @@ def get_wards
 end
 
 def get_requests
-  graffiti_requests = HTTP.get("https://data.cityofchicago.org/resource/hec5-y4x5.json")
+  #graffiti_requests = HTTP.get("https://data.cityofchicago.org/resource/hec5-y4x5.json")
+  graffiti_requests = HTTP.get("https://data.cityofchicago.org/resource/v6vf-nfxy.json")
 
   graffiti_requests.parse.each do |request|
     removal_request = RemovalRequest.new(

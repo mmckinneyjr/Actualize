@@ -51,6 +51,18 @@ Pull down the new exercises into your repository.
 ```
 git pull origin main --no-edit
 ```
+
+### Week 6
+
+|       | Deliberate Practice (mandatory)                | Deep Dives (optional, see [readme](DEEPDIVES_README.md) |
+| ----- | ---------------------------------------------- | ------------------------------------------------------- |
+| Day 1 | [Intro to JavaScript](w06/intro_to_js)         | [Take Home #2](w06/takehome_2)                          |
+| Day 2 | [Intro to JavaScript 2](w06/intro_to_js_2)     | [Take Home #2](w06/takehome_2)                          |
+| Day 3 | [Intro to Vue](w06/intro_to_vue)               | [Take Home #2](w06/takehome_2)                          |
+| Day 4 | [More JavaScript](w06/more_javascript)         | [Take Home #2](w06/takehome_2)                          |
+| Day 5 | [JavaScript Web Requests](w06/js_web_requests) | [Take Home #2](w06/takehome_2)                          |
+
+
 ### Week 5
 
 |       | Deliberate Practice (mandatory)                         | Deep Dives (optional, see [readme](DEEPDIVES_README.md) |

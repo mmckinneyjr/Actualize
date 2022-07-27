@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+system("cp #{__dir__}/qnotes /usr/local/bin/")
+

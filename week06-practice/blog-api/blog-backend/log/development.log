@@ -1,0 +1,1449 @@
+  [1m[35m (213.8ms)[0m  [1m[35mCREATE DATABASE "blog_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE DATABASE "blog_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (22.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(838789120653861195)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220205211912)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (8.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220205211912"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20220205212343)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "user_id" integer, "title" character varying, "body" text, "image" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220205212343"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (7.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-28 16:20:15.954742"], ["updated_at", "2022-07-28 16:20:15.954742"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(838789120653861195)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "peter@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Peter"], ["email", "peter@test.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-28 16:20:24.689466"], ["updated_at", "2022-07-28 16:20:24.689466"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Test"], ["email", "test@test.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-28 16:20:24.955425"], ["updated_at", "2022-07-28 16:20:24.955425"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["title", "Visionary multimedia orchestration"], ["body", "Seitan fixie sriracha yolo pour-over lumbersexual. Everyday irony kogi pork belly five dollar toast. Butcher waistcoat fingerstache franzen marfa retro. Roof lo-fi aesthetic. Flannel ramps chillwave lumbersexual brooklyn irony muggle magic fingerstache. Disrupt vhs fanny pack normcore migas occupy meh farm-to-table. Cred 3 wolf moon vegan blue bottle tacos. Iphone try-hard cray kitsch bitters five dollar toast pop-up."], ["image", "https://i.picsum.photos/id/302/200/300.jpg?hmac=b5e6gUSooYpWB3rLAPrDpnm8PsPb84p_NXRwD-DK-1I"], ["created_at", "2022-07-28 16:20:25.789005"], ["updated_at", "2022-07-28 16:20:25.789005"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["title", "Cloned heuristic initiative"], ["body", "Tumblr wolf plaid pinterest portland cray trust fund. Muggle magic brooklyn art party humblebrag keytar church-key chillwave. Tousled fanny pack put a bird on it retro. Offal meggings cornhole drinking five dollar toast pbr&b quinoa organic. Truffaut godard +1 next level franzen mustache actually hashtag. Kombucha you probably haven't heard of them helvetica bicycle rights fixie muggle magic celiac ethical. Master plaid tacos."], ["image", "https://i.picsum.photos/id/131/200/300.jpg?hmac=9q7mRSOguNBFGg_gPPRKlfjNINGjXWeDBTYPP1_gEas"], ["created_at", "2022-07-28 16:20:25.794153"], ["updated_at", "2022-07-28 16:20:25.794153"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["title", "Decentralized web-enabled open architecture"], ["body", "Ennui tattooed trust fund williamsburg. Narwhal vegan microdosing kinfolk trust fund. Vinegar bushwick chia +1 forage tilde cray mixtape. Street viral post-ironic. Ramps sustainable skateboard literally seitan venmo small batch. Etsy mlkshk raw denim. Ethical carry whatever humblebrag disrupt synth chicharrones poutine. Tattooed fashion axe migas organic xoxo banh mi craft beer sartorial."], ["image", "https://i.picsum.photos/id/852/200/300.jpg?hmac=6IMZOkPF_q5nf8IwfYdfxPUyKnyPL1w8moDjTeMOT5g"], ["created_at", "2022-07-28 16:20:25.797612"], ["updated_at", "2022-07-28 16:20:25.797612"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["title", "Organic intermediate concept"], ["body", "Cold-pressed neutra cornhole pop-up. Cornhole hashtag celiac intelligentsia cray health. Green juice thundercats kale chips you probably haven't heard of them trust fund fanny pack venmo gastropub. Everyday typewriter kinfolk muggle magic cred gastropub direct trade. Cliche schlitz polaroid mixtape blog readymade brunch 8-bit. Williamsburg pinterest portland pbr&b quinoa tacos. Aesthetic xoxo cleanse plaid. Farm-to-table letterpress selvage bushwick ramps."], ["image", "https://i.picsum.photos/id/135/200/300.jpg?hmac=d3sTOCUkxdC1OKCgh9wTPjck-gMWATyVHFvflla5vLI"], ["created_at", "2022-07-28 16:20:25.807501"], ["updated_at", "2022-07-28 16:20:25.807501"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["title", "Sharable global emulation"], ["body", "Beard goth cardigan synth keffiyeh actually. Yr tumblr stumptown. Quinoa bespoke authentic artisan. Semiotics church-key diy slow-carb cardigan. Hammock aesthetic dreamcatcher. Master yr asymmetrical raw denim you probably haven't heard of them. Master pug selfies mumblecore messenger bag food truck waistcoat truffaut. Portland goth diy slow-carb muggle magic."], ["image", "https://i.picsum.photos/id/640/200/300.jpg?hmac=wFv1Wyd-STy0zsr2E2USifr--6VcaWg6pOhzelisMIg"], ["created_at", "2022-07-28 16:20:25.815636"], ["updated_at", "2022-07-28 16:20:25.815636"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["title", "Operative didactic hierarchy"], ["body", "Salvia green juice ugh fingerstache seitan authentic normcore synth. Brunch tilde kickstarter aesthetic. Brunch tote bag twee. Irony schlitz you probably haven't heard of them pabst forage lumbersexual. Aesthetic fixie normcore mixtape. Letterpress organic lomo shoreditch."], ["image", "https://i.picsum.photos/id/768/200/300.jpg?hmac=lFX2oZVTUayugh_YZQ5q6uoXJFYaOJz3d2_GLaIW2aU"], ["created_at", "2022-07-28 16:20:25.823662"], ["updated_at", "2022-07-28 16:20:25.823662"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["title", "Operative dynamic throughput"], ["body", "Church-key meditation bitters single-origin coffee. Blog mumblecore offal 90's pour-over. Wolf bitters selfies. Pbr&b beard 8-bit chambray. Cliche bitters typewriter. Bitters 3 wolf moon street. Vinyl bicycle rights pbr&b pinterest before they sold out leggings actually."], ["image", "https://i.picsum.photos/id/100/200/300.jpg?hmac=MeTp97vw7VNDswRcCqUFkGNC8ILDvNfI4MRoHFyGcQ8"], ["created_at", "2022-07-28 16:20:25.832731"], ["updated_at", "2022-07-28 16:20:25.832731"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["title", "User-centric exuding knowledge user"], ["body", "Tacos lumbersexual beard. Gluten-free echo five dollar toast lomo helvetica. Thundercats marfa butcher offal umami farm-to-table pitchfork. Mustache selfies hammock drinking lomo listicle. Occupy lumbersexual pour-over quinoa fashion axe franzen put a bird on it. Gluten-free echo selfies lumbersexual schlitz 8-bit waistcoat disrupt. Next level ramps chia."], ["image", "https://i.picsum.photos/id/955/200/300.jpg?hmac=I4JBGrEHxErLo6XCZM73YcpyhJjX3GxLPggnlxcdU24"], ["created_at", "2022-07-28 16:20:25.840418"], ["updated_at", "2022-07-28 16:20:25.840418"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["title", "Polarised bottom-line moderator"], ["body", "Tousled artisan distillery shoreditch plaid diy blue bottle. Typewriter trust fund disrupt locavore. Salvia flexitarian tattooed diy organic microdosing wayfarers. Food truck meh kombucha cray selvage before they sold out. Chartreuse master gentrify +1 mustache bitters waistcoat literally. Bitters muggle magic next level drinking farm-to-table."], ["image", "https://i.picsum.photos/id/690/200/300.jpg?hmac=YX9nONyDZ_zuGZ5wLOen_mxLWVHEsjpkADU43laON4M"], ["created_at", "2022-07-28 16:20:25.854964"], ["updated_at", "2022-07-28 16:20:25.854964"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-07-28 11:20:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | Allocations: 876)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 7743)
+
+
+Started GET "/post.json" for ::1 at 2022-07-28 11:20:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/post.json"):
+  
+Started GET "/favicon.ico" for ::1 at 2022-07-28 11:20:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/post.json" for ::1 at 2022-07-28 11:26:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/post.json"):
+  
+Started GET "/post.json" for ::1 at 2022-07-28 11:26:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/post.json"):
+  
+Started GET "/post.json" for ::1 at 2022-07-28 11:28:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/post.json"):
+  
+Started GET "/posts.json" for ::1 at 2022-07-28 11:28:32 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 23.0ms | ActiveRecord: 7.2ms | Allocations: 26522)
+
+
+Started POST "/users" for ::1 at 2022-07-28 12:46:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"Bob", "email"=>"bob@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Bob", "email"=>"bob@example.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (5.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bob"], ["email", "bob@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-28 17:46:40.780986"], ["updated_at", "2022-07-28 17:46:40.780986"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 201 Created in 313ms (Views: 0.2ms | ActiveRecord: 15.2ms | Allocations: 24760)
+
+
+Started POST "/sessions" for ::1 at 2022-07-28 12:46:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"bob@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"bob@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 296ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1497)
+
+
+Started POST "/users" for ::1 at 2022-07-28 12:48:23 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"Tom", "email"=>"tom@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Tom", "email"=>"tom@example.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tom"], ["email", "tom@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-07-28 17:48:24.189004"], ["updated_at", "2022-07-28 17:48:24.189004"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 201 Created in 300ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 2838)
+
+
+Started POST "/sessions" for ::1 at 2022-07-28 12:48:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"tom@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"tom@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 299ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 618)
+
+
+Started POST "/sessions" for ::1 at 2022-07-28 12:48:47 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"tom@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"tom@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 299ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 725)
+
+
+Started POST "/sessions" for ::1 at 2022-07-28 12:52:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"peter@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peter@test.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "peter@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 298ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 713)
+
+
+Started POST "/sessions" for ::1 at 2022-07-28 12:53:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 10ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 737)
+
+
+Started POST "/sessions" for ::1 at 2022-07-28 12:53:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"peter@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peter@test.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "peter@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 299ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 710)
+
+
+Started GET "/" for ::1 at 2022-07-28 13:00:25 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.9ms | Allocations: 767)
+Completed 200 OK in 16ms (Views: 6.8ms | Allocations: 6353)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-07-28 13:00:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-07-28 13:00:28 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/codingbootcamp/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.8ms | Allocations: 481)
+Completed 200 OK in 6ms (Views: 3.6ms | Allocations: 1457)
+
+
+Started GET "/products.json" for ::1 at 2022-07-28 13:00:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/products.json"):
+  
+Started GET "/posts.json" for ::1 at 2022-07-28 13:00:38 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 82ms (Views: 16.0ms | ActiveRecord: 27.0ms | Allocations: 11866)
+
+
+Started GET "/Posts.json" for ::1 at 2022-07-28 13:06:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Posts.json"):
+  
+Started GET "/Posts.json" for ::1 at 2022-07-28 13:07:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Posts.json"):
+  
+Started GET "/posts.json" for ::1 at 2022-07-28 13:07:40 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 72ms (Views: 5.4ms | ActiveRecord: 28.5ms | Allocations: 3999)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:07:46 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:08:15 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 1.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:08:32 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:08:35 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 1.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:09:02 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:09:10 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:09:17 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:09:25 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 1.1ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:09:33 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:10:15 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 3.8ms | ActiveRecord: 3.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:10:30 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:10:42 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 1.1ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:11:13 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 2.1ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:11:23 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 1.3ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:11:28 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 1.1ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:12:24 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (5.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 5.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:12:37 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 1.2ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:12:48 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:13:45 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 8.8ms | ActiveRecord: 1.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:14:11 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:14:20 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:14:24 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 4.9ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:14:55 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:15:11 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:15:24 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 1.2ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:15:56 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 14.3ms | ActiveRecord: 1.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:16:08 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:30:02 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 70ms (Views: 4.0ms | ActiveRecord: 15.0ms | Allocations: 3975)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:30:46 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:31:11 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:31:28 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:31:43 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:31:45 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:31:58 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:32:03 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:32:12 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:32:19 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.9ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:32:36 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:32:46 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:32:53 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:33:54 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 1.0ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:34:18 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (3.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 3.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:34:29 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:34:43 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 1.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:34:46 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:34:49 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:35:14 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (17.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 8.5ms | ActiveRecord: 17.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:35:23 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 2.0ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:35:28 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:35:43 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:35:48 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:35:56 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:36:03 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:36:07 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:36:11 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:36:27 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:36:30 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:36:44 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:36:52 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:37:13 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:37:24 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:37:34 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:38:01 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:38:11 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.9ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:38:21 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:38:54 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:38:59 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:39:06 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:40:33 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 1.0ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:41:10 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:42:02 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 1.9ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:42:23 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (7.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 7.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:42:40 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:42:44 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (3.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 3.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:43:13 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.9ms | Allocations: 1732)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:43:19 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:43:40 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:43:46 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:43:51 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:44:20 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 1.3ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:44:40 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:44:44 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.8ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:45:02 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1732)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:45:15 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:46:17 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 1.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:46:34 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:47:19 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.9ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:47:34 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:47:55 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 1.0ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:48:15 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:48:23 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.7ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:48:37 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:49:09 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (9.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 13.1ms | ActiveRecord: 9.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:49:18 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 13:56:03 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 66ms (Views: 5.2ms | ActiveRecord: 23.4ms | Allocations: 4026)
+
+
+Started POST "/posts" for ::1 at 2022-07-28 13:58:28 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"image"=>"https://images.unsplash.com/photo-1554080353-321e452ccf19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", "title"=>"Camera Girl", "body"=>"ksdfljdsflkjsdfl;kjsf;lkjasl;fjasdl;fkjas;ldfkjasl;fkjasl;dfjl;sakdjfl;s", "post"=>{"title"=>"Camera Girl", "body"=>"ksdfljdsflkjsdfl;kjsf;lkjasl;fjasdl;fkjas;ldfkjasl;fkjasl;dfjl;sakdjfl;s", "image"=>"https://images.unsplash.com/photo-1554080353-321e452ccf19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 115)
+
+
+Started POST "/posts" for ::1 at 2022-07-28 13:58:30 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"image"=>"https://images.unsplash.com/photo-1554080353-321e452ccf19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", "title"=>"Camera Girl", "body"=>"ksdfljdsflkjsdfl;kjsf;lkjasl;fjasdl;fkjas;ldfkjasl;fkjasl;dfjl;sakdjfl;sas;ldkjf;laskjf;lsakjf;lsakjfl;dsjfl;kjsafl;ksdf", "post"=>{"title"=>"Camera Girl", "body"=>"ksdfljdsflkjsdfl;kjsf;lkjasl;fjasdl;fkjas;ldfkjasl;fkjasl;dfjl;sakdjfl;sas;ldkjf;laskjf;lsakjf;lsakjfl;dsjfl;kjsafl;ksdf", "image"=>"https://images.unsplash.com/photo-1554080353-321e452ccf19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 104)
+
+
+Started POST "/posts" for ::1 at 2022-07-28 13:59:21 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"title"=>"sdfsdf", "body"=>"sdf", "image"=>"sdf", "post"=>{"title"=>"sdfsdf", "body"=>"sdf", "image"=>"sdf"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 104)
+
+
+Started POST "/posts.json" for ::1 at 2022-07-28 13:59:43 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"title"=>"asdasd", "body"=>"asdasda", "image"=>"asdadasd", "post"=>{"title"=>"asdasd", "body"=>"asdasda", "image"=>"asdadasd"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started POST "/sessions" for ::1 at 2022-07-28 14:00:09 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"tom@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"tom@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 325ms (Views: 0.4ms | ActiveRecord: 7.5ms | Allocations: 811)
+
+
+Started POST "/posts.json" for ::1 at 2022-07-28 14:00:16 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"title"=>"sdfsdfs", "body"=>"sdfsdf", "image"=>"sdfsdfds", "post"=>{"title"=>"sdfsdfs", "body"=>"sdfsdf", "image"=>"sdfsdfds"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (7.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 4], ["title", "sdfsdfs"], ["body", "sdfsdf"], ["image", "sdfsdfds"], ["created_at", "2022-07-28 19:00:16.283800"], ["updated_at", "2022-07-28 19:00:16.283800"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+Completed 200 OK in 68ms (Views: 0.5ms | ActiveRecord: 9.6ms | Allocations: 8651)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:00:16 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.8ms | Allocations: 1873)
+
+
+Started POST "/posts.json" for ::1 at 2022-07-28 14:02:03 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"image"=>"https://images.unsplash.com/photo-1518710223692-2190c514ac11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60", "title"=>"Lights", "body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "post"=>{"title"=>"Lights", "body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "image"=>"https://images.unsplash.com/photo-1518710223692-2190c514ac11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 4], ["title", "Lights"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], ["image", "https://images.unsplash.com/photo-1518710223692-2190c514ac11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"], ["created_at", "2022-07-28 19:02:03.398999"], ["updated_at", "2022-07-28 19:02:03.398999"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+Completed 200 OK in 28ms (Views: 0.8ms | ActiveRecord: 4.3ms | Allocations: 3886)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:02:03 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 1853)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:03:36 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 5.2ms | ActiveRecord: 1.1ms | Allocations: 1853)
+
+
+Started POST "/posts.json" for ::1 at 2022-07-28 14:04:14 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"image"=>"https://images.unsplash.com/photo-1464855499786-2839659d9e5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60", "title"=>"Sunset", "body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam. Mauris rhoncus aenean vel elit. Id nibh tortor id aliquet lectus proin. Commodo elit at imperdiet dui accumsan sit amet nulla. Ut sem viverra aliquet eget. Proin nibh nisl condimentum id venenatis a condimentum vitae. Maecenas pharetra convallis posuere morbi leo urna molestie at. Et ligula ullamcorper malesuada proin libero nunc consequat. Adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum.", "post"=>{"title"=>"Sunset", "body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam. Mauris rhoncus aenean vel elit. Id nibh tortor id aliquet lectus proin. Commodo elit at imperdiet dui accumsan sit amet nulla. Ut sem viverra aliquet eget. Proin nibh nisl condimentum id venenatis a condimentum vitae. Maecenas pharetra convallis posuere morbi leo urna molestie at. Et ligula ullamcorper malesuada proin libero nunc consequat. Adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum.", "image"=>"https://images.unsplash.com/photo-1464855499786-2839659d9e5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"}}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (8.5ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 4], ["title", "Sunset"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam. Mauris rhoncus aenean vel elit. Id nibh tortor id aliquet lectus proin. Commodo elit at imperdiet dui accumsan sit amet nulla. Ut sem viverra aliquet eget. Proin nibh nisl condimentum id venenatis a condimentum vitae. Maecenas pharetra convallis posuere morbi leo urna molestie at. Et ligula ullamcorper malesuada proin libero nunc consequat. Adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum."], ["image", "https://images.unsplash.com/photo-1464855499786-2839659d9e5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"], ["created_at", "2022-07-28 19:04:14.566500"], ["updated_at", "2022-07-28 19:04:14.566500"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+Completed 200 OK in 61ms (Views: 0.7ms | ActiveRecord: 17.8ms | Allocations: 3830)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:04:14 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:04:49 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 1.1ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:04:58 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 1.3ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:05:03 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:05:05 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:05:35 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 2.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:05:56 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:06:13 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 0.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:07:11 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:07:21 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:09:50 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 0.9ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:09:59 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:10:20 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 4.9ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:10:22 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:13:24 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (11.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 8.0ms | ActiveRecord: 11.9ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:15:07 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 6.1ms | ActiveRecord: 1.0ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:15:47 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 1.1ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:16:01 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:16:06 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (4.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 4.1ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:16:16 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:17:00 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:17:09 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.7ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:17:10 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:17:14 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:18:19 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 28.7ms | ActiveRecord: 1.0ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:20:16 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 10.9ms | ActiveRecord: 2.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:21:07 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:21:20 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 1.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:25:35 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 0.9ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:25:35 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:25:59 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:25:59 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:26:17 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:26:27 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:26:49 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:26:55 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:27:00 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:27:03 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:27:55 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 1.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:28:16 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 1977)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:28:53 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 1.0ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:28:59 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:29:02 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:29:08 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1977)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:29:24 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 1.0ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:29:59 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 15.8ms | ActiveRecord: 1.2ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:30:07 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:30:22 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 1.1ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:30:29 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.1ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:30:57 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 16.1ms | ActiveRecord: 0.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:31:12 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:31:18 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.9ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:31:31 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:31:36 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:31:42 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 3.7ms | ActiveRecord: 0.8ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:31:51 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:31:56 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:32:28 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 1977)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:33:38 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (6.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 6.7ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:33:54 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 6.2ms | ActiveRecord: 1.6ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:34:14 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 4.1ms | ActiveRecord: 1.0ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:34:21 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:34:26 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (11.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 10.0ms | ActiveRecord: 11.9ms | Allocations: 1976)
+
+
+Started GET "/posts.json" for ::1 at 2022-07-28 14:34:29 -0500
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 1976)
+
+

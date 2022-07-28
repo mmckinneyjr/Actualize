@@ -1,6 +1,5 @@
 ### Paste your HTML code here:
-
-<!-- index.html -->
+````
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,11 +29,10 @@
     </div>
   </body>
 </html>
-
+````
 
 ### Paste your JS code here:
-
-// index.js
+````
 var App = {
   data: function () {
     return {
@@ -53,3 +51,4 @@ var App = {
 };
 
 Vue.createApp(App).mount("#app");
+````

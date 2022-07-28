@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Hello from HTML!</h1>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <h3>Add New Movie</h3>
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" v-model="newMovieParams.title" id="title" placeholder="title" />
+      </div>
+      <div>
+        <label for="year">Year:</label>
+        <input type="text" v-model="newMovieParams.year" id="year" placeholder="year" />
+      </div>
+      <div>
+        <label for="plot">Plot:</label>
+        <input type="text" v-model="newMovieParams.plot" id="plot" placeholder="plot" />
+      </div>
+      <div>
+        <button v-on:click="createMovie()">Create</button>
+      </div>
+      <div v-for="movie in movies" v-bind:key="movie.id">
+        <h5>{{ movie.title }}</h5>
+      </div>
+    </div>
+  </body>
+  <script src="index2.js"></script>
+</html>
